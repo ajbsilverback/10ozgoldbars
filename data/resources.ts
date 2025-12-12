@@ -1,11 +1,13 @@
 export interface Resource {
   slug: string
   title: string
-  category: 'Gold Market & Investing' | 'Goldbacks Knowledge Base'
+  category: 'Gold Market & Investing'
+  categorySlug: 'gold-market'
   date: string
   excerpt: string
   content: string
   tldr: string
+  monexLink: string
 }
 
 export const resources: Resource[] = [
@@ -14,9 +16,11 @@ export const resources: Resource[] = [
     slug: 'are-10-oz-gold-bars-smart-investment-2025',
     title: 'Are 10 oz Gold Bars a Smart Way to Own Gold?',
     category: 'Gold Market & Investing',
+    categorySlug: 'gold-market',
     date: '2025-01-15',
     excerpt: 'Discover why 10 oz gold bars are the optimal choice for high-net-worth investors seeking the balance between 1 oz coins and kilo bars.',
     tldr: '10 oz gold bars offer the ideal balance of premium efficiency (2-4% over spot), practical liquidity, and manageable unit cost (~$20,000), making them optimal for serious investors building substantial gold positions.',
+    monexLink: 'https://www.monex.com/10-oz-gold-bullion-bar-price-charts/',
     content: `
 ## The Sweet Spot in Gold Bar Sizing
 
@@ -78,9 +82,11 @@ For current pricing and market insights, check our [guide to 10 oz gold bar pric
     slug: 'understanding-gold-spot-bid-ask-premiums',
     title: 'Understanding Gold Spot, Bid, Ask & Premiums',
     category: 'Gold Market & Investing',
+    categorySlug: 'gold-market',
     date: '2025-01-10',
     excerpt: 'Master the fundamental concepts of gold pricing: spot price, bid/ask spreads, and how dealer premiums affect your 10 oz gold bar purchases.',
     tldr: 'Spot price is the base market rate for gold; bid is what dealers pay you, ask is what you pay them. 10 oz bars typically carry 2-4% premiums over spot, with 1-2% spreads when selling.',
+    monexLink: 'https://www.monex.com/knowledge-base/gold-investing/gold-bullion/10-oz-gold-bars/',
     content: `
 ## Decoding Gold Prices for 10 oz Bar Investors
 
@@ -168,9 +174,11 @@ For more on current gold pricing, explore [this overview of 10 oz gold bars](htt
     slug: '10-oz-gold-bars-vs-1-oz-coins',
     title: '10 oz Gold Bars vs 1 oz Coins vs Kilo Bars: Complete Comparison',
     category: 'Gold Market & Investing',
+    categorySlug: 'gold-market',
     date: '2025-01-08',
     excerpt: 'Compare 10 oz gold bars against 1 oz coins and kilo bars across premiums, liquidity, storage, and practical use cases.',
     tldr: '10 oz bars offer 2-4% premiums (vs 4-8% for coins), better storage efficiency, and maintain strong liquidity—making them ideal for investors building $100K+ positions.',
+    monexLink: 'https://www.monex.com/knowledge/why-choose-10-oz-gold-bars-in-hand/',
     content: `
 ## Finding Your Optimal Gold Format
 
@@ -272,9 +280,11 @@ Learn more about [choosing the right 10 oz gold bar](https://www.monex.com/knowl
     slug: 'long-term-storage-strategies-physical-gold',
     title: 'How to Store 10 oz Gold Bars Securely',
     category: 'Gold Market & Investing',
+    categorySlug: 'gold-market',
     date: '2025-01-05',
     excerpt: 'Learn the best practices for storing 10 oz gold bars safely, from home storage to professional vault services and geographic diversification.',
     tldr: 'For 10 oz bars, professional vault storage offers the best security and insurance at 0.3-0.5% annually. Home safes work for smaller positions but require proper insurance. Consider geographic diversification for large holdings.',
+    monexLink: 'https://www.monex.com/knowledge/best-worst-places-to-buy-sell-10-oz-gold-bars/',
     content: `
 ## Protecting Your 10 oz Gold Bar Investment
 
@@ -406,9 +416,11 @@ For secure storage solutions, explore options for [storing 10 oz gold bars](http
     slug: 'premiums-10-oz-gold-bars-vs-other-sizes',
     title: 'Premiums on 10 oz Gold Bars vs Other Bar Sizes',
     category: 'Gold Market & Investing',
+    categorySlug: 'gold-market',
     date: '2025-01-02',
     excerpt: 'Understand how premiums on 10 oz gold bars compare to 1 oz, 5 oz, and kilo bars—and what drives these differences.',
     tldr: '10 oz bars typically carry 2-4% premiums over spot, saving 1-4% versus 1 oz bars while costing only 1% more than kilo bars. Manufacturing cost per ounce drops as bar size increases.',
+    monexLink: 'https://www.monex.com/10-oz-gold-bars-for-sale/',
     content: `
 ## The Premium Structure of Gold Bars
 
@@ -523,9 +535,11 @@ For current premium comparisons, explore [10 oz gold bar pricing](https://www.mo
     slug: 'best-10-oz-gold-bar-brands',
     title: 'Best 10 oz Gold Bar Brands and What to Look For',
     category: 'Gold Market & Investing',
+    categorySlug: 'gold-market',
     date: '2024-12-28',
     excerpt: 'Compare the top 10 oz gold bar refiners including PAMP Suisse, Valcambi, Heraeus, and more. Learn what separates premium brands from generic options.',
     tldr: 'PAMP Suisse, Valcambi, and Heraeus command highest recognition and tightest resale spreads. All LBMA-approved refiners guarantee purity; brand choice affects liquidity and premiums more than quality.',
+    monexLink: 'https://www.monex.com/knowledge/best-10-oz-gold-bar-brands-around-the-world/',
     content: `
 ## Choosing the Right 10 oz Gold Bar Brand
 
@@ -647,9 +661,11 @@ Explore [the best 10 oz gold bar brands](https://www.monex.com/knowledge/best-10
     slug: 'how-to-evaluate-gold-dealers',
     title: 'How to Evaluate Gold Dealers for 10 oz Bar Purchases',
     category: 'Gold Market & Investing',
+    categorySlug: 'gold-market',
     date: '2024-12-20',
     excerpt: 'Learn what to look for when choosing a gold dealer for 10 oz bar purchases, including reputation indicators, pricing transparency, and red flags.',
     tldr: 'Prioritize dealers with 10+ years in business, transparent pricing, clear buyback policies, and professional certifications (PNG, ANA). Always compare 3-5 dealers before purchasing.',
+    monexLink: 'https://www.monex.com/10-oz-gold-bars-for-sale/',
     content: `
 ## Finding a Trustworthy Dealer for 10 oz Gold Bars
 
@@ -781,9 +797,11 @@ For more on dealer selection, explore [where to buy 10 oz gold bars](https://www
     slug: 'using-10-oz-gold-bars-portfolio-diversification',
     title: 'Using 10 oz Gold Bars in a Diversified Portfolio',
     category: 'Gold Market & Investing',
+    categorySlug: 'gold-market',
     date: '2024-12-15',
     excerpt: 'Learn how to incorporate 10 oz gold bars into a broader investment portfolio, including allocation strategies and rebalancing approaches.',
     tldr: 'Most advisors suggest 5-15% precious metals allocation. For physical gold within that allocation, 10 oz bars offer optimal efficiency for holdings above $100K. Rebalance annually based on percentage targets.',
+    monexLink: 'https://www.monex.com/knowledge/how-to-diversify-portfolio-with-10-oz-gold-bars/',
     content: `
 ## 10 oz Gold Bars as a Portfolio Component
 
@@ -911,9 +929,11 @@ For portfolio diversification strategies, explore [how to diversify with 10 oz g
     slug: 'how-gold-protects-against-inflation',
     title: 'How Gold Protects Against Inflation',
     category: 'Gold Market & Investing',
+    categorySlug: 'gold-market',
     date: '2024-12-10',
     excerpt: 'Understand gold\'s historical role as an inflation hedge and why 10 oz gold bars are an effective way to preserve purchasing power.',
     tldr: 'Gold maintains purchasing power because its supply is limited—you can\'t print gold. Over multi-decade periods, gold has consistently preserved value against inflation, though short-term correlation varies.',
+    monexLink: 'https://www.monex.com/knowledge/invest-in-stability-10-oz-gold-bars-and-gold-backed-currencies/',
     content: `
 ## Gold as the Timeless Inflation Hedge
 
@@ -1015,9 +1035,11 @@ Learn more about [investing in 10 oz gold bars](https://www.monex.com/knowledge/
     slug: 'physical-gold-vs-gold-etfs',
     title: 'Physical 10 oz Gold Bars vs Gold ETFs: Complete Comparison',
     category: 'Gold Market & Investing',
+    categorySlug: 'gold-market',
     date: '2024-12-05',
     excerpt: 'Compare owning physical 10 oz gold bars to gold ETFs across ownership, costs, liquidity, risks, and tax treatment.',
     tldr: 'Physical 10 oz bars offer true ownership and zero counterparty risk; ETFs provide convenience and lower transaction costs. For holdings above $100K, many investors use both—bars for core position, ETFs for tactical adjustments.',
+    monexLink: 'https://www.monex.com/knowledge-base/gold-investing/gold-bullion/10-oz-gold-bars/',
     content: `
 ## Two Paths to Gold Exposure
 
@@ -1158,288 +1180,6 @@ This approach captures physical gold's security while maintaining portfolio mana
 For more on physical gold ownership, explore [10 oz gold bars](https://www.monex.com/knowledge-base/gold-investing/gold-bullion/10-oz-gold-bars/){nofollow} as an investment option.
     `,
   },
-  // GOLDBACKS ARTICLES
-  {
-    slug: 'history-of-goldbacks',
-    title: 'The History of Goldbacks: Small-Denomination Gold Currency',
-    category: 'Goldbacks Knowledge Base',
-    date: '2025-01-12',
-    excerpt: 'Discover the origins and evolution of Goldbacks, from Utah\'s pioneering 2019 launch to multi-state adoption—and how they complement 10 oz gold bars.',
-    tldr: 'Goldbacks launched in 2019 as the first physical gold currency for everyday transactions. They complement 10 oz bars by providing small-denomination gold ownership for practical use.',
-    content: `
-## The Birth of Spendable Gold
-
-While 10 oz gold bars are ideal for wealth preservation, they're impractical for everyday transactions. Goldbacks solve this problem through innovative technology that makes small-denomination physical gold usable.
-
-### Origins: Utah 2019
-
-The Goldback concept was developed to address a fundamental problem: gold is excellent for savings but impractical for spending. A 10 oz bar worth $20,000+ can't buy groceries.
-
-Goldbacks use revolutionary technology that deposits precise amounts of 24-karat gold between layers of protective polymer. The result is durable, tamper-evident notes containing small, usable gold amounts.
-
-Utah launched the first Goldback series in 2019, with denominations of 1, 5, 10, 25, and 50 Goldbacks.
-
-### The Technology
-
-Manufacturing involves:
-- Depositing 24-karat gold particles onto thin substrate
-- Sealing between durable polymer layers
-- Embedding intricate security features
-- Creating artwork that's beautiful and functional
-
-Each note's gold content is verified through assay, and the design makes counterfeiting extremely difficult.
-
-### State Expansion
-
-Following Utah's success, additional states joined:
-
-- **Nevada (2020):** Mining heritage themes
-- **New Hampshire (2020):** Liberty-focused "Live Free or Die" designs
-- **Wyoming (2021):** Frontier and wildlife imagery
-- **Oklahoma (2024):** Native American and frontier heritage
-- **Florida (2024):** Tropical themes, natural beauty
-- **South Dakota (2024):** Mount Rushmore, Black Hills
-- **Arizona (2025):** Grand Canyon, desert landscapes
-
-### Denominations and Values
-
-Each Goldback contains exactly its face value in 1/1000 troy ounce units:
-
-| Denomination | Gold Content | Approximate Value* |
-|-------------|--------------|-------------------|
-| 1 Goldback | 1/1000 oz | ~$4.50-5.50 |
-| 5 Goldbacks | 5/1000 oz | ~$22-27 |
-| 10 Goldbacks | 10/1000 oz | ~$45-55 |
-| 25 Goldbacks | 25/1000 oz | ~$112-140 |
-| 50 Goldbacks | 50/1000 oz | ~$225-280 |
-
-*Values vary with gold spot prices and market premiums
-
-### Complementing 10 oz Bars
-
-**10 oz bars:** Wealth storage, portfolio allocation, long-term preservation
-
-**Goldbacks:** Everyday transactions, small gifts, entry-level gold ownership, practical gold use
-
-Together, they provide complete coverage—bars for storing wealth, Goldbacks for using it.
-
-### The Growing Goldback Economy
-
-A developing ecosystem supports circulation:
-- Growing merchant acceptance networks
-- Exchange services (Goldback to fiat and vice versa)
-- Collector communities
-- Educational initiatives
-
-### Looking Forward
-
-Goldbacks continue to expand, with more states considering adoption. For 10 oz bar investors, Goldbacks offer a complementary way to hold and use gold at smaller scales.
-    `,
-  },
-  {
-    slug: 'utah-goldbacks',
-    title: 'Utah Goldbacks: The Original Series',
-    category: 'Goldbacks Knowledge Base',
-    date: '2025-01-08',
-    excerpt: 'Explore Utah\'s pioneering Goldback series, the first physical gold currency designed for everyday transactions.',
-    tldr: 'Utah launched the first Goldbacks in 2019, proving small-denomination physical gold could work for commerce. Five denominations contain 1-50 units of 1/1000 oz gold each.',
-    content: `
-## Utah: Where Goldbacks Began
-
-Utah holds a special place in Goldback history as the birthplace of this innovative currency. Launched in 2019, Utah Goldbacks were the first to prove that small-denomination physical gold could work for everyday commerce.
-
-### Why Utah?
-
-Utah was a natural fit for Goldback innovation:
-- Strong precious metals culture
-- Favorable state laws regarding gold/silver as legal tender
-- Active sound money advocacy community
-- Supportive business environment
-
-### The Denominations
-
-**1 Goldback - Voluntas (Free Will)**
-Represents individual choice and agency. Gold content: 1/1000 troy ounce.
-
-**5 Goldbacks - Libertas (Liberty)**
-Celebrates freedom with traditional symbols. Gold content: 5/1000 troy ounce.
-
-**10 Goldbacks - Virtus (Courage)**
-Depicts pioneer spirit. Gold content: 10/1000 troy ounce.
-
-**25 Goldbacks - Concordia (Harmony)**
-Represents community and cooperation. Gold content: 25/1000 troy ounce.
-
-**50 Goldbacks - Prudentia (Wisdom)**
-Crowns the series with knowledge themes. Gold content: 50/1000 troy ounce.
-
-### Circulation in Utah
-
-Utah boasts the most developed Goldback economy:
-- Hundreds of participating merchants
-- Farmer's markets accepting Goldbacks
-- Local exchange services
-- Growing everyday commerce acceptance
-
-### For 10 oz Bar Investors
-
-Utah Goldbacks offer a way to:
-- Introduce others to gold ownership
-- Make small gold gifts
-- Maintain some spendable gold alongside bar holdings
-- Participate in alternative currency movement
-
-### The Utah Legacy
-
-Utah Goldbacks proved the concept works, demonstrating that:
-- People will accept gold-based currency
-- Manufacturing at scale is feasible
-- Merchant networks develop organically
-- Small-denomination gold fills a real market need
-    `,
-  },
-  {
-    slug: 'nevada-goldbacks',
-    title: 'Nevada Goldbacks: Mining Heritage',
-    category: 'Goldbacks Knowledge Base',
-    date: '2025-01-05',
-    excerpt: 'Discover Nevada Goldbacks, celebrating the Silver State\'s rich mining history and frontier spirit.',
-    tldr: 'Nevada Goldbacks (2020) honor the state\'s mining legacy with designs featuring prospectors, desert landscapes, and frontier themes across five denominations.',
-    content: `
-## Nevada: The Silver State Goes Gold
-
-Nevada became the second state to launch Goldbacks in 2020, a fitting choice given its legendary mining history. While nicknamed the "Silver State," Nevada's gold production has actually exceeded silver in value for decades.
-
-### Nevada's Mining Heritage
-
-Nevada leads the United States in gold production, contributing over 70% of domestic output. This heritage makes Nevada's embrace of Goldbacks particularly meaningful.
-
-### Design Themes
-
-Nevada Goldbacks celebrate:
-- Mining and prospecting imagery
-- Desert landscapes and wildlife
-- Frontier spirit and independence
-- Iconic Nevada landmarks
-
-### The Denominations
-
-**1 Goldback - Aurum (Gold):** Homage to gold itself
-**5 Goldbacks - Fortuna (Fortune):** Luck and perseverance of mining
-**10 Goldbacks - Industria (Industry):** Hard work and enterprise
-**25 Goldbacks - Veritas (Truth):** Honesty and fair dealing
-**50 Goldbacks - Virtus (Virtue):** Moral courage
-
-### For 10 oz Bar Investors
-
-Nevada Goldbacks offer:
-- Connection to America's gold mining heartland
-- Alternative to hold alongside bar investments
-- Collector appeal for mining enthusiasts
-- Small-denomination gold exposure
-
-### Unique Aspects
-
-Nevada allows gold and silver as legal tender for debt payment. Combined with no state income tax, Nevada provides favorable conditions for precious metals ownership at all scales—from Goldbacks to 10 oz bars.
-    `,
-  },
-  {
-    slug: 'new-hampshire-goldbacks',
-    title: 'New Hampshire Goldbacks: Live Free or Die',
-    category: 'Goldbacks Knowledge Base',
-    date: '2025-01-02',
-    excerpt: 'Explore New Hampshire Goldbacks, embodying the Granite State\'s fierce independence and liberty tradition.',
-    tldr: 'New Hampshire Goldbacks (2020) embrace "Live Free or Die" with designs featuring liberty themes and Revolutionary War heritage.',
-    content: `
-## New Hampshire: Liberty in Gold Form
-
-New Hampshire joined the Goldback movement in 2020, bringing East Coast perspective to this Western-born innovation. The Granite State's fierce independence and "Live Free or Die" motto align perfectly with sound money principles.
-
-### The Liberty Tradition
-
-New Hampshire's contributions to American liberty are legendary:
-- First colony to declare independence from Britain
-- "Live Free or Die" adopted as state motto
-- Tradition of minimal government
-- No state income or sales tax
-
-### The Denominations
-
-**1 Goldback - Libertas (Liberty):** Symbols of freedom
-**5 Goldbacks - Fortitudo (Fortitude):** Strength to defend liberty
-**10 Goldbacks - Vigilantia (Vigilance):** Eternal watchfulness
-**25 Goldbacks - Fides (Faith):** Trust in principles
-**50 Goldbacks - Religio (Devotion):** Commitment to higher principles
-
-### Artistic Elements
-
-Designs incorporate:
-- White Mountain peaks
-- Moose and wildlife
-- Covered bridges
-- Revolutionary War symbolism
-- The Old Man of the Mountain memorial
-
-### For 10 oz Bar Investors
-
-New Hampshire Goldbacks represent:
-- Independence from central bank monopoly
-- Personal responsibility for wealth
-- Community-based alternatives
-- Liberty-oriented gold ownership
-
-The strong Free State Project community ensures growing merchant acceptance and circulation.
-    `,
-  },
-  {
-    slug: 'wyoming-goldbacks',
-    title: 'Wyoming Goldbacks: Cowboy State Gold',
-    category: 'Goldbacks Knowledge Base',
-    date: '2024-12-28',
-    excerpt: 'Learn about Wyoming Goldbacks, honoring the Cowboy State\'s frontier heritage and wide-open spaces.',
-    tldr: 'Wyoming Goldbacks (2021) feature bucking broncos, Yellowstone wildlife, and the rugged independence that defines the Cowboy State.',
-    content: `
-## Wyoming: The Cowboy State Goes Gold
-
-Wyoming joined the Goldback family in 2021, bringing frontier spirit and rugged individualism to these innovative gold notes.
-
-### Wyoming's Unique Character
-
-Wyoming stands apart:
-- Smallest state population
-- First state to grant women's suffrage (1869)
-- Yellowstone—world's first national park
-- Strong property rights traditions
-- No state income tax
-
-### The Denominations
-
-**1 Goldback - Libertas (Liberty):** Bucking horse symbolism
-**5 Goldbacks - Virtus (Courage):** Frontier bravery
-**10 Goldbacks - Industria (Industry):** Ranching and mining heritage
-**25 Goldbacks - Humanitas (Humanity):** Community bonds
-**50 Goldbacks - Prudentia (Wisdom):** Foresight and judgment
-
-### Artistic Elements
-
-Designs feature:
-- Bucking horse and rider
-- Bison (Yellowstone herds)
-- Grand Teton peaks
-- Cowboy imagery
-- Yellowstone geothermal features
-
-### For 10 oz Bar Investors
-
-Wyoming Goldbacks capture the American West:
-- Independence and self-reliance
-- Frontier-era money connection
-- Sound money legislation leadership
-- Complement to serious bar investments
-
-Wyoming has emerged as a leader in sound money legislation, making Goldbacks a natural fit alongside traditional gold bar ownership.
-    `,
-  },
 ]
 
 export function getResourceBySlug(slug: string): Resource | undefined {
@@ -1449,3 +1189,11 @@ export function getResourceBySlug(slug: string): Resource | undefined {
 export function getAllResourceSlugs(): string[] {
   return resources.map(r => r.slug)
 }
+
+export function getResourcesByCategory(categorySlug: string): Resource[] {
+  return resources.filter(r => r.categorySlug === categorySlug)
+}
+
+export const categories = [
+  { slug: 'gold-market', name: 'Gold Market & Investing' },
+] as const

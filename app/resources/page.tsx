@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { resources } from '@/data/resources'
+import { resources, categories } from '@/data/resources'
 import ResourceCard from '@/components/ResourceCard'
 import AISummary from '@/components/AISummary'
 
@@ -12,9 +12,21 @@ export const metadata: Metadata = {
   },
 }
 
-export default function ResourcesPage() {
-  const goldMarketArticles = resources.filter(r => r.category === 'Gold Market & Investing')
-  const goldbacksArticles = resources.filter(r => r.category === 'Goldbacks Knowledge Base')
+interface PageProps {
+  searchParams: Promise<{ category?: string }>
+}
+
+export default async function ResourcesPage({ searchParams }: PageProps) {
+  const { category } = await searchParams
+  
+  // Filter resources based on category param (currently only gold-market)
+  const filteredResources = category
+    ? resources.filter(r => r.categorySlug === category)
+    : resources
+  
+  const goldMarketArticles = filteredResources.filter(r => r.category === 'Gold Market & Investing')
+  
+  const activeCategory = category || 'all'
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -121,6 +133,37 @@ export default function ResourcesPage() {
         </div>
       </section>
 
+      {/* Category Filter Buttons */}
+      <section className="py-6 bg-[#EFE9D9]">
+        <div className="max-w-5xl mx-auto px-4 md:px-6">
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href="/resources"
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                activeCategory === 'all'
+                  ? 'bg-[#C69A35] text-[#000000]'
+                  : 'bg-white text-[#666666] border border-[#E5E0D1] hover:border-[#C69A35] hover:text-[#C69A35]'
+              }`}
+            >
+              All Resources
+            </Link>
+            {categories.map((cat) => (
+              <Link
+                key={cat.slug}
+                href={`/resources?category=${cat.slug}`}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                  activeCategory === cat.slug
+                    ? 'bg-[#C69A35] text-[#000000]'
+                    : 'bg-white text-[#666666] border border-[#E5E0D1] hover:border-[#C69A35] hover:text-[#C69A35]'
+                }`}
+              >
+                {cat.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Featured Starting Points */}
       <section className="py-12 md:py-16 bg-[#EFE9D9]">
         <div className="max-w-5xl mx-auto px-4 md:px-6">
@@ -189,51 +232,6 @@ export default function ResourcesPage() {
           </div>
         </div>
       </section>
-
-      {/* Goldbacks Section */}
-      {goldbacksArticles.length > 0 && (
-        <section className="py-14 md:py-20 bg-[#EFE9D9]">
-          <div className="max-w-5xl mx-auto px-4 md:px-6">
-            <div className="mb-10">
-              <div className="flex items-center gap-4 mb-4">
-                <h2 className="text-2xl md:text-3xl font-bold text-[#111111] font-display">
-                  Goldbacks <span className="text-[#C69A35]">Knowledge Base</span>
-                </h2>
-                <div className="flex-1 h-px bg-gradient-to-r from-[#C69A35]/50 to-transparent"></div>
-              </div>
-              <p className="text-[#666666] max-w-2xl leading-relaxed">
-                Explore Goldbacks—innovative small-denomination gold currency that complements 
-                your 10 oz bar holdings for everyday gold ownership.
-              </p>
-            </div>
-
-            <div className="bg-[#000000] rounded-lg p-6 mb-8">
-              <h3 className="font-semibold text-white mb-3 font-display">How Goldbacks Complement 10 oz Bars</h3>
-              <p className="text-[#999999] text-sm leading-relaxed mb-4">
-                While 10 oz bars are ideal for wealth preservation and portfolio allocation, Goldbacks 
-                offer something different: small-denomination gold for everyday transactions. Together, 
-                they provide a complete physical gold strategy—bars for wealth storage, Goldbacks for 
-                practical gold use.
-              </p>
-              <Link href="/resources/history-of-goldbacks" className="text-[#C69A35] text-sm hover:underline underline-offset-2">
-                Learn the full history of Goldbacks →
-              </Link>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {goldbacksArticles.map((resource) => (
-                <ResourceCard
-                  key={resource.slug}
-                  title={resource.title}
-                  category={resource.category}
-                  excerpt={resource.excerpt}
-                  slug={resource.slug}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* Additional Q&A for GEO */}
       <section className="py-12 md:py-16 bg-[#EFE9D9]">

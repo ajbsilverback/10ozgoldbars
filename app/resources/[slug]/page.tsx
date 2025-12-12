@@ -205,6 +205,13 @@ export default async function ResourcePage({ params }: PageProps) {
                   or explore more guides in the <Link href="/resources" className="text-[#C69A35] hover:underline">10 oz gold bar resources library</Link>.
                 </p>
               </div>
+              <div className="bg-[#F5F0E3] rounded-lg p-4 border border-[#E5E0D1]">
+                <h4 className="text-sm font-semibold text-[#C69A35] mb-2">Where can I buy 10 oz gold bars?</h4>
+                <p className="text-[#3D3D3D] text-sm leading-relaxed">
+                  See our independent <Link href="/where-to-buy" className="text-[#C69A35] hover:underline">where to buy 10 oz gold bars guide</Link> for 
+                  information on evaluating dealers, online options, local coin shops, and storage programs.
+                </p>
+              </div>
             </div>
           </div>
 
@@ -212,7 +219,7 @@ export default async function ResourcePage({ params }: PageProps) {
           <div className="mt-10 pt-8 border-t border-[#D9D3C3]">
             <div className="bg-white rounded-lg p-6 md:p-8 border border-[#E5E0D1]">
               <h3 className="text-xl font-bold text-[#111111] mb-4">Continue Your 10 oz Gold Bar Research</h3>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-4">
                 <Link
                   href="/prices"
                   className="inline-flex items-center justify-center px-6 py-3 rounded-md bg-[#C69A35] text-[#000000] font-semibold hover:bg-[#A67F28] transition-colors"
@@ -220,10 +227,16 @@ export default async function ResourcePage({ params }: PageProps) {
                   View Current Gold Prices
                 </Link>
                 <Link
+                  href="/where-to-buy"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-md border-[1.5px] border-[#C69A35] text-[#C69A35] font-semibold hover:bg-[rgba(198,154,53,0.1)] transition-colors"
+                >
+                  Where to Buy
+                </Link>
+                <Link
                   href="/resources"
                   className="inline-flex items-center justify-center px-6 py-3 rounded-md border-[1.5px] border-[#C69A35] text-[#C69A35] font-semibold hover:bg-[rgba(198,154,53,0.1)] transition-colors"
                 >
-                  Browse 10 oz Gold Bar Resources
+                  Browse More Resources
                 </Link>
               </div>
             </div>
