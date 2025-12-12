@@ -21,7 +21,13 @@ export default function Footer() {
           </div>
 
           {/* Links */}
-          <nav className="flex gap-8" aria-label="Footer navigation">
+          <nav className="flex flex-wrap gap-x-8 gap-y-2 justify-center md:justify-end" aria-label="Footer navigation">
+            <Link 
+              href="/where-to-buy" 
+              className="text-sm text-[#888888] hover:text-[#C69A35] transition-colors"
+            >
+              Where to Buy 10 oz Gold Bars
+            </Link>
             <Link 
               href="/privacy-policy" 
               className="text-sm text-[#888888] hover:text-[#C69A35] transition-colors"

@@ -351,6 +351,10 @@ export default function HomePage() {
             >
               Read: Are 10 oz Gold Bars a Smart Way to Own Gold? →
             </Link>
+            <p className="mt-4 text-sm text-[#888888]">
+              See our independent{' '}
+              <Link href="/where-to-buy" className="text-[#C69A35] hover:underline">where-to-buy guide</Link>.
+            </p>
           </div>
         </div>
       </section>

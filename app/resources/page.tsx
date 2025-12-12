@@ -95,6 +95,13 @@ export default function ResourcesPage() {
               Whether you&apos;re comparing bar sizes, evaluating dealers, or planning storage, 
               these guides provide the insights you need to make informed decisions.
             </p>
+            <p className="text-sm text-[#888888] mt-4">
+              New:{' '}
+              <Link href="/where-to-buy" className="text-[#C69A35] hover:underline">
+                Where to buy 10 oz gold bars
+              </Link>{' '}
+              — our independent dealer guide.
+            </p>
           </div>
         </div>
       </section>
