@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://www.1kilogoldbars.com/sitemap.xml',
+    sitemap: 'https://www.10ozgoldbars.com/sitemap.xml',
   }
 }
 

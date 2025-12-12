@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'Gold Prices', href: '/gold-prices' },
+  { name: 'Gold Prices', href: '/prices' },
   { name: 'Resources', href: '/resources' },
 ]
 
@@ -13,24 +13,26 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur supports-[backdrop-filter]:backdrop-blur-lg border-b border-gray-100">
-      <nav className="max-w-6xl mx-auto px-4 md:px-6" aria-label="Primary navigation">
-        <div className="flex h-16 md:h-[72px] items-center justify-between">
+    <header className="sticky top-0 z-50 bg-[#EFE9D9] border-b border-[#D9D3C3]">
+      <nav className="max-w-5xl mx-auto px-4 md:px-6" aria-label="Primary navigation">
+        <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link 
             href="/" 
-            className="flex items-center gap-2 text-xl font-bold tracking-tight"
+            className="flex items-center"
           >
-            <span className="gold-shimmer font-display">1KiloGoldBars.com</span>
+            <span className="text-xl font-bold tracking-tight gold-shimmer font-display">
+              10ozGoldBars.com
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:gap-10">
+          <div className="hidden md:flex md:items-center md:gap-8">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="nav-link text-sm font-medium text-gray-700 hover:text-[#D4AF37] transition-colors duration-200"
+                className="nav-link text-sm font-medium"
               >
                 {item.name}
               </Link>
@@ -40,7 +42,7 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <button
             type="button"
-            className="md:hidden inline-flex items-center justify-center rounded-lg p-2.5 text-gray-600 hover:text-[#D4AF37] hover:bg-gray-100 transition-colors"
+            className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-[#3D3D3D] hover:text-[#C69A35] hover:bg-[#F5F0E3] transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-menu"
@@ -60,13 +62,13 @@ export default function Navbar() {
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden border-t border-gray-100" id="mobile-menu">
+          <div className="md:hidden border-t border-[#D9D3C3]" id="mobile-menu">
             <div className="space-y-1 py-4">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block rounded-lg px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[#D4AF37] transition-colors"
+                  className="block rounded-md px-4 py-3 text-base font-medium text-[#3D3D3D] hover:bg-[#F5F0E3] hover:text-[#C69A35] transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}

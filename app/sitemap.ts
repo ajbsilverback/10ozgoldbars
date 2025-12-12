@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { getAllResourceSlugs } from '@/data/resources'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.1kilogoldbars.com'
+  const baseUrl = 'https://www.10ozgoldbars.com'
   
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [
@@ -13,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${baseUrl}/gold-prices`,
+      url: `${baseUrl}/prices`,
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 0.9,
@@ -36,4 +36,3 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [...staticPages, ...resourcePages]
 }
-

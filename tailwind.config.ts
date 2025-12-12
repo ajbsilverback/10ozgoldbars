@@ -9,31 +9,35 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Gold Executive Black Theme
         gold: {
-          50: '#fefce8',
-          100: '#fef9c3',
-          200: '#fef08a',
-          300: '#fde047',
-          400: '#facc15',
-          500: '#eab308',
-          600: '#ca8a04',
-          700: '#a16207',
-          800: '#854d0e',
-          900: '#713f12',
-          950: '#422006',
+          DEFAULT: '#C69A35',
+          light: '#D4AB4A',
+          dark: '#A67F28',
+          muted: 'rgba(198, 154, 53, 0.1)',
         },
-        slate: {
-          850: '#172033',
-          950: '#0b1120',
-        }
+        theme: {
+          light: '#EFE9D9',
+          dark: '#000000',
+          cream: '#F5F0E3',
+        },
       },
       fontFamily: {
-        display: ['Playfair Display', 'Georgia', 'serif'],
-        sans: ['Source Sans 3', 'system-ui', 'sans-serif'],
+        display: ['Playfair Display', 'Georgia', 'Times New Roman', 'serif'],
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+      },
+      fontSize: {
+        'display-xl': ['3.5rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+        'display-lg': ['2.75rem', { lineHeight: '1.15', letterSpacing: '-0.02em' }],
+        'display-md': ['2rem', { lineHeight: '1.2', letterSpacing: '-0.01em' }],
+        'display-sm': ['1.5rem', { lineHeight: '1.3', letterSpacing: '-0.01em' }],
+      },
+      boxShadow: {
+        'card': '0 1px 3px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04)',
+        'card-hover': '0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04)',
       },
     },
   },
   plugins: [],
 }
 export default config
-

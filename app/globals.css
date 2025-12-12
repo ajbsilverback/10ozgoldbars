@@ -1,127 +1,154 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ========================================
+   GOLD EXECUTIVE BLACK THEME
+   10ozGoldBars.com
+   ======================================== */
+
 :root {
-  /* Premium Investment Color Palette */
-  --gold-accent: #D4AF37;
-  --gold-light: #E8D48A;
-  --gold-dark: #B8962E;
-  --charcoal-deep: #1A1A1A;
-  --charcoal: #2C2C2C;
-  --slate: #3A3A3A;
-  --soft-white: #F9FAFB;
-  --off-white: #F3F4F6;
+  /* Theme Colors */
+  --gold: #C69A35;
+  --gold-light: #D4AB4A;
+  --gold-dark: #A67F28;
+  --gold-muted: rgba(198, 154, 53, 0.1);
   
-  --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #E8D48A 50%, #B8962E 100%);
+  --theme-dark: #000000;
+  --theme-light: #EFE9D9;
+  --theme-cream: #F5F0E3;
+  
+  /* Text */
+  --text-dark: #111111;
+  --text-body: #3D3D3D;
+  --text-muted: #666666;
+  --text-light: #FFFFFF;
+  
+  /* Borders */
+  --border-light: #E5E0D1;
+  --border-subtle: #D9D3C3;
 }
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
 
 html {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  font-family: 'Inter', system-ui, sans-serif;
-  background: var(--soft-white);
-  color: #374151;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--theme-light);
+  color: var(--text-body);
+  line-height: 1.7;
+  font-size: 1rem;
 }
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
   font-weight: 600;
   letter-spacing: -0.02em;
+  color: var(--text-dark);
+  line-height: 1.2;
 }
 
-/* Gold shimmer animation - refined */
+h1 { font-weight: 700; }
+
+p {
+  line-height: 1.75;
+}
+
+/* ========================================
+   GOLD SHIMMER EFFECT
+   ======================================== */
+
 @keyframes shimmer {
   0% { background-position: -200% center; }
   100% { background-position: 200% center; }
 }
 
 .gold-shimmer {
-  background: linear-gradient(90deg, #D4AF37, #E8D48A, #D4AF37, #B8962E, #D4AF37);
+  background: linear-gradient(
+    90deg, 
+    var(--gold) 0%, 
+    var(--gold-light) 25%, 
+    var(--gold) 50%, 
+    var(--gold-dark) 75%, 
+    var(--gold) 100%
+  );
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: shimmer 3s linear infinite;
+  animation: shimmer 4s ease-in-out infinite;
 }
 
-.gold-text {
-  color: var(--gold-accent);
+/* ========================================
+   BUTTONS
+   ======================================== */
+
+.btn-primary {
+  @apply inline-flex items-center justify-center px-6 py-3 font-semibold transition-all duration-200;
+  background: var(--gold);
+  color: var(--theme-dark);
+  border-radius: 6px;
 }
 
-.gold-bg {
-  background: var(--gold-gradient);
+.btn-primary:hover {
+  background: var(--gold-dark);
 }
 
-/* Premium card styles */
-.card-premium {
-  background: white;
-  border-radius: 1rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+.btn-secondary {
+  @apply inline-flex items-center justify-center px-6 py-3 font-semibold transition-all duration-200;
+  background: transparent;
+  color: var(--gold);
+  border: 1.5px solid var(--gold);
+  border-radius: 6px;
 }
 
-.card-premium:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+.btn-secondary:hover {
+  background: var(--gold-muted);
 }
 
-/* Gold accent border top */
-.gold-border-top {
-  border-top: 4px solid var(--gold-accent);
+/* ========================================
+   CARDS
+   ======================================== */
+
+.card {
+  background: #FFFFFF;
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
 }
 
-/* Dark section background */
-.bg-charcoal {
-  background: linear-gradient(135deg, var(--charcoal-deep) 0%, var(--charcoal) 100%);
+.card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
-/* Glass effect for dark sections */
-.glass-dark {
-  background: rgba(26, 26, 26, 0.95);
-  backdrop-filter: blur(12px);
-}
+/* ========================================
+   NAVIGATION
+   ======================================== */
 
-/* Widget container styling */
-.widget-container {
-  background: #ffffff;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  border: 1px solid #E5E7EB;
-}
-
-/* Focus states */
-a:focus-visible,
-button:focus-visible {
-  outline: 2px solid var(--gold-accent);
-  outline-offset: 2px;
-}
-
-/* Selection styling */
-::selection {
-  background: rgba(212, 175, 55, 0.2);
-  color: var(--charcoal-deep);
-}
-
-/* Premium section padding */
-@layer utilities {
-  .section-padding {
-    @apply py-12 md:py-20;
-  }
-  
-  .container-narrow {
-    @apply max-w-6xl mx-auto px-4 md:px-6;
-  }
-}
-
-/* Nav link hover animation */
 .nav-link {
   position: relative;
+  color: var(--text-body);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--gold);
 }
 
 .nav-link::after {
@@ -131,84 +158,53 @@ button:focus-visible {
   bottom: -4px;
   width: 0;
   height: 2px;
-  background: var(--gold-accent);
-  transition: width 0.3s ease;
+  background: var(--gold);
+  transition: width 0.2s ease;
 }
 
 .nav-link:hover::after {
   width: 100%;
 }
 
-/* Premium button styles */
-.btn-primary {
-  @apply inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold shadow-lg transition-all duration-200;
-  background: var(--gold-accent);
-  color: var(--charcoal-deep);
+/* ========================================
+   FOCUS STATES
+   ======================================== */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
-.btn-primary:hover {
-  background: #E8D48A;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.4);
+/* ========================================
+   SELECTION
+   ======================================== */
+
+::selection {
+  background: rgba(198, 154, 53, 0.25);
+  color: var(--theme-dark);
 }
 
-.btn-secondary {
-  @apply inline-flex items-center justify-center px-8 py-4 rounded-full font-medium transition-all duration-200;
-  color: var(--gold-accent);
-  border: 2px solid var(--gold-accent);
-  background: transparent;
-}
+/* ========================================
+   ARTICLE CONTENT
+   ======================================== */
 
-.btn-secondary:hover {
-  background: rgba(212, 175, 55, 0.1);
-  color: #B8962E;
-}
-
-/* Quote block styling */
-.quote-block {
-  border-left: 4px solid var(--gold-accent);
-  padding-left: 1.5rem;
-  font-style: italic;
-  color: #4B5563;
-}
-
-/* Dark mode text for dark sections */
-.dark-section {
-  @apply text-gray-300;
-}
-
-.dark-section h1,
-.dark-section h2,
-.dark-section h3,
-.dark-section h4 {
-  @apply text-white;
-}
-
-/* Subtle divider */
-.divider {
-  @apply border-t border-gray-200 my-12;
-}
-
-.divider-dark {
-  @apply border-t border-gray-700 my-12;
-}
-
-/* Article content styling */
 .article-content {
-  font-size: 1.125rem;
-  line-height: 1.8;
-  color: #374151;
+  font-size: 1.0625rem;
+  line-height: 1.85;
+  color: var(--text-body);
 }
 
 .article-content h2 {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: #111827;
+  font-size: 1.625rem;
+  font-weight: 600;
+  color: var(--text-dark);
   margin-top: 2.5rem;
   margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid #F3F4F6;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-light);
 }
 
 .article-content h2:first-child {
@@ -217,20 +213,19 @@ button:focus-visible {
 
 .article-content h3 {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  color: #1F2937;
+  color: var(--text-dark);
   margin-top: 2rem;
   margin-bottom: 0.75rem;
 }
 
 .article-content p {
   margin-bottom: 1.25rem;
-  color: #4B5563;
 }
 
 .article-content strong {
-  color: #111827;
+  color: var(--text-dark);
   font-weight: 600;
 }
 
@@ -249,37 +244,36 @@ button:focus-visible {
 }
 
 .article-content li {
-  margin-bottom: 0.625rem;
-  padding-left: 0.5rem;
-  color: #4B5563;
+  margin-bottom: 0.5rem;
+  padding-left: 0.375rem;
 }
 
 .article-content li::marker {
-  color: #D4AF37;
+  color: var(--gold);
 }
 
 .article-content table {
   width: 100%;
   margin: 1.5rem 0;
   border-collapse: collapse;
-  border: 1px solid #E5E7EB;
-  border-radius: 0.5rem;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
   overflow: hidden;
+  font-size: 0.9375rem;
 }
 
 .article-content th {
-  background: #F9FAFB;
-  color: #111827;
+  background: var(--theme-cream);
+  color: var(--text-dark);
   font-weight: 600;
   text-align: left;
-  padding: 0.75rem 1rem;
-  border-bottom: 2px solid #E5E7EB;
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid var(--border-light);
 }
 
 .article-content td {
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid #E5E7EB;
-  color: #4B5563;
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .article-content tr:last-child td {
@@ -287,13 +281,25 @@ button:focus-visible {
 }
 
 .article-content a {
-  color: #D4AF37;
+  color: var(--gold);
   font-weight: 500;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .article-content a:hover {
-  color: #B8962E;
+  color: var(--gold-dark);
   text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ========================================
+   WIDGET CONTAINER
+   ======================================== */
+
+.widget-container {
+  background: #FFFFFF;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-light);
 }

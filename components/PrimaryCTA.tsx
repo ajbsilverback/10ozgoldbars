@@ -17,11 +17,11 @@ export default function PrimaryCTA({
     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
       <Link
         href={primaryHref}
-        className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-[#1A1A1A] bg-[#D4AF37] rounded-full shadow-lg hover:bg-[#E8D48A] hover:shadow-xl hover:shadow-yellow-500/20 transform hover:-translate-y-0.5 transition-all duration-200"
+        className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold bg-[#C69A35] text-[#000000] rounded-md hover:bg-[#A67F28] transition-colors"
       >
         {primaryLabel}
         <svg 
-          className="ml-2 w-5 h-5" 
+          className="ml-2 w-4 h-4" 
           fill="none" 
           stroke="currentColor" 
           viewBox="0 0 24 24"
@@ -33,7 +33,7 @@ export default function PrimaryCTA({
       {secondaryLabel && secondaryHref && (
         <Link
           href={secondaryHref}
-          className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-[#D4AF37] bg-transparent border-2 border-[#D4AF37] rounded-full hover:bg-[#D4AF37]/10 hover:text-[#B8962E] transition-all duration-200"
+          className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-[#C69A35] bg-transparent border-[1.5px] border-[#C69A35] rounded-md hover:bg-[rgba(198,154,53,0.1)] transition-colors"
         >
           {secondaryLabel}
         </Link>
