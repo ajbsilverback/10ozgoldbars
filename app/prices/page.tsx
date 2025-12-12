@@ -2,6 +2,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import GoldCharts from './GoldCharts'
 import AISummary from '@/components/AISummary'
+import ProductPriceCard from '@/components/ProductPriceCard'
+import MetalSpotIndexCard from '@/components/MetalSpotIndexCard'
+import { fetchProductSpot, fetchMetalSpotIndex } from '@/lib/monexSpot'
 
 export const metadata: Metadata = {
   title: 'Gold Prices & 10 oz Gold Bar Market Overview | 10ozGoldBars.com',
@@ -34,7 +37,13 @@ const faqs = [
   },
 ]
 
-export default function PricesPage() {
+export default async function PricesPage() {
+  // Fetch price data server-side (no caching, fresh on each page load)
+  const [productRes, spotRes] = await Promise.all([
+    fetchProductSpot(),
+    fetchMetalSpotIndex(),
+  ])
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -121,6 +130,19 @@ export default function PricesPage() {
               'Learn practical strategies for timing purchases and comparing dealer offers.',
             ]}
           />
+        </div>
+      </section>
+
+      {/* Dual Price Cards Section */}
+      <section className="py-10 md:py-14 bg-[#EFE9D9]">
+        <div className="max-w-5xl mx-auto px-4 md:px-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#111111] mb-6 font-display">
+            Current Prices
+          </h2>
+          <div className="grid gap-6 lg:grid-cols-2">
+            <ProductPriceCard data={productRes.data} error={productRes.error} />
+            <MetalSpotIndexCard data={spotRes.data} error={spotRes.error} />
+          </div>
         </div>
       </section>
 
