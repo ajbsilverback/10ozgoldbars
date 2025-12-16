@@ -6,7 +6,7 @@ import QASection from "@/components/QASection";
 import LiveGbozSpotCard from "@/components/LiveGbozSpotCard";
 import CapitalRequirementsCard from "@/components/CapitalRequirementsCard";
 import { homeQA } from "@/data/qa-content";
-import { fetchProductSpot, formatUSD } from "@/lib/monexSpot";
+import { fetchProductSpot, fetchKiloBarPrice, formatUSD } from "@/lib/monexSpot";
 
 export const metadata: Metadata = {
   title: "10 oz Gold Bars | Expert Guide to Ten Ounce Gold Bar Investing",
@@ -33,6 +33,7 @@ export const metadata: Metadata = {
 export default async function HomePage() {
   // Fetch price data once for the entire page
   const priceData = await fetchProductSpot();
+  const kiloBarPrice = await fetchKiloBarPrice();
   
   // Helper to format price as approximate (rounded to nearest $1,000)
   const formatApproxPrice = (price: number): string => {
@@ -47,6 +48,8 @@ export default async function HomePage() {
   
   // Get approximate bar price for display
   const approxBarPrice = priceData ? formatApproxPrice(priceData.ask) : "~$20,000";
+  // Get approximate kilo bar price for comparison (fallback to $140,000)
+  const approxKiloPrice = kiloBarPrice ? formatApproxPrice(kiloBarPrice) : "~$140,000";
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -235,7 +238,7 @@ export default async function HomePage() {
                 Balanced Flexibility
               </h3>
               <p className="text-gray-400 leading-relaxed">
-                Unlike kilo bars which require $65,000+ per bar, 10 oz bars let you 
+                Unlike kilo bars which require {approxKiloPrice}+ per bar, 10 oz bars let you 
                 build meaningful positions at ~{approxBarPrice} per bar. Easier to buy, sell, 
                 or gift in smaller increments while still benefiting from lower premiums.
               </p>
@@ -395,10 +398,10 @@ export default async function HomePage() {
                     )}
                   </td>
                   <td className="py-4 px-6 text-center">
-                    {priceData ? (
-                      <>~{formatUSD(Math.round((priceData.ask / SITE_CONFIG.troyOunces) * 32.15 * 1.015))}</>
+                    {kiloBarPrice ? (
+                      <>~{formatUSD(Math.round(kiloBarPrice))}</>
                     ) : (
-                      "~$65,000"
+                      "~$140,000"
                     )}
                   </td>
                 </tr>

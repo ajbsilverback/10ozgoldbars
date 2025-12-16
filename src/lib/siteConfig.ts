@@ -2,6 +2,40 @@
  * SITE CONFIGURATION - Single Source of Truth
  * 
  * Configuration for 10ozGoldBars.com
+ * 
+ * ═══════════════════════════════════════════════════════════════════════════
+ * GUARDRAILS - Do Not Modify Without Intentional Review
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 
+ * PROTECTED ELEMENTS:
+ * - Pricing symbols (GBXSPOT vs GBX10)
+ * - Monex API endpoints
+ * - Monex chart embed script
+ * - Navigation IA (matches kilo site)
+ * - Repo remote (must remain ajbsilverback/10ozgoldbars)
+ * 
+ * PRICING RULES:
+ * - GBXSPOT: live gold spot price per troy ounce (market reference ONLY)
+ * - GBX10: 10 oz gold bar product pricing (product cards + charts ONLY)
+ * - Do NOT interchange these symbols
+ * 
+ * DEPLOYMENT:
+ * - main branch is protected
+ * - No force-pushes
+ * - Vercel auto-deploys from main only
+ * 
+ * DESIGN:
+ * - Built from 1kilogoldbars.com baseline
+ * - Layout changes should maintain parity with kilo site
+ * 
+ * CONTENT:
+ * - This site is strictly about 10 oz gold bars
+ * - Do NOT reintroduce kilo-specific claims:
+ *   • 32.15 oz references (except in educational comparisons)
+ *   • Institutional sizing language
+ *   • Kilo-only premium logic
+ * 
+ * ═══════════════════════════════════════════════════════════════════════════
  */
 
 export const SITE_CONFIG = {
@@ -43,13 +77,13 @@ export const SITE_CONFIG = {
   
   /** 
    * Product price symbol for Monex API
-   * GBX10 = 10 oz gold bar
+   * GBX10 = 10 oz gold bar (product cards + charts ONLY)
    */
   productSymbol: "GBX10",
   
   /**
    * Spot index symbol for Monex API (raw metal spot price)
-   * GBXSPOT = Gold Spot Index
+   * GBXSPOT = Gold Spot Index (market reference ONLY)
    */
   spotSymbol: "GBXSPOT",
 

@@ -165,6 +165,45 @@ export async function fetchProductSpot(): Promise<ProductSpotSummary | null> {
 /** @deprecated Use fetchProductSpot instead */
 export const fetchGbozSpot = fetchProductSpot;
 
+// ============================================================
+// KILO BAR COMPARISON PRICE - For educational comparisons only
+// ============================================================
+
+/**
+ * Fetches the current 1 kilo gold bar price from Monex API
+ * Used ONLY for educational comparisons (e.g., "kilo bars cost $X")
+ * NOT the primary product of this site
+ * 
+ * @returns Promise<number | null> - The ask price or null on error
+ */
+export async function fetchKiloBarPrice(): Promise<number | null> {
+  const apiUrl = "https://api.monex.com/api/v2/Metals/spot/summary?metals=GBX1K";
+  
+  try {
+    const response = await fetch(apiUrl, {
+      cache: "no-store",
+      headers: { "Accept": "application/json" },
+    });
+
+    if (!response.ok) {
+      console.error(`Monex API (GBX1K) error: ${response.status}`);
+      return null;
+    }
+
+    const json = await response.json();
+    
+    // Extract ask price from response
+    if (json?.data?.[0]?.ask) {
+      return Number(json.data[0].ask);
+    }
+    
+    return null;
+  } catch (error) {
+    console.error("Error fetching GBX1K price:", error);
+    return null;
+  }
+}
+
 /**
  * Formats a price number as USD currency
  */
