@@ -385,21 +385,21 @@ export default async function HomePage() {
                   <td className="py-4 px-6 font-medium">Entry Cost</td>
                   <td className="py-4 px-6 text-center">
                     {priceData ? (
-                      <>~{formatUSD(Math.round((priceData.ask / SITE_CONFIG.troyOunces) * 1.05))}</>
+                      <>~{formatUSD(Math.round((priceData.ask / SITE_CONFIG.troyOunces) * 1.05)).replace(".00", "")}</>
                     ) : (
                       "~$2,100"
                     )}
                   </td>
                   <td className="py-4 px-6 text-center text-bullion-gold">
                     {priceData ? (
-                      <>~{formatUSD(Math.round(priceData.ask * 1.02))}</>
+                      <>~{formatUSD(Math.round(priceData.ask * 1.02)).replace(".00", "")}</>
                     ) : (
                       "~$20,400"
                     )}
                   </td>
                   <td className="py-4 px-6 text-center">
                     {kiloBarPrice ? (
-                      <>~{formatUSD(Math.round(kiloBarPrice))}</>
+                      <>~{formatUSD(Math.round(kiloBarPrice)).replace(".00", "")}</>
                     ) : (
                       "~$140,000"
                     )}
