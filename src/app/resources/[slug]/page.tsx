@@ -42,6 +42,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `${SITE_CONFIG.domain}/resources/${slug}`,
       type: "article",
     },
+    twitter: {
+      card: "summary_large_image",
+      title: resource.title,
+      description: resource.description,
+    },
   };
 }
 
@@ -68,9 +73,9 @@ function getMonexAnchorText(slug: string): string {
 function generateAISummaryBullets(slug: string, title: string): string[] {
   const summaryMap: Record<string, string[]> = {
     "premiums-explained": [
-      "This article explains why 1 kilo gold bars have the lowest retail premiums",
+      "This article explains why 10 oz gold bars have lower premiums than 1 oz bars",
       "Learn how premiums of 1.5-3% compare to smaller bar sizes",
-      "Understand the manufacturing economics that drive kilo bar efficiency",
+      "Understand the manufacturing economics that drive 10 oz bar efficiency",
       "Discover strategies to maximize premium savings when purchasing",
       "Compare total cost of ownership across different gold bar formats",
     ],
@@ -82,23 +87,23 @@ function generateAISummaryBullets(slug: string, title: string): string[] {
       "Get guidance on building a mixed-size gold bar portfolio",
     ],
     "storage-options": [
-      "This article covers storage solutions for high-value kilo gold bars",
-      "Learn about professional vault storage and allocated programs",
-      "Understand bank safe deposit box advantages and limitations",
-      "Discover home storage requirements for substantial gold holdings",
-      "Get guidance on insurance and security considerations",
+      "This article covers storage solutions for 10 oz gold bars",
+      "Learn about home safes, safe deposit boxes, and vault options",
+      "Understand insurance requirements for gold storage",
+      "Discover the compact dimensions that make 10 oz bars easy to store",
+      "Get guidance on security considerations for your holdings",
     ],
     "brand-differences": [
-      "This article compares major 1 kilo gold bar manufacturers",
-      "Learn about PAMP Suisse, Valcambi, Argor-Heraeus, and Perth Mint",
-      "Understand the importance of LBMA accreditation for kilo bars",
+      "This article compares major 10 oz gold bar manufacturers",
+      "Learn about PAMP Suisse, Credit Suisse, Perth Mint, and Royal Canadian Mint",
+      "Understand the importance of recognized brands for 10 oz bars",
       "Discover security features and authentication methods by brand",
       "Compare how brand choice affects premiums and resale value",
     ],
     "liquidity-considerations": [
-      "This article explains liquidity dynamics for 1 kilo gold bars",
-      "Learn how kilo bar liquidity compares to smaller denominations",
-      "Understand the partial liquidation challenge with large bars",
+      "This article explains liquidity dynamics for 10 oz gold bars",
+      "Learn how 10 oz bar liquidity compares to other sizes",
+      "Understand the capital requirement considerations",
       "Discover strategies for efficient buying and selling",
       "Get guidance on documentation for smooth resale transactions",
     ],
@@ -110,35 +115,35 @@ function generateAISummaryBullets(slug: string, title: string): string[] {
       "Get context for interpreting gold price movements",
     ],
     "spreads-explained": [
-      "This article explains bid-ask spreads on 1 kilo gold bars",
-      "Learn why kilo bars have tighter spreads (1-2%) than smaller bars",
+      "This article explains bid-ask spreads on 10 oz gold bars",
+      "Learn why 10 oz bars have competitive spreads (1.5-2.5%)",
       "Understand how spreads affect your total cost of ownership",
       "Discover strategies to minimize spread impact on returns",
       "Calculate your break-even point including spread costs",
     ],
     "authentication-guide": [
-      "This article covers authentication for high-value kilo gold bars",
-      "Learn about security features on modern LBMA-accredited bars",
+      "This article covers authentication for 10 oz gold bars",
+      "Learn about security features on bars from major refiners",
       "Understand professional testing methods like XRF analysis",
-      "Discover documentation requirements for legitimate kilo bars",
+      "Discover documentation requirements for legitimate bars",
       "Get guidance on avoiding counterfeits and red flags",
     ],
     "institutional-vs-retail": [
-      "This article explains the institutional gold market for kilo bars",
+      "This article explains the institutional gold market",
       "Learn about LBMA accreditation and quality standards",
       "Understand how institutional infrastructure benefits retail investors",
       "Discover pricing differences between institutional and retail markets",
       "Get insights on leveraging institutional markets as a retail buyer",
     ],
     "portfolio-allocation": [
-      "This article covers strategic allocation to 1 kilo gold bars",
-      "Learn when kilo bars become appropriate for your portfolio",
+      "This article covers strategic allocation to 10 oz gold bars",
+      "Learn when 10 oz bars become appropriate for your portfolio",
       "Understand gold's role in portfolio diversification",
       "Discover mixed-size strategies for balancing efficiency and flexibility",
       "Get guidance on physical gold vs other gold investments",
     ],
     "first-time-buyers-guide": [
-      "This article guides first-time buyers through the kilo bar purchase process",
+      "This article guides first-time buyers through the 10 oz bar purchase process",
       "Learn how to evaluate and select reputable dealers",
       "Understand payment methods, settlement timelines, and delivery logistics",
       "Discover why dealer pricing varies and how to compare options",
@@ -155,7 +160,7 @@ function generateAISummaryBullets(slug: string, title: string): string[] {
 
   return summaryMap[slug] || [
     `This article provides comprehensive coverage of ${title.toLowerCase()}`,
-    "Learn key concepts and practical considerations for kilo gold bar investors",
+    "Learn key concepts and practical considerations for gold bar investors",
     "Understand how this topic affects your gold investment strategy",
     "Get actionable guidance based on industry best practices",
     "Find answers to common questions in this area",
@@ -314,7 +319,7 @@ export default async function ResourcePage({ params }: Props) {
           {/* Internal Links */}
           <div className="mt-10 p-5 md:p-6 rounded-xl bg-bullion-darker/50 border border-bullion-gold/10">
             <p className="text-gray-400 mb-3 text-sm md:text-base">
-              Continue learning about 1 kilo gold bars:
+              Continue learning about 10 oz gold bars:
             </p>
             <div className="flex flex-wrap gap-3 md:gap-4">
               <Link
@@ -327,10 +332,10 @@ export default async function ResourcePage({ params }: Props) {
                 </svg>
               </Link>
               <Link
-                href="/where-to-buy-1-kilo-gold-bars"
+                href="/where-to-buy-10-oz-gold-bars"
                 className="inline-flex items-center text-bullion-gold hover:text-bullion-goldLight transition-colors"
               >
-                <span>Where to buy kilo gold bars</span>
+                <span>Where to buy 10 oz gold bars</span>
                 <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
@@ -390,7 +395,7 @@ export default async function ResourcePage({ params }: Props) {
             <p className="text-gray-400 mb-6 max-w-xl mx-auto text-sm md:text-base">
               Explore more{" "}
               <Link href="/resources" className="text-bullion-gold hover:underline">
-                resources about kilo gold bars
+                resources about 10 oz gold bars
               </Link>{" "}
               or check{" "}
               <Link href="/live-gold-prices" className="text-bullion-gold hover:underline">

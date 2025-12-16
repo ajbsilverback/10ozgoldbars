@@ -3,76 +3,82 @@ import Link from "next/link";
 import { SITE_CONFIG } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: "Where to Buy 1 Kilo Gold Bars | Independent Buying Guide",
+  title: "Where to Buy 10 oz Gold Bars | Independent Dealer Guide",
   description:
-    "Learn where to buy 1 kilo gold bars online and locally, including major dealers, local coin shops, marketplaces, and storage providers. Independent, educational guidance only.",
+    "Independent guide to buying 10 oz gold bars from online dealers, local coin shops, marketplaces, and vaulted programs. No endorsements—educational information only.",
   alternates: {
-    canonical: `${SITE_CONFIG.canonicalDomain}/where-to-buy-1-kilo-gold-bars`,
+    canonical: `${SITE_CONFIG.canonicalDomain}/where-to-buy-10-oz-gold-bars`,
   },
   openGraph: {
-    title: "Where to Buy 1 Kilo Gold Bars | Independent Buying Guide",
+    title: "Where to Buy 10 oz Gold Bars | Independent Dealer Guide",
     description:
-      "Learn where to buy 1 kilo gold bars online and locally, including major dealers, local coin shops, marketplaces, and storage providers.",
-    url: `${SITE_CONFIG.domain}/where-to-buy-1-kilo-gold-bars`,
+      "Independent guide to buying 10 oz gold bars from online dealers, local coin shops, and marketplaces. Educational information only.",
+    url: `${SITE_CONFIG.domain}/where-to-buy-10-oz-gold-bars`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Where to Buy 10 oz Gold Bars | Independent Dealer Guide",
+    description:
+      "Independent guide to buying 10 oz gold bars from online dealers, local coin shops, and marketplaces.",
   },
 };
 
 // Online dealers data - multiple sources for comparison
-// Monex is positioned first; remaining dealers in alphabetical order
 const onlineDealers = [
   {
     name: "Monex",
     description:
-      "A precious metals dealer providing live market data and various gold bar products, including 1 kilo bars from recognized refiners.",
-    url: "https://www.monex.com/gold/",
+      "A precious metals dealer providing live market data and various gold bar products for purchase.",
+    url: "https://www.monex.com/",
   },
   {
-    name: "APMEX",
+    name: "JM Bullion",
     description:
-      "A large online bullion retailer with a wide selection of 1 kilo gold bars from various mints and refiners worldwide.",
-    url: "https://www.apmex.com/category/25403/1-kilo-gold-bars",
-  },
-  {
-    name: "Bullion Exchanges",
-    description:
-      "A New York-based bullion dealer offering 1 kilo gold bars with multiple payment options and competitive pricing.",
-    url: "https://bullionexchanges.com/view-all-gold-bars",
-  },
-  {
-    name: "Finest Known",
-    description:
-      "A precious metals and rare coin dealer offering gold bars and bullion products for collectors and investors.",
-    url: "https://finestknown.com/",
+      "An established online precious metals dealer offering gold bars from major refiners including PAMP Suisse, Perth Mint, and Credit Suisse.",
+    url: "https://www.jmbullion.com/",
   },
   {
     name: "Goldline",
     description:
-      "An established precious metals firm offering gold bars and coins with educational resources for investors.",
+      "A precious metals dealer offering gold bars and coins with personalized service and market insights.",
     url: "https://www.goldline.com/",
   },
   {
     name: "GovMint",
     description:
-      "A dealer specializing in government-issued coins and bullion products, including gold bars from sovereign mints.",
+      "A collectible coins and precious metals dealer offering gold bars and government-issued bullion products.",
     url: "https://www.govmint.com/",
   },
   {
-    name: "JM Bullion",
+    name: "APMEX",
     description:
-      "An established online precious metals dealer offering 1 kilo gold bars from major refiners including PAMP Suisse, Perth Mint, and Credit Suisse.",
-    url: "https://www.jmbullion.com/gold/gold-bars/kilo-gold-bars/",
-  },
-  {
-    name: "Kitco",
-    description:
-      "A long-standing precious metals dealer and data provider offering kilo gold bars alongside comprehensive market information.",
-    url: "https://online.kitco.com/gold-bars",
+      "One of the largest online bullion retailers with a wide selection of gold bars from various mints and refiners worldwide.",
+    url: "https://www.apmex.com/",
   },
   {
     name: "SD Bullion",
     description:
-      "An online dealer known for competitive pricing on bullion products, including 1 kilo gold bars from recognized refiners.",
-    url: "https://sdbullion.com/gold/gold-bars/kilo-gold-bars",
+      "An online dealer known for competitive pricing on bullion products from recognized refiners.",
+    url: "https://sdbullion.com/",
+  },
+  {
+    name: "Bullion Exchanges",
+    description:
+      "A New York-based bullion dealer offering gold bars with multiple payment options and competitive pricing.",
+    url: "https://bullionexchanges.com/",
+  },
+  {
+    name: "Provident Metals",
+    description:
+      "An online bullion dealer offering competitive prices on gold bars from government and private mints.",
+    url: "https://www.providentmetals.com/",
+  },
+  {
+    name: "Money Metals Exchange",
+    description:
+      "A precious metals dealer offering gold bars with price transparency and educational content.",
+    url: "https://www.moneymetals.com/",
   },
 ];
 
@@ -80,11 +86,11 @@ export default function WhereToBuyPage() {
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Where to Buy 1 Kilo Gold Bars | Independent Buying Guide",
+    name: "Where to Buy 10 oz Gold Bars | Independent Buying Guide",
     description:
-      "Learn where to buy 1 kilo gold bars online and locally, including major dealers, local coin shops, marketplaces, and storage providers.",
-    url: `${SITE_CONFIG.domain}/where-to-buy-1-kilo-gold-bars`,
-    publisher: {
+      "Learn where to buy 10 oz gold bars online and locally, including major dealers, local coin shops, marketplaces, and storage providers.",
+      url: `${SITE_CONFIG.domain}/where-to-buy-10-oz-gold-bars`,
+      publisher: {
       "@type": "Organization",
       name: SITE_CONFIG.brandName,
       url: SITE_CONFIG.domain,
@@ -94,9 +100,9 @@ export default function WhereToBuyPage() {
   const itemListSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Where to buy 1 kilo gold bars",
+    name: "Where to buy 10 oz gold bars",
     description:
-      "Types of vendors and platforms for purchasing 1 kilo gold bars",
+      "Types of vendors and platforms for purchasing 10 oz gold bars",
     itemListElement: [
       {
         "@type": "ListItem",
@@ -139,11 +145,11 @@ export default function WhereToBuyPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
               <span className="gold-text">Where to Buy</span>
               <br />
-              <span className="text-white">1 Kilo Gold Bars</span>
+              <span className="text-white">10 oz Gold Bars</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-6">
               An independent educational guide to understanding your options
-              for purchasing 1 kilo (32.15 troy ounce) gold bars from various sources.
+              for purchasing 10 oz (ten troy ounce) gold bars from various sources.
             </p>
             <div className="bg-bullion-gold/5 border border-bullion-gold/20 rounded-xl p-6 max-w-2xl mx-auto">
               <p className="text-gray-400 text-sm">
@@ -186,8 +192,8 @@ export default function WhereToBuyPage() {
                 </h3>
                 <p className="text-gray-400 text-sm">
                   Compare premiums over spot price across multiple dealers.
-                  Kilo bars typically have 1.5-3% premiums, significantly lower
-                  than smaller denominations.
+                  10 oz bars typically have 1.5-3% premiums, lower than 1 oz
+                  bars but higher than kilo bars.
                 </p>
               </div>
               <div className="card p-6">
@@ -199,7 +205,7 @@ export default function WhereToBuyPage() {
                 </h3>
                 <p className="text-gray-400 text-sm">
                   Understand shipping costs, delivery times, and insurance
-                  coverage. For kilo bars worth $65,000+, fully insured
+                  coverage. For 10 oz bars worth ~$20,000, fully insured
                   shipping is essential.
                 </p>
               </div>
@@ -212,7 +218,7 @@ export default function WhereToBuyPage() {
                 </h3>
                 <p className="text-gray-400 text-sm">
                   Check whether the dealer offers buyback programs and at what
-                  spread. Kilo bars from recognized refiners typically have
+                  spread. 10 oz bars from recognized refiners typically have
                   excellent buyback liquidity.
                 </p>
               </div>
@@ -224,9 +230,9 @@ export default function WhereToBuyPage() {
                   Storage & Security
                 </h3>
                 <p className="text-gray-400 text-sm">
-                  Many dealers offer storage options for kilo bars. Understand
-                  whether storage is allocated (your specific bars) or
-                  unallocated (pooled holdings).
+                  Many dealers offer storage options. 10 oz bars are compact
+                  enough for home safes but valuable enough to warrant 
+                  professional storage consideration.
                 </p>
               </div>
               <div className="card p-6">
@@ -238,7 +244,7 @@ export default function WhereToBuyPage() {
                 </h3>
                 <p className="text-gray-400 text-sm">
                   For purchases of this magnitude, responsive customer service
-                  is critical. Evaluate accessibility and helpfulness before
+                  is important. Evaluate accessibility and helpfulness before
                   committing.
                 </p>
               </div>
@@ -273,7 +279,7 @@ export default function WhereToBuyPage() {
                     rel="nofollow"
                     className="inline-flex items-center text-bullion-gold hover:text-bullion-goldLight transition-colors text-sm font-medium"
                   >
-                    <span>View {dealer.name} gold bars</span>
+                    <span>Visit {dealer.name}</span>
                     <svg
                       className="w-4 h-4 ml-2"
                       fill="none"
@@ -300,22 +306,22 @@ export default function WhereToBuyPage() {
             </h2>
             <div className="card p-8 max-w-3xl mx-auto">
               <p className="text-gray-300 mb-6">
-                Local coin shops and bullion dealers can handle kilo bar
-                transactions, though inventory availability varies:
+                Local coin shops and bullion dealers commonly stock 10 oz bars,
+                making them a convenient option:
               </p>
               <ul className="space-y-4 mb-6">
                 <li className="flex items-start gap-3">
                   <span className="text-bullion-gold mt-1">•</span>
                   <span className="text-gray-400">
                     <strong className="text-white">Face-to-face transactions:</strong>{" "}
-                    Build relationships and negotiate directly, especially valuable for large purchases.
+                    Build relationships and negotiate directly.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-bullion-gold mt-1">•</span>
                   <span className="text-gray-400">
                     <strong className="text-white">Immediate possession:</strong>{" "}
-                    Walk out with your kilo bar the same day, no shipping delays.
+                    Walk out with your 10 oz bar the same day, no shipping delays.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
@@ -328,8 +334,8 @@ export default function WhereToBuyPage() {
                 <li className="flex items-start gap-3">
                   <span className="text-bullion-gold mt-1">•</span>
                   <span className="text-gray-400">
-                    <strong className="text-white">Special orders:</strong>{" "}
-                    Many shops can order kilo bars even if not in regular inventory.
+                    <strong className="text-white">Common inventory:</strong>{" "}
+                    10 oz bars are popular and many shops keep them in stock.
                   </span>
                 </li>
               </ul>
@@ -337,8 +343,7 @@ export default function WhereToBuyPage() {
                 <p className="text-gray-500 text-sm">
                   <strong className="text-gray-400">Finding local dealers:</strong>{" "}
                   Search for &ldquo;coin shop near me&rdquo; or &ldquo;bullion dealer&rdquo;
-                  in your area. For kilo bars, call ahead to confirm availability
-                  and pricing.
+                  in your area. Call ahead to confirm availability and pricing.
                 </p>
               </div>
             </div>
@@ -352,7 +357,7 @@ export default function WhereToBuyPage() {
             <div className="card p-8 max-w-3xl mx-auto">
               <p className="text-gray-300 mb-6">
                 Online marketplaces and auction houses occasionally offer
-                kilo gold bars, though due diligence is especially important
+                10 oz gold bars, though due diligence is especially important
                 for purchases of this value.
               </p>
               <div className="grid md:grid-cols-2 gap-6 mb-6">
@@ -381,12 +386,12 @@ export default function WhereToBuyPage() {
               </div>
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="https://www.ebay.com/sch/i.html?_nkw=1+kilo+gold+bar"
+                  href="https://www.ebay.com/sch/i.html?_nkw=10+oz+gold+bar"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer nofollow"
                   className="inline-flex items-center text-bullion-gold hover:text-bullion-goldLight transition-colors text-sm"
                 >
-                  <span>eBay 1 kilo gold bar search</span>
+                  <span>eBay 10 oz gold bar search</span>
                   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
@@ -394,7 +399,7 @@ export default function WhereToBuyPage() {
                 <a
                   href="https://www.ha.com/"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer nofollow"
                   className="inline-flex items-center text-bullion-gold hover:text-bullion-goldLight transition-colors text-sm"
                 >
                   <span>Heritage Auctions</span>
@@ -413,9 +418,11 @@ export default function WhereToBuyPage() {
             </h2>
             <div className="card p-8 max-w-3xl mx-auto">
               <p className="text-gray-300 mb-6">
-                For kilo bars, many investors prefer professional vault storage
-                rather than taking physical delivery. This approach provides
-                institutional-grade security for high-value holdings.
+                For investors with larger holdings (multiple 10 oz bars or combined
+                value exceeding $50,000), professional vault storage may make sense.
+                Private vault facilities specialize in precious metals storage,
+                offering insurance coverage, regular auditing, and often extended
+                access hours.
               </p>
               <div className="bg-bullion-gold/5 border border-bullion-gold/20 rounded-lg p-4 mb-6">
                 <h3 className="text-lg font-semibold text-white mb-2">
@@ -423,10 +430,10 @@ export default function WhereToBuyPage() {
                 </h3>
                 <p className="text-gray-400 text-sm">
                   <strong className="text-white">Allocated storage</strong> means
-                  your specific kilo bars are segregated and identified as yours.{" "}
+                  your specific 10 oz bars are segregated and identified as yours.{" "}
                   <strong className="text-white">Unallocated storage</strong> means
                   you have a claim on a quantity of gold held in aggregate. For
-                  kilo bars, allocated storage is strongly recommended.
+                  10 oz bars, allocated storage is generally recommended.
                 </p>
               </div>
               <p className="text-gray-400 text-sm mb-4">
@@ -437,7 +444,7 @@ export default function WhereToBuyPage() {
                 <a
                   href="https://www.brinks.com/"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer nofollow"
                   className="inline-flex items-center text-bullion-gold hover:text-bullion-goldLight transition-colors text-sm"
                 >
                   <span>Brink&apos;s</span>
@@ -448,7 +455,7 @@ export default function WhereToBuyPage() {
                 <a
                   href="https://www.loomis.com/"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer nofollow"
                   className="inline-flex items-center text-bullion-gold hover:text-bullion-goldLight transition-colors text-sm"
                 >
                   <span>Loomis</span>
@@ -483,7 +490,7 @@ export default function WhereToBuyPage() {
                   <a
                     href="https://www.monex.com/gold-prices/"
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener noreferrer nofollow"
                     className="inline-flex items-center text-bullion-gold hover:text-bullion-goldLight transition-colors"
                   >
                     <span>Monex live gold prices</span>
@@ -497,7 +504,7 @@ export default function WhereToBuyPage() {
                   <a
                     href="https://www.kitco.com/gold-price-today-usa/"
                     target="_blank"
-                    rel="nofollow"
+                    rel="noopener noreferrer nofollow"
                     className="inline-flex items-center text-bullion-gold hover:text-bullion-goldLight transition-colors"
                   >
                     <span>Kitco gold price charts</span>
@@ -510,7 +517,7 @@ export default function WhereToBuyPage() {
                   <a
                     href="https://goldprice.org/"
                     target="_blank"
-                    rel="nofollow"
+                    rel="noopener noreferrer nofollow"
                     className="inline-flex items-center text-bullion-gold hover:text-bullion-goldLight transition-colors"
                   >
                     <span>GoldPrice.org market data</span>
@@ -562,4 +569,3 @@ export default function WhereToBuyPage() {
     </>
   );
 }
-

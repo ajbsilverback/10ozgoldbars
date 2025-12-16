@@ -11,19 +11,17 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_CONFIG.brandName}`,
   },
   description:
-    "Discover everything about 1 kilo gold bars, the preferred choice for serious investors seeking substantial gold positions with the lowest premiums per ounce. Expert insights on 32.15 troy ounce gold bars.",
+    "Discover everything about 10 oz gold bars, the balanced choice for serious investors seeking lower premiums than 1 oz bars with more flexibility than kilo bars. Expert insights on 10 troy ounce gold bars.",
   keywords: [
-    "1 kilo gold bars",
-    "kilo gold bars",
-    "kilogram gold bars",
-    "32 oz gold bars",
+    "10 oz gold bars",
+    "10 ounce gold bars",
+    "ten ounce gold bars",
     "gold bullion bars",
-    "buy kilo gold bars",
+    "buy 10 oz gold bars",
     "gold investment",
     "gold bar prices",
-    "institutional gold",
-    "bulk gold bars",
     "gold bar storage",
+    "gold bar premiums",
   ],
   authors: [{ name: SITE_CONFIG.brandName }],
   creator: SITE_CONFIG.brandName,
@@ -35,13 +33,13 @@ export const metadata: Metadata = {
     siteName: SITE_CONFIG.brandName,
     title: `${SITE_CONFIG.brandName} | ${SITE_CONFIG.primaryProduct} Insights & Education`,
     description:
-      "Discover everything about 1 kilo gold bars, the preferred choice for serious investors seeking substantial gold positions with the lowest premiums per ounce.",
+      "Discover everything about 10 oz gold bars, the balanced choice for serious investors seeking lower premiums than 1 oz bars with more flexibility than kilo bars.",
     images: [
       {
         url: `${SITE_CONFIG.domain}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: "1 Kilo Gold Bars - Investment Education",
+        alt: "10 oz Gold Bars - Investment Education",
       },
     ],
   },
@@ -49,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${SITE_CONFIG.brandName} | ${SITE_CONFIG.primaryProduct} Insights & Education`,
     description:
-      "Discover everything about 1 kilo gold bars, the preferred choice for serious investors seeking substantial gold positions with the lowest premiums per ounce.",
+      "Discover everything about 10 oz gold bars, the balanced choice for serious investors seeking lower premiums than 1 oz bars with more flexibility than kilo bars.",
   },
   robots: {
     index: true,

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { SITE_CONFIG } from "@/lib/siteConfig";
@@ -7,15 +8,51 @@ import CapitalRequirementsCard from "@/components/CapitalRequirementsCard";
 import { homeQA } from "@/data/qa-content";
 import { fetchProductSpot, formatUSD } from "@/lib/monexSpot";
 
+export const metadata: Metadata = {
+  title: "10 oz Gold Bars | Expert Guide to Ten Ounce Gold Bar Investing",
+  description:
+    "Comprehensive guide to 10 oz gold bars covering pricing, premiums, storage, and purchasing. The balanced choice for investors seeking lower premiums than 1 oz bars with more flexibility than kilo bars.",
+  alternates: {
+    canonical: SITE_CONFIG.canonicalDomain,
+  },
+  openGraph: {
+    title: "10 oz Gold Bars | Expert Guide to Ten Ounce Gold Bar Investing",
+    description:
+      "Comprehensive guide to 10 oz gold bars covering pricing, premiums, storage, and purchasing. The balanced choice for serious gold investors.",
+    url: SITE_CONFIG.domain,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "10 oz Gold Bars | Expert Guide to Ten Ounce Gold Bar Investing",
+    description:
+      "Comprehensive guide to 10 oz gold bars covering pricing, premiums, storage, and purchasing.",
+  },
+};
+
 export default async function HomePage() {
   // Fetch price data once for the entire page
   const priceData = await fetchProductSpot();
+  
+  // Helper to format price as approximate (rounded to nearest $1,000)
+  const formatApproxPrice = (price: number): string => {
+    const rounded = Math.round(price / 1000) * 1000;
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(rounded);
+  };
+  
+  // Get approximate bar price for display
+  const approxBarPrice = priceData ? formatApproxPrice(priceData.ask) : "~$20,000";
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: `${SITE_CONFIG.brandName} - Your Guide to 1 Kilo Gold Bars`,
+    name: `${SITE_CONFIG.brandName} - Your Guide to 10 oz Gold Bars`,
     description:
-      "Comprehensive educational resource about 1 kilo gold bars, the preferred choice for serious investors seeking substantial gold positions with the lowest premiums per ounce.",
+      "Comprehensive educational resource about 10 oz gold bars, the balanced choice for investors seeking lower premiums than 1 oz bars with more flexibility than kilo bars.",
     url: SITE_CONFIG.domain,
     publisher: {
       "@type": "Organization",
@@ -27,9 +64,9 @@ export default async function HomePage() {
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: "1 Kilo Gold Bars",
+    name: "10 oz Gold Bars",
     description:
-      "One kilogram (32.1507 troy ounces) gold bullion bars, offering the lowest premiums per ounce for serious precious metals investors.",
+      "Ten troy ounce gold bullion bars, offering a balanced combination of lower premiums and practical portability for precious metals investors.",
     brand: {
       "@type": "Brand",
       name: SITE_CONFIG.brandName,
@@ -38,9 +75,9 @@ export default async function HomePage() {
     material: "Gold",
     weight: {
       "@type": "QuantitativeValue",
-      value: 1,
-      unitCode: "KGM",
-      unitText: "kilogram",
+      value: 10,
+      unitCode: "ONT",
+      unitText: "troy ounces",
     },
   };
 
@@ -65,23 +102,23 @@ export default async function HomePage() {
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-bullion-gold/10 border border-bullion-gold/30 mb-6">
                 <span className="w-2 h-2 rounded-full bg-bullion-gold mr-3 animate-pulse" />
                 <span className="text-bullion-gold text-sm font-medium">
-                  32.15 Troy Ounces of Pure Gold
+                  10 Troy Ounces of Pure Gold
                 </span>
               </div>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-tight mb-4">
-                <span className="gold-text">1 Kilo Gold Bars</span>
+                <span className="gold-text">10 oz Gold Bars</span>
                 <br />
                 <span className="text-white">
-                  Maximum Value. Lowest Premiums.
+                  Practical Size. Strong Value.
                 </span>
               </h1>
 
               <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-8 max-w-prose">
-                Discover why 1 kilogram gold bars are the preferred choice for 
-                serious investors and institutions seeking the lowest premiums 
-                per ounce and substantial gold positions. Learn{" "}
-                <Link href="/where-to-buy-1-kilo-gold-bars" className="text-bullion-gold hover:underline">
-                  where to buy 1 kilo gold bars
+                Discover why 10 oz gold bars are the balanced choice for 
+                investors seeking lower premiums than 1 oz bars with more 
+                flexibility than kilo bars. Learn{" "}
+                <Link href="/where-to-buy-10-oz-gold-bars" className="text-bullion-gold hover:underline">
+                  where to buy 10 oz gold bars
                 </Link>{" "}
                 in our independent buying guide.
               </p>
@@ -111,8 +148,8 @@ export default async function HomePage() {
             {/* Right: Hero Image */}
             <div className="mt-12 lg:mt-0 flex justify-center lg:justify-end">
               <Image
-                src="/1-kilo-gold-bar-hero.png"
-                alt="1 kilo gold bar"
+                src="/10-oz-gold-bars-stacked.png"
+                alt="10 oz gold bars stacked"
                 width={500}
                 height={500}
                 className="max-w-sm w-full h-auto"
@@ -131,23 +168,23 @@ export default async function HomePage() {
               <span className="gold-text">Live Gold Pricing</span>
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Track real-time 1 kilo gold bar prices with live market data updated on page load.
+              Track real-time 10 oz gold bar prices with live market data updated on page load.
             </p>
           </div>
           <LiveGbozSpotCard />
         </div>
       </section>
 
-      {/* Why 1 Kilo Gold Bars Section */}
+      {/* Why 10 oz Gold Bars Section */}
       <section className="py-16 md:py-20 section-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 md:mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
-              Why <span className="gold-text">1 Kilo Gold Bars</span>?
+              Why <span className="gold-text">10 oz Gold Bars</span>?
             </h2>
             <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
-              The 1 kilogram gold bar represents the optimal balance of 
-              premium efficiency and practical ownership for serious investors.
+              The 10 oz gold bar represents the optimal balance of 
+              premium efficiency and practical flexibility for serious investors.
             </p>
           </div>
 
@@ -169,13 +206,12 @@ export default async function HomePage() {
                 </svg>
               </div>
               <h3 className="text-2xl font-display font-semibold mb-4 text-white">
-                Lowest Premiums
+                Lower Premiums
               </h3>
               <p className="text-gray-400 leading-relaxed">
-                Kilo bars command the lowest retail premiums of any commonly 
-                traded bar size, typically just 1.5-3% over spot price. Compared 
-                to 1 oz bars (3-8% premium), you get more gold for your money. 
-                Over a substantial position, these savings compound significantly.
+                10 oz bars typically carry 1.5-3% premiums over spot price—significantly 
+                lower than 1 oz bars (3-8% premium). You get more gold for your money 
+                while maintaining practical portability and liquidity.
               </p>
             </div>
 
@@ -191,18 +227,17 @@ export default async function HomePage() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                    d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"
                   />
                 </svg>
               </div>
               <h3 className="text-2xl font-display font-semibold mb-4 text-white">
-                Institutional Quality
+                Balanced Flexibility
               </h3>
               <p className="text-gray-400 leading-relaxed">
-                The kilo bar is the standard for institutional gold trading 
-                globally. LBMA-accredited refiners like PAMP Suisse, Valcambi, 
-                Argor-Heraeus, and Perth Mint produce kilo bars to exacting 
-                standards, ensuring worldwide acceptance and liquidity.
+                Unlike kilo bars which require $65,000+ per bar, 10 oz bars let you 
+                build meaningful positions at ~{approxBarPrice} per bar. Easier to buy, sell, 
+                or gift in smaller increments while still benefiting from lower premiums.
               </p>
             </div>
 
@@ -223,31 +258,30 @@ export default async function HomePage() {
                 </svg>
               </div>
               <h3 className="text-2xl font-display font-semibold mb-4 text-white">
-                Storage Efficiency
+                Easy Storage
               </h3>
               <p className="text-gray-400 leading-relaxed">
-                A single kilo bar stores the equivalent value of 32+ individual 
-                1 oz bars in one compact unit. This dramatically simplifies 
-                storage, reduces handling, and often lowers vault fees at 
-                professional storage facilities that charge per-item.
+                A 10 oz bar is compact enough to fit in a home safe while holding 
+                substantial value. Perfect for investors who want meaningful gold 
+                positions without the storage challenges of larger denominations.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Who Buys Kilo Gold Bars */}
+      {/* Who Buys 10 oz Gold Bars */}
       <section className="py-16 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 gold-bar-pattern opacity-50" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
-                Who Buys <span className="gold-text">1 Kilo Gold Bars</span>?
+                Who Buys <span className="gold-text">10 oz Gold Bars</span>?
               </h2>
               <p className="text-lg md:text-xl text-gray-300 mb-6">
-                Kilo bars serve investors with substantial capital seeking 
-                maximum efficiency in their gold holdings.
+                10 oz bars serve investors seeking the sweet spot between 
+                premium efficiency and practical flexibility.
               </p>
               <div className="space-y-5">
                 <div className="flex items-start space-x-4">
@@ -256,12 +290,12 @@ export default async function HomePage() {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">
-                      High-Net-Worth Individuals
+                      Serious Accumulators
                     </h3>
                     <p className="text-gray-400">
-                      Investors with $100,000+ allocated to precious metals 
-                      maximize their buying power with kilo bars, saving 
-                      thousands in premiums compared to smaller denominations.
+                      Investors building $25,000-$100,000+ gold positions find 
+                      10 oz bars offer better value than 1 oz while remaining 
+                      more practical than kilo bars for most storage situations.
                     </p>
                   </div>
                 </div>
@@ -271,12 +305,12 @@ export default async function HomePage() {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">
-                      Family Offices & Trusts
+                      Home Storage Buyers
                     </h3>
                     <p className="text-gray-400">
-                      Multi-generational wealth managers favor kilo bars for 
-                      their premium efficiency and streamlined estate transfer. 
-                      A few bars represent substantial value in compact form.
+                      Those who prefer direct custody of their gold appreciate 
+                      that 10 oz bars fit easily in home safes and safe deposit 
+                      boxes while holding meaningful value per bar.
                     </p>
                   </div>
                 </div>
@@ -289,9 +323,9 @@ export default async function HomePage() {
                       Long-Term Holders
                     </h3>
                     <p className="text-gray-400">
-                      Investors with 10+ year time horizons prioritize acquisition 
-                      cost over flexibility. The lower premiums on kilo bars 
-                      compound into significant value over decades.
+                      Investors with 5-10+ year horizons prioritize lower 
+                      premiums over divisibility. The savings on 10 oz bars 
+                      versus 1 oz bars compound significantly over time.
                     </p>
                   </div>
                 </div>
@@ -312,8 +346,8 @@ export default async function HomePage() {
               Comparing <span className="gold-text">Bar Sizes</span>
             </h2>
             <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
-              Understanding how 1 kilo gold bars compare to smaller denominations 
-              helps you choose the right size for your investment goals.
+              Understanding how 10 oz gold bars compare to other sizes 
+              helps you choose the right bar for your investment goals.
             </p>
           </div>
 
@@ -327,10 +361,10 @@ export default async function HomePage() {
                   <th className="text-center py-4 px-6 text-gray-500 font-display">
                     1 oz Bar
                   </th>
-                  <th className="text-center py-4 px-6 text-gray-500 font-display">
+                  <th className="text-center py-4 px-6 text-bullion-gold font-display">
                     10 oz Bar
                   </th>
-                  <th className="text-center py-4 px-6 text-bullion-gold font-display">
+                  <th className="text-center py-4 px-6 text-gray-500 font-display">
                     1 Kilo Bar
                   </th>
                 </tr>
@@ -339,60 +373,60 @@ export default async function HomePage() {
                 <tr className="border-b border-gray-800">
                   <td className="py-4 px-6 font-medium">Premium Over Spot</td>
                   <td className="py-4 px-6 text-center">3-8%</td>
-                  <td className="py-4 px-6 text-center">2-4%</td>
                   <td className="py-4 px-6 text-center text-green-400">
-                    1.5-3% (Lowest)
+                    1.5-3% (Best Balance)
                   </td>
+                  <td className="py-4 px-6 text-center">1-2%</td>
                 </tr>
                 <tr className="border-b border-gray-800">
                   <td className="py-4 px-6 font-medium">Entry Cost</td>
                   <td className="py-4 px-6 text-center">
                     {priceData ? (
-                      <>~{formatUSD(Math.round((priceData.ask / SITE_CONFIG.troyOunces) * 1.03))}</>
+                      <>~{formatUSD(Math.round((priceData.ask / SITE_CONFIG.troyOunces) * 1.05))}</>
                     ) : (
-                      "~$2,700"
+                      "~$2,100"
+                    )}
+                  </td>
+                  <td className="py-4 px-6 text-center text-bullion-gold">
+                    {priceData ? (
+                      <>~{formatUSD(Math.round(priceData.ask * 1.02))}</>
+                    ) : (
+                      "~$20,400"
                     )}
                   </td>
                   <td className="py-4 px-6 text-center">
                     {priceData ? (
-                      <>~{formatUSD(Math.round((priceData.ask / SITE_CONFIG.troyOunces) * 10 * 1.01))}</>
+                      <>~{formatUSD(Math.round((priceData.ask / SITE_CONFIG.troyOunces) * 32.15 * 1.015))}</>
                     ) : (
-                      "~$27,000"
-                    )}
-                  </td>
-                  <td className="py-4 px-6 text-center">
-                    {priceData ? (
-                      <>~{formatUSD(Math.round(priceData.ask))}</>
-                    ) : (
-                      "~$87,000"
+                      "~$65,000"
                     )}
                   </td>
                 </tr>
                 <tr className="border-b border-gray-800">
                   <td className="py-4 px-6 font-medium">Divisibility</td>
                   <td className="py-4 px-6 text-center">★★★★★</td>
-                  <td className="py-4 px-6 text-center">★★★☆☆</td>
+                  <td className="py-4 px-6 text-center text-bullion-gold">★★★★☆</td>
                   <td className="py-4 px-6 text-center">★★☆☆☆</td>
                 </tr>
                 <tr className="border-b border-gray-800">
-                  <td className="py-4 px-6 font-medium">Storage Efficiency</td>
-                  <td className="py-4 px-6 text-center">Good</td>
-                  <td className="py-4 px-6 text-center">Better</td>
-                  <td className="py-4 px-6 text-center text-green-400">Best</td>
+                  <td className="py-4 px-6 font-medium">Home Storage</td>
+                  <td className="py-4 px-6 text-center">Easy</td>
+                  <td className="py-4 px-6 text-center text-green-400">Easy</td>
+                  <td className="py-4 px-6 text-center">Challenging</td>
                 </tr>
                 <tr className="border-b border-gray-800">
-                  <td className="py-4 px-6 font-medium">Institutional Acceptance</td>
-                  <td className="py-4 px-6 text-center">★★★★☆</td>
-                  <td className="py-4 px-6 text-center">★★★★☆</td>
-                  <td className="py-4 px-6 text-center text-green-400">★★★★★</td>
+                  <td className="py-4 px-6 font-medium">Liquidity</td>
+                  <td className="py-4 px-6 text-center">★★★★★</td>
+                  <td className="py-4 px-6 text-center text-bullion-gold">★★★★☆</td>
+                  <td className="py-4 px-6 text-center">★★★☆☆</td>
                 </tr>
                 <tr>
                   <td className="py-4 px-6 font-medium">Best For</td>
                   <td className="py-4 px-6 text-center">Flexibility</td>
-                  <td className="py-4 px-6 text-center">Balance</td>
                   <td className="py-4 px-6 text-center text-bullion-gold">
-                    Maximum Value
+                    Best Balance
                   </td>
+                  <td className="py-4 px-6 text-center">Maximum Value</td>
                 </tr>
               </tbody>
             </table>
@@ -408,77 +442,73 @@ export default async function HomePage() {
               Important <span className="gold-text">Considerations</span>
             </h2>
             <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
-              While kilo bars offer the best premiums, they require careful 
-              planning around liquidity, storage, and capital commitment.
+              While 10 oz bars offer excellent balance, consider these factors 
+              when deciding if they&apos;re right for your investment strategy.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
             <div className="card p-6">
               <h3 className="text-xl font-display font-semibold text-white mb-4">
-                Liquidity Trade-offs
+                Capital Commitment
               </h3>
               <p className="text-gray-400 mb-4">
-                Kilo bars are less liquid than smaller denominations. While 
-                established dealers maintain ready markets, the buyer pool 
-                is smaller than for 1 oz bars. Selling may take longer and 
-                require connecting with specialized dealers.
+                At ~{approxBarPrice} per bar, 10 oz bars require meaningful capital per 
+                purchase. This is lower than kilo bars but higher than building 
+                positions one ounce at a time.
               </p>
               <p className="text-gray-500 text-sm">
-                <strong className="text-bullion-gold">Consider:</strong> If you 
-                anticipate needing to liquidate portions of your holdings, 
-                smaller bars may be more practical despite higher premiums.
+                <strong className="text-bullion-gold">Consider:</strong> If 
+                you&apos;re investing $5,000-$10,000 initially, you might start 
+                with 1 oz bars and graduate to 10 oz as your position grows.
               </p>
             </div>
 
             <div className="card p-6">
               <h3 className="text-xl font-display font-semibold text-white mb-4">
-                All-or-Nothing Sales
+                Partial Liquidation
               </h3>
               <p className="text-gray-400 mb-4">
-                Unlike holding multiple small bars, you cannot partially 
-                liquidate a kilo bar. When you sell, you&apos;re converting 
-                approximately $65,000+ to cash at once. This may exceed 
-                your actual needs or create tax timing challenges.
+                Unlike holding many 1 oz bars, selling means converting ~{approxBarPrice}{" "}
+                at once. For flexibility, some investors hold a mix of 1 oz and 
+                10 oz bars.
               </p>
               <p className="text-gray-500 text-sm">
-                <strong className="text-bullion-gold">Consider:</strong> Some 
-                investors combine kilo bars for core holdings with smaller 
-                bars for flexibility.
+                <strong className="text-bullion-gold">Consider:</strong> Keep 
+                some 1 oz bars for smaller liquidity needs while using 10 oz 
+                bars for core holdings.
               </p>
             </div>
 
             <div className="card p-6">
               <h3 className="text-xl font-display font-semibold text-white mb-4">
-                Storage Requirements
+                Storage Options
               </h3>
               <p className="text-gray-400 mb-4">
-                A kilo bar weighs 2.2 pounds and requires secure storage 
-                capable of protecting substantial value. Professional vault 
-                storage, while adding costs, often makes sense for holdings 
-                of this magnitude.
+                A 10 oz bar is compact (roughly 60mm × 31mm × 9mm) and weighs 
+                about 311 grams. Most home safes easily accommodate multiple 
+                10 oz bars.
               </p>
               <p className="text-gray-500 text-sm">
-                <strong className="text-bullion-gold">Consider:</strong> Vault 
-                storage fees are often based on value, meaning kilo bars 
-                may have similar storage costs to equivalent smaller holdings.
+                <strong className="text-bullion-gold">Consider:</strong> Bank 
+                safe deposit boxes, home safes, or professional vault storage 
+                all work well for 10 oz bars.
               </p>
             </div>
 
             <div className="card p-6">
               <h3 className="text-xl font-display font-semibold text-white mb-4">
-                Authentication Importance
+                Authentication
               </h3>
               <p className="text-gray-400 mb-4">
-                Given the high value, buy only from established dealers 
-                and choose bars from LBMA-accredited refiners with full 
-                documentation. Counterfeit risk increases with bar value, 
-                making provenance critical.
+                Buy from established dealers and choose bars from recognized 
+                refiners like PAMP Suisse, Credit Suisse, Royal Canadian Mint, 
+                or Perth Mint. Look for assay certificates and security features.
               </p>
               <p className="text-gray-500 text-sm">
-                <strong className="text-bullion-gold">Consider:</strong> Premium 
-                brands like PAMP, Valcambi, and Perth Mint include security 
-                features and assay certificates that aid authentication.
+                <strong className="text-bullion-gold">Consider:</strong> Bars 
+                in tamper-evident packaging from major mints command the best 
+                resale prices and are easiest to authenticate.
               </p>
             </div>
           </div>
@@ -504,7 +534,7 @@ export default async function HomePage() {
             <Link href="/resources" className="text-bullion-gold hover:underline">
               educational library
             </Link>
-            , and discover whether 1 kilo gold bars are right for your 
+            , and discover whether 10 oz gold bars are right for your 
             investment strategy.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">

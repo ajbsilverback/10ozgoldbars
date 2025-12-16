@@ -3,17 +3,24 @@ import Link from "next/link";
 import { SITE_CONFIG } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: "About | 1KiloGoldBars.com",
+  title: "About 10ozGoldBars.com | Independent Educational Resource",
   description:
-    "Learn about 1KiloGoldBars.com, an independent educational resource about 1 kilo gold bars. We do not sell precious metals or provide financial advice.",
+    "10ozGoldBars.com is an independent educational resource about 10 oz gold bars. We do not sell precious metals, provide financial advice, or endorse any dealers.",
   alternates: {
     canonical: `${SITE_CONFIG.canonicalDomain}/about`,
   },
   openGraph: {
-    title: "About | 1KiloGoldBars.com",
+    title: "About 10ozGoldBars.com | Independent Educational Resource",
     description:
-      "Learn about 1KiloGoldBars.com, an independent educational resource about 1 kilo gold bars.",
+      "Independent educational resource about 10 oz gold bars. We do not sell precious metals or provide financial advice.",
     url: `${SITE_CONFIG.domain}/about`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "About 10ozGoldBars.com | Independent Educational Resource",
+    description:
+      "Independent educational resource about 10 oz gold bars. We do not sell precious metals or provide financial advice.",
   },
 };
 
@@ -21,9 +28,9 @@ export default function AboutPage() {
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
-    name: "About 1KiloGoldBars.com",
+    name: "About 10ozGoldBars.com",
     description:
-      "Learn about 1KiloGoldBars.com, an independent educational resource about 1 kilo gold bars.",
+      "Learn about 10ozGoldBars.com, an independent educational resource about 10 oz gold bars.",
     url: `${SITE_CONFIG.domain}/about`,
     publisher: {
       "@type": "Organization",
@@ -47,7 +54,7 @@ export default function AboutPage() {
               About <span className="gold-text">{SITE_CONFIG.brandName}</span>
             </h1>
             <p className="text-xl text-gray-300">
-              An independent educational resource for serious gold investors
+              An independent educational resource for gold investors
             </p>
           </div>
 
@@ -60,15 +67,15 @@ export default function AboutPage() {
               </h2>
               <p className="text-gray-300 leading-relaxed mb-4">
                 {SITE_CONFIG.brandName} is an independent educational website
-                dedicated to helping serious investors understand{" "}
-                {SITE_CONFIG.primaryProduct}, the preferred choice for those 
-                seeking substantial gold positions with the lowest premiums 
-                per ounce.
+                dedicated to helping investors understand{" "}
+                {SITE_CONFIG.primaryProduct}, the balanced choice for those 
+                seeking lower premiums than 1 oz bars with more flexibility 
+                than kilo bars.
               </p>
               <p className="text-gray-300 leading-relaxed">
                 Our mission is to provide clear, unbiased information about 
-                kilo bar investing, including pricing mechanics, storage 
-                requirements, refiner comparisons, and the trade-offs between 
+                10 oz bar investing, including pricing mechanics, storage 
+                options, refiner comparisons, and the trade-offs between 
                 bar sizes.
               </p>
             </section>
@@ -130,8 +137,8 @@ export default function AboutPage() {
                 <li className="flex items-start gap-3">
                   <span className="text-bullion-gold">•</span>
                   <span>
-                    <strong className="text-white">1 Kilo Gold Bar price</strong> (current
-                    ask price for a 1 kg gold bar)
+                    <strong className="text-white">10 oz Gold Bar price</strong> (current
+                    ask price for a 10 oz gold bar)
                   </span>
                 </li>
                 <li className="flex items-start gap-3">

@@ -19,7 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/where-to-buy-1-kilo-gold-bars`,
+      url: `${baseUrl}/where-to-buy-10-oz-gold-bars`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.8,

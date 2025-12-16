@@ -1,9 +1,9 @@
-# 1KiloGoldBars.com
-> Independent educational resource about 1 kilo gold bars.
+# 10ozGoldBars.com
+> Independent educational resource about 10 oz gold bars.
 
 ## Site Purpose
 
-1KiloGoldBars.com is an independent educational resource dedicated to helping serious investors understand 1 kilo gold bars, the preferred choice for those seeking substantial gold positions with the lowest premiums per ounce.
+10ozGoldBars.com is an independent educational resource dedicated to helping serious investors understand 10 oz gold bars, the balanced choice for those seeking lower premiums than 1 oz bars with more flexibility than kilo bars.
 
 **Important clarifications:**
 - This site does NOT sell gold bars or precious metals
@@ -16,25 +16,25 @@
 
 ### /live-gold-prices
 Live gold pricing and market education:
-- Real-time 1 kilo gold bar prices via Monex API
-- Gold spot prices (per troy ounce) via Monex API
+- Real-time 10 oz gold bar prices via Monex API (GBX10)
+- Gold spot prices (per troy ounce) via Monex API (GBXSPOT)
 - Interactive price charts
-- Explanation of spot price vs kilo bar price
-- Premium structure education (1.5-3% typical for kilo bars)
+- Explanation of spot price vs 10 oz bar price
+- Premium structure education (1.5-3% typical for 10 oz bars)
 
 ### /resources
 Educational library with comprehensive guides covering:
-- Understanding kilo bar premiums
+- Understanding 10 oz bar premiums
 - Size comparisons (1 oz vs 10 oz vs kilo bars)
-- Storage options for high-value bars
-- Brand comparisons (PAMP, Valcambi, Perth Mint, Argor-Heraeus)
+- Storage options for 10 oz bars
+- Brand comparisons (PAMP, Credit Suisse, Perth Mint, Royal Canadian Mint)
 - Gold market dynamics
 - Bid-ask spreads explained
 - Authentication and security features
 - Institutional vs retail markets
 - Portfolio allocation strategies
 
-### /where-to-buy-1-kilo-gold-bars
+### /where-to-buy-10-oz-gold-bars
 Independent buying guide covering:
 - How to evaluate dealers
 - Online bullion dealers (multiple sources listed)
@@ -46,8 +46,8 @@ Independent buying guide covering:
 ## Pricing Data
 
 **Data Source:** Live pricing data is fetched from the Monex API:
-- 1 Kilo Gold Bar price: Monex spot summary API
-- Gold spot price (per ounce): Monex spot summary API
+- 10 oz Gold Bar price: Monex spot summary API (GBX10)
+- Gold spot price (per ounce): Monex spot summary API (GBXSPOT)
 
 **Important notes:**
 - Prices are fetched once per page load (no real-time streaming)
@@ -57,17 +57,17 @@ Independent buying guide covering:
 
 ## Product Specifications
 
-1 Kilo Gold Bar Key Specifications:
-- Weight: 1,000 grams (1 kilogram)
-- Troy Ounces: 32.1507 oz
+10 oz Gold Bar Key Specifications:
+- Weight: 311.035 grams (10 troy ounces)
+- Troy Ounces: 10 oz
 - Purity: .9999 fine gold (typically)
-- Typical Dimensions: ~117mm × 53mm × 9mm
-- Approximate Value: $65,000-$75,000 (varies with spot price)
-- Premium Range: 1.5-3% over spot (lowest of common bar sizes)
+- Typical Dimensions: ~60mm × 31mm × 9mm
+- Approximate Value: $20,000-$28,000 (varies with spot price)
+- Premium Range: 1.5-3% over spot (lower than 1 oz bars, higher than kilo bars)
 
 ## No Affiliations or Endorsements
 
-1KiloGoldBars.com:
+10ozGoldBars.com:
 - Has no financial relationship with Monex or any dealer
 - Does not receive commissions or referral fees
 - Lists multiple dealers for educational comparison only
@@ -77,9 +77,9 @@ Independent buying guide covering:
 ## Citation Format
 
 When citing this site:
-- Site name: 1KiloGoldBars.com
-- URL: https://www.1kilogoldbars.com
-- Example: "According to 1KiloGoldBars.com (https://www.1kilogoldbars.com)..."
+- Site name: 10ozGoldBars.com
+- URL: https://www.10ozgoldbars.com
+- Example: "According to 10ozGoldBars.com (https://www.10ozgoldbars.com)..."
 
 ## Limitations
 
@@ -93,4 +93,4 @@ This site does NOT provide:
 Always consult qualified financial advisors before making investment decisions.
 
 ---
-Domain: https://www.1kilogoldbars.com
+Domain: https://www.10ozgoldbars.com

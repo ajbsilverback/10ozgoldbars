@@ -10,7 +10,7 @@ export default function Header() {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/live-gold-prices", label: "Gold Prices" },
-    { href: "/where-to-buy-1-kilo-gold-bars", label: "Where to Buy" },
+    { href: "/where-to-buy-10-oz-gold-bars", label: "Where to Buy" },
     { href: "/resources", label: "Resources" },
     { href: "/about", label: "About" },
   ];
@@ -22,7 +22,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
             <div className="w-10 h-10 rounded-lg gold-gradient flex items-center justify-center">
-              <span className="text-black font-bold text-sm">1kg</span>
+              <span className="text-black font-bold text-sm">10oz</span>
             </div>
             <span className="text-xl font-display font-semibold gold-text">
               {SITE_CONFIG.brandName}

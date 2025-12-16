@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/where-to-buy",
-        destination: "/where-to-buy-1-kilo-gold-bars",
+        destination: "/where-to-buy-10-oz-gold-bars",
         permanent: true,
       },
     ];

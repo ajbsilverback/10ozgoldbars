@@ -1,17 +1,22 @@
 import Link from "next/link";
 import { fetchProductSpot, formatUSD, formatChange, formatTimestamp } from "@/lib/monexSpot";
+import { SITE_CONFIG } from "@/lib/siteConfig";
 
 type LiveGbozSpotCardProps = {
   showCta?: boolean;
 };
 
 /**
- * Server Component - Fetches GBX1K price ONCE per page load
+ * Server Component - Fetches 10 oz Gold Bar (GBX10) price ONCE per page load
+ * 
+ * Uses Monex API with symbol: GBX10 (10 oz gold bar product pricing)
+ * This is PRODUCT-SPECIFIC pricing, NOT raw gold spot.
  * 
  * ABSOLUTELY NO setInterval, useEffect, or client-side polling.
  * This renders ONCE per page load and never refreshes again.
  */
 export default async function LiveGbozSpotCard({ showCta = true }: LiveGbozSpotCardProps) {
+  // Fetches GBX10 (10 oz gold bar) pricing from Monex
   const data = await fetchProductSpot();
 
   // Error state - if data === null
@@ -19,7 +24,7 @@ export default async function LiveGbozSpotCard({ showCta = true }: LiveGbozSpotC
     return (
       <div className="max-w-3xl mx-auto rounded-xl border border-bullion-gold/30 shadow-md p-6 sm:p-10 bg-[#111]">
         <p className="text-gray-400 text-center text-lg">
-          Live pricing is temporarily unavailable.
+          10 oz gold bar pricing ({SITE_CONFIG.productSymbol}) is temporarily unavailable.
         </p>
       </div>
     );
@@ -32,9 +37,14 @@ export default async function LiveGbozSpotCard({ showCta = true }: LiveGbozSpotC
     <div className="max-w-3xl mx-auto rounded-xl border border-bullion-gold/30 shadow-md p-6 sm:p-10 bg-[#111] space-y-6">
       {/* Header with live indicator */}
       <div className="flex items-center justify-between">
-        <h2 className="text-xl sm:text-2xl font-display font-semibold text-white">
-          Live 1 Kilo Gold Bar Price
-        </h2>
+        <div>
+          <h2 className="text-xl sm:text-2xl font-display font-semibold text-white">
+            10 oz Gold Bar Price
+          </h2>
+          <p className="text-xs text-gray-500 mt-1">
+            Product pricing ({SITE_CONFIG.productSymbol})
+          </p>
+        </div>
         <div className="flex items-center gap-2">
           <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
           <span className="text-sm text-gray-400 font-medium">Live</span>
@@ -51,7 +61,7 @@ export default async function LiveGbozSpotCard({ showCta = true }: LiveGbozSpotC
           <p className="text-5xl sm:text-6xl lg:text-7xl font-display font-extrabold tracking-tight gold-text">
             {formatUSD(data.ask)}
           </p>
-          <p className="text-lg text-gray-400 mt-2">per kilo bar (32.15 oz)</p>
+          <p className="text-lg text-gray-400 mt-2">per 10 oz bar</p>
         </div>
       </div>
 
@@ -156,9 +166,9 @@ export default async function LiveGbozSpotCard({ showCta = true }: LiveGbozSpotC
 
       {/* Attribution */}
       <p className="text-xs text-gray-600 text-center pt-4 border-t border-bullion-gold/10">
-        Prices provided by{" "}
+        10 oz gold bar ({SITE_CONFIG.productSymbol}) pricing from{" "}
         <a
-          href="https://www.monex.com/liveprices/"
+          href="https://www.monex.com/10-oz-gold-bullion-bar-price-charts/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-bullion-gold hover:underline"

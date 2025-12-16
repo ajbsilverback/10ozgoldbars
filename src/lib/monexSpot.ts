@@ -10,7 +10,7 @@ import { SITE_CONFIG, getProductApiUrl, getSpotApiUrl } from "./siteConfig";
  * 
  * API Response shape (data[0]):
  * {
- *   "symbol": "GBOZ",
+ *   "symbol": "GBX10",
  *   "baseCurrency": "USD",
  *   "last": 4371.0,
  *   "bid": 4211.0,
@@ -84,7 +84,7 @@ export async function fetchProductSpot(): Promise<ProductSpotSummary | null> {
     } else if (json && typeof json === "object") {
       // Response is an object
       if (json[symbol]) {
-        // Keyed by symbol: { GBOZ: { ... } }
+        // Keyed by symbol: { GBX10: { ... } }
         productData = json[symbol];
       } else if (json.data && Array.isArray(json.data)) {
         // Wrapped in data property: { data: [...] }

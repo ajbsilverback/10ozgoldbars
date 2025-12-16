@@ -1,7 +1,7 @@
 /**
  * SITE CONFIGURATION - Single Source of Truth
  * 
- * Configuration for 1KiloGoldBars.com
+ * Configuration for 10ozGoldBars.com
  */
 
 export const SITE_CONFIG = {
@@ -10,20 +10,20 @@ export const SITE_CONFIG = {
   // ============================================================
   
   /** Primary domain with https:// prefix */
-  domain: "https://www.1kilogoldbars.com",
+  domain: "https://www.10ozgoldbars.com",
   
   /** Canonical domain (usually same as domain) */
-  canonicalDomain: "https://www.1kilogoldbars.com",
+  canonicalDomain: "https://www.10ozgoldbars.com",
   
   /** Brand name displayed in UI and metadata */
-  brandName: "1KiloGoldBars.com",
+  brandName: "10ozGoldBars.com",
 
   // ============================================================
   // PRODUCT DEFINITION
   // ============================================================
   
   /** Primary product name */
-  primaryProduct: "1 kilo gold bars",
+  primaryProduct: "10 oz gold bars",
   
   /** Metal type: "gold" | "silver" | "platinum" | "palladium" */
   metal: "gold",
@@ -32,10 +32,10 @@ export const SITE_CONFIG = {
   form: "bars",
   
   /** Size or series identifier */
-  sizeOrSeries: "1 kilo",
+  sizeOrSeries: "10 oz",
 
   /** Troy ounce equivalent */
-  troyOunces: 32.1507,
+  troyOunces: 10,
 
   // ============================================================
   // MONEX API SYMBOLS
@@ -43,9 +43,9 @@ export const SITE_CONFIG = {
   
   /** 
    * Product price symbol for Monex API
-   * GBX1K = 1 kilo gold bar
+   * GBX10 = 10 oz gold bar
    */
-  productSymbol: "GBX1K",
+  productSymbol: "GBX10",
   
   /**
    * Spot index symbol for Monex API (raw metal spot price)
@@ -59,13 +59,13 @@ export const SITE_CONFIG = {
   
   /** Target audience description */
   angle:
-    "serious investors and institutions seeking substantial gold positions with lowest premiums per ounce",
+    "serious investors seeking meaningful gold positions with lower premiums than 1 oz bars and more flexibility than kilo bars",
 
   /** Array of relevant Monex.com links for citations */
   monexLinks: [
     "https://www.monex.com/gold/",
     "https://www.monex.com/gold-prices/",
-    "https://www.monex.com/investing-in-gold/",
+    "https://www.monex.com/10-oz-gold-bullion-bar-price-charts/",
     "https://www.monex.com/knowledge-base/gold-investing/",
   ],
 } as const;

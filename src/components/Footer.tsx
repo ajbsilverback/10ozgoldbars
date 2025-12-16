@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="space-y-4">
             <Link href="/" className="flex items-center space-x-3">
               <div className="w-10 h-10 rounded-lg gold-gradient flex items-center justify-center">
-                <span className="text-black font-bold text-sm">1kg</span>
+                <span className="text-black font-bold text-sm">10oz</span>
               </div>
               <span className="text-xl font-display font-semibold gold-text">
                 {SITE_CONFIG.brandName}
@@ -20,8 +20,8 @@ export default function Footer() {
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed">
               Your trusted educational resource for {SITE_CONFIG.primaryProduct}. 
-              Helping serious investors understand 32.15 troy ounce gold bars 
-              with the lowest premiums per ounce.
+              Helping investors understand 10 troy ounce gold bars 
+              with balanced premiums and practical portability.
             </p>
           </div>
 
@@ -70,10 +70,10 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/where-to-buy-1-kilo-gold-bars"
+                  href="/where-to-buy-10-oz-gold-bars"
                   className="text-gray-400 hover:text-bullion-gold transition-colors text-sm"
                 >
-                  Where to Buy 1 Kilo Gold Bars
+                  Where to Buy 10 oz Gold Bars
                 </Link>
               </li>
               <li>

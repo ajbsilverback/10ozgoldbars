@@ -1,4 +1,5 @@
 import { fetchProductSpot, ProductSpotSummary } from "@/lib/monexSpot";
+import { SITE_CONFIG } from "@/lib/siteConfig";
 
 interface CapitalRequirementsCardProps {
   /** Optional pre-fetched price data to avoid duplicate API calls */
@@ -6,13 +7,14 @@ interface CapitalRequirementsCardProps {
 }
 
 /**
- * Server Component - Displays the approximate capital required to purchase a 1 kilo gold bar.
+ * Server Component - Displays the approximate capital required to purchase a 10 oz gold bar.
  * 
+ * Uses 10 oz gold bar (GBX10) pricing from Monex API.
  * Can receive pre-fetched price data or will fetch its own if not provided.
  * NO polling, NO intervals - renders ONCE per page load only.
  */
 export default async function CapitalRequirementsCard({ priceData }: CapitalRequirementsCardProps = {}) {
-  // Use provided data or fetch if not available
+  // Use provided data or fetch GBX10 (10 oz gold bar) if not available
   const data = priceData !== undefined ? priceData : await fetchProductSpot();
 
   // Round to nearest $100 for display
@@ -36,8 +38,8 @@ export default async function CapitalRequirementsCard({ priceData }: CapitalRequ
       </h3>
       <p className="text-gray-400 text-sm text-center mb-6">
         {hasValidPrice
-          ? "Based on current 1 kilo gold bar ask price:"
-          : "To purchase a single 1 kilo gold bar:"}
+          ? `Based on current 10 oz gold bar (${SITE_CONFIG.productSymbol}) ask price:`
+          : "To purchase a single 10 oz gold bar:"}
       </p>
       <div className="text-center py-6 rounded-lg bg-bullion-gold/10 border border-bullion-gold/30">
         {hasValidPrice ? (
@@ -45,7 +47,7 @@ export default async function CapitalRequirementsCard({ priceData }: CapitalRequ
             <span className="text-4xl font-display font-bold gold-text">
               ≈ {roundToHundred(data.ask)}
             </span>
-            <p className="text-gray-400 text-sm mt-2">per kilo bar</p>
+            <p className="text-gray-400 text-sm mt-2">per 10 oz bar</p>
           </>
         ) : (
           <>
@@ -57,7 +59,7 @@ export default async function CapitalRequirementsCard({ priceData }: CapitalRequ
         )}
       </div>
       <p className="text-gray-500 text-xs text-center mt-4">
-        Prices vary with spot gold and dealer premiums
+        {SITE_CONFIG.productSymbol} pricing varies with gold spot and dealer premiums
       </p>
     </div>
   );

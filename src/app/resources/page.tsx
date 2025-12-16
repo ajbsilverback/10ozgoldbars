@@ -7,17 +7,24 @@ import { resourcesQA } from "@/data/qa-content";
 import { fetchProductSpot } from "@/lib/monexSpot";
 
 export const metadata: Metadata = {
-  title: "1 Kilo Gold Bar Resources & Educational Guides",
+  title: "10 oz Gold Bar Educational Resources & Investment Guides",
   description:
-    "Comprehensive educational resources about 1 kilo gold bars covering premiums, storage, brand comparisons, market dynamics, and investment strategies for serious gold investors.",
+    "In-depth educational guides on 10 oz gold bars covering premiums, storage options, refiner comparisons, market dynamics, authentication, and portfolio allocation strategies.",
   alternates: {
     canonical: `${SITE_CONFIG.canonicalDomain}/resources`,
   },
   openGraph: {
-    title: "1 Kilo Gold Bar Resources & Educational Guides",
+    title: "10 oz Gold Bar Educational Resources & Investment Guides",
     description:
-      "Comprehensive educational resources about 1 kilo gold bars covering premiums, storage, brand comparisons, and investment strategies.",
+      "In-depth educational guides on 10 oz gold bars covering premiums, storage, refiner comparisons, and portfolio strategies.",
     url: `${SITE_CONFIG.domain}/resources`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "10 oz Gold Bar Educational Resources & Investment Guides",
+    description:
+      "In-depth educational guides on 10 oz gold bars covering premiums, storage, and investment strategies.",
   },
 };
 
@@ -45,9 +52,9 @@ export default async function ResourcesPage({ searchParams }: PageProps) {
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "1 Kilo Gold Bar Resources & Educational Guides",
+    name: "10 oz Gold Bar Resources & Educational Guides",
     description:
-      "Comprehensive educational resources about 1 kilo gold bars covering premiums, storage, brand comparisons, and investment strategies.",
+      "Comprehensive educational resources about 10 oz gold bars covering premiums, storage, brand comparisons, and investment strategies.",
     url: `${SITE_CONFIG.domain}/resources`,
     publisher: {
       "@type": "Organization",
@@ -131,21 +138,20 @@ export default async function ResourcesPage({ searchParams }: PageProps) {
             </h1>
 
             <p className="text-xl text-gray-300 leading-relaxed mt-6">
-              Deepen your understanding of 1 kilo gold bars and the broader 
+              Deepen your understanding of 10 oz gold bars and the broader 
               gold market with our comprehensive guides. Whether you&apos;re 
-              evaluating kilo bars vs. smaller denominations, comparing refiner 
-              brands, or planning storage, our resources provide the insights 
-              you need. Check{" "}
+              evaluating bar sizes, comparing refiner brands, or planning 
+              storage, our resources provide the insights you need. Check{" "}
               <Link href="/live-gold-prices" className="text-bullion-gold hover:underline">
                 current gold prices
               </Link>
               , explore our{" "}
-              <Link href="/where-to-buy-1-kilo-gold-bars" className="text-bullion-gold hover:underline">
+              <Link href="/where-to-buy-10-oz-gold-bars" className="text-bullion-gold hover:underline">
                 independent buying guide
               </Link>
               , or return to our{" "}
               <Link href="/" className="text-bullion-gold hover:underline">
-                1 kilo gold bar overview
+                10 oz gold bar overview
               </Link>.
             </p>
           </div>

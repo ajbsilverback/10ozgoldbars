@@ -1,22 +1,24 @@
-# 1KiloGoldBars.com
+# 10ozGoldBars.com
 
-An educational microsite about 1 kilo gold bars built with Next.js 15, TypeScript, and Tailwind CSS.
+An educational microsite about 10 oz gold bars built with Next.js 15, TypeScript, and Tailwind CSS.
 
 ## Features
 
-- **Home Page**: Comprehensive overview of 1 kilo gold bars, including benefits, who buys them, key specifications, and size comparisons
-- **Prices Page**: Live gold pricing with GBX1K and GBXSPOT data, plus educational content about premiums
-- **Resources**: 10 in-depth educational articles covering:
-  - Understanding Kilo Bar Premiums
+- **Home Page**: Comprehensive overview of 10 oz gold bars, including benefits, who buys them, key specifications, and size comparisons
+- **Prices Page**: Live gold pricing with GBX10 and GBXSPOT data, plus educational content about premiums
+- **Resources**: 12 in-depth educational articles covering:
+  - Understanding 10 oz Bar Premiums
   - Size Comparison (1 oz vs 10 oz vs Kilo)
-  - Storage Options for High-Value Bars
-  - Brand Differences (PAMP, Valcambi, Perth, Argor-Heraeus)
+  - Storage Options for 10 oz Bars
+  - Brand Differences (PAMP, Credit Suisse, Perth, Royal Canadian Mint)
   - Liquidity Considerations
   - Market Dynamics
   - Bid-Ask Spreads
   - Authentication Guide
   - Institutional vs Retail Markets
   - Portfolio Allocation
+  - First-Time Buyer's Guide
+  - Tax Considerations
 - **Where to Buy**: Independent dealer guide with multiple sources and neutrality disclaimer
 - **About**: Site mission and editorial independence
 
@@ -50,11 +52,11 @@ src/
 ├── app/
 │   ├── layout.tsx          # Root layout with header/footer
 │   ├── page.tsx            # Home page
-│   ├── prices/
+│   ├── live-gold-prices/
 │   │   └── page.tsx        # Gold prices page
 │   ├── about/
 │   │   └── page.tsx        # About page
-│   ├── where-to-buy/
+│   ├── where-to-buy-10-oz-gold-bars/
 │   │   └── page.tsx        # Buying guide
 │   └── resources/
 │       ├── page.tsx        # Resources index
@@ -63,8 +65,8 @@ src/
 ├── components/
 │   ├── Header.tsx
 │   ├── Footer.tsx
-│   ├── LiveGbozSpotCard.tsx    # Kilo bar price card
-│   ├── LiveGoldSpotIndexCard.tsx # Spot index card
+│   ├── LiveGbozSpotCard.tsx       # 10 oz bar price card
+│   ├── LiveGoldSpotIndexCard.tsx  # Gold spot index card
 │   └── MonexWidgets.tsx
 ├── lib/
 │   ├── siteConfig.ts       # ⭐ SINGLE SOURCE OF TRUTH
@@ -79,11 +81,11 @@ src/
 
 This site uses the Monex API for pricing data:
 
-- **Product Symbol**: GBX1K (1 kilo gold bar)
+- **Product Symbol**: GBX10 (10 oz gold bar)
 - **Spot Symbol**: GBXSPOT (Gold spot index)
 
 API endpoints:
-- `https://api.monex.com/api/v2/Metals/spot/summary?metals=GBX1K`
+- `https://api.monex.com/api/v2/Metals/spot/summary?metals=GBX10`
 - `https://api.monex.com/api/v2/Metals/spot/summary?metals=GBXSPOT`
 
 Prices are fetched once per page load (no polling/intervals).
