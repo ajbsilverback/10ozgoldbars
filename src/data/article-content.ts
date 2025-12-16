@@ -92,13 +92,13 @@ const articleContents: Record<string, ArticleContent> = {
       {
         heading: "10 oz Gold Bars: The Optimal Balance",
         content: [
-          "Ten-ounce gold bars occupy the sweet spot between premium efficiency and practical flexibility. At roughly $20,000-$25,000 per bar, they require meaningful capital but remain accessible to serious individual investors.",
+          "Ten-ounce gold bars occupy the sweet spot between premium efficiency and practical flexibility. At roughly {{CAPITAL_REQUIREMENT_RANGE}} per bar, they require meaningful capital but remain accessible to serious individual investors.",
           "Premiums typically fall in the 1.5-3% range, notably lower than 1 oz bars. An investor purchasing 50 oz of gold saves hundreds of dollars by choosing five 10 oz bars over fifty 1 oz equivalents.",
           "Liquidity is excellent for 10 oz bars. Most established dealers maintain ready markets, and transactions typically complete efficiently. The 10 oz size is popular with both dealers and investors.",
         ],
         subheading: "Why 10 oz Is Often the Best Choice",
         subcontent: [
-          "The 10 oz size represents the optimal compromise for many investors. You capture meaningful premium savings while maintaining reasonable divisibility, allowing you to liquidate in ~$20,000 increments if needed.",
+          "The 10 oz size represents the optimal compromise for many investors. You capture meaningful premium savings while maintaining reasonable divisibility, allowing you to liquidate in {{CAPITAL_REQUIREMENT}} increments if needed.",
           "Home storage is practical for 10 oz bars - they fit easily in safes and safe deposit boxes while holding meaningful value. For investors who want direct custody without the storage challenges of larger sizes, 10 oz bars excel.",
         ],
       },
@@ -137,7 +137,7 @@ const articleContents: Record<string, ArticleContent> = {
       {
         heading: "Storage Options for 10 oz Gold Bars",
         content: [
-          "One of the advantages of 10 oz gold bars is their practical storage. At approximately 60mm × 31mm × 9mm and weighing about 311 grams, they're compact enough to store easily while holding meaningful value (~$20,000 each).",
+          "One of the advantages of 10 oz gold bars is their practical storage. At approximately 60mm × 31mm × 9mm and weighing about 311 grams, they're compact enough to store easily while holding meaningful value ({{CAPITAL_REQUIREMENT}} each).",
           "Unlike kilo bars which often require professional storage, 10 oz bars offer more flexibility. You can realistically store several 10 oz bars in a home safe or bank safe deposit box without the security concerns that come with larger holdings.",
           "Your storage decision should reflect your total holdings value, access requirements, insurance considerations, and personal comfort level. Each option presents trade-offs worth understanding before committing capital.",
         ],
@@ -237,7 +237,7 @@ const articleContents: Record<string, ArticleContent> = {
       "Recognized brands from major refiners trade efficiently worldwide",
       "Bid-ask spreads on 10 oz bars are typically 1.5-2.5%",
       "Sales typically complete within 1-2 business days through established dealers",
-      "The main consideration is selling means liquidating ~$20,000 at once",
+      "The main consideration is selling means liquidating {{CAPITAL_REQUIREMENT}} at once",
     ],
     sections: [
       {
@@ -264,8 +264,8 @@ const articleContents: Record<string, ArticleContent> = {
       {
         heading: "The Capital Chunk Consideration",
         content: [
-          "The primary liquidity consideration with 10 oz bars is that selling means converting ~$20,000 at once. If you own three 10 oz bars and need $10,000 in cash, you must sell one bar (worth ~$20,000) and find alternative uses for the excess, or find other liquidity sources.",
-          "This is less constraining than kilo bars (which require $65,000+ per transaction) but more constraining than 1 oz bars (which allow precise amounts). For most investors, the ~$20,000 increment is practical.",
+          "The primary liquidity consideration with 10 oz bars is that selling means converting {{CAPITAL_REQUIREMENT}} at once. If you own three 10 oz bars and need $10,000 in cash, you must sell one bar (worth {{CAPITAL_REQUIREMENT}}) and find alternative uses for the excess, or find other liquidity sources.",
+          "This is less constraining than kilo bars (which require $65,000+ per transaction) but more constraining than 1 oz bars (which allow precise amounts). For most investors, the {{CAPITAL_REQUIREMENT}} increment is practical.",
           "Investors anticipating potential small liquidation needs should consider holding some 1 oz bars alongside their 10 oz holdings for maximum flexibility.",
         ],
         subheading: "Strategies for 10 oz Bar Liquidity",
@@ -351,14 +351,14 @@ const articleContents: Record<string, ArticleContent> = {
         subheading: "Spread Comparison Across Bar Sizes",
         subcontent: [
           "10 oz bars have competitive percentage spreads among common bar sizes. The transaction costs spread across meaningful value, improving economics. A 10 oz bar at 2% spread versus potentially similar spreads on 1 oz bars represents efficient transaction costs.",
-          "The main difference from 1 oz bars is the transaction size: you're transacting ~$20,000 at once rather than having the option to sell smaller amounts.",
+          "The main difference from 1 oz bars is the transaction size: you're transacting {{CAPITAL_REQUIREMENT}} at once rather than having the option to sell smaller amounts.",
         ],
       },
       {
         heading: "Calculating Your Break-Even",
         content: [
           "Before purchasing, calculate the price appreciation required to break even after accounting for the full spread. If you pay 2% over spot and expect to receive 1% below spot when selling, you need 3% appreciation to break even.",
-          "For a 10 oz bar at $20,000, that 3% break-even represents roughly $600 in gold price movement. This is more achievable than the 7-8% break-even typical of some 1 oz bar transactions.",
+          "For a 10 oz bar at {{CAPITAL_REQUIREMENT}}, that 3% break-even represents roughly $600 in gold price movement. This is more achievable than the 7-8% break-even typical of some 1 oz bar transactions.",
           "This calculation helps set realistic expectations. 10 oz bars' competitive spreads mean reasonable break-even compared to smaller bars, making them efficient for medium-term as well as long-term holdings.",
         ],
         subheading: "Strategies to Minimize Spread Impact",
@@ -381,7 +381,7 @@ const articleContents: Record<string, ArticleContent> = {
       {
         heading: "Why Authentication Matters for 10 oz Bars",
         content: [
-          "With individual bars valued at ~$20,000, authentication is important for 10 oz gold purchases. While the risk is lower than for larger bars, verification remains essential before committing capital.",
+          "With individual bars valued at {{CAPITAL_REQUIREMENT}}, authentication is important for 10 oz gold purchases. While the risk is lower than for larger bars, verification remains essential before committing capital.",
           "The good news: recognized refiners invest in anti-counterfeiting measures. Their 10 oz bars include security features that make sophisticated counterfeits difficult and expensive to produce.",
           "For legitimate purchases from reputable dealers, authentication concerns are minimal. The risk increases when buying from unknown sources, secondary markets, or bars with incomplete documentation.",
         ],
@@ -462,7 +462,7 @@ const articleContents: Record<string, ArticleContent> = {
   "portfolio-allocation": {
     keyTakeaways: [
       "Gold typically represents 5-15% of diversified portfolios",
-      "10 oz bars are appropriate when gold allocation reaches $20,000+",
+      "10 oz bars are appropriate when gold allocation reaches {{CAPITAL_REQUIREMENT_PLUS}}",
       "Consider both premium efficiency and liquidity needs in allocation decisions",
       "Mix bar sizes to balance efficiency with flexibility if desired",
       "Regular rebalancing maintains target allocation as prices fluctuate",
@@ -516,7 +516,7 @@ const articleContents: Record<string, ArticleContent> = {
       {
         heading: "Preparing for Your First 10 oz Bar Purchase",
         content: [
-          "Purchasing a 10 oz gold bar represents a meaningful financial commitment of approximately $20,000. Before initiating a transaction, take time to understand the process. Research dealers, understand pricing structures, arrange storage, and ensure you're ready to complete the transaction smoothly.",
+          "Purchasing a 10 oz gold bar represents a meaningful financial commitment of approximately {{CAPITAL_REQUIREMENT}}. Before initiating a transaction, take time to understand the process. Research dealers, understand pricing structures, arrange storage, and ensure you're ready to complete the transaction smoothly.",
           "The preparation phase matters. Rushing into a purchase without adequate preparation can lead to unnecessary costs or complications. This guide walks through the practical considerations for first-time 10 oz bar buyers.",
         ],
       },

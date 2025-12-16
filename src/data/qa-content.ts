@@ -210,7 +210,7 @@ export const resourceQA: Record<string, QAItem[]> = {
   "portfolio-allocation": [
     {
       question: "What percentage of a portfolio should be in 10 oz gold bars?",
-      answer: "Conventional wisdom suggests 5-15% of a portfolio in precious metals as a diversifier and inflation hedge. The specific allocation depends on your risk tolerance, investment horizon, and overall financial situation. 10 oz bars are appropriate for investors with $20,000+ to allocate to physical gold.",
+      answer: "Conventional wisdom suggests 5-15% of a portfolio in precious metals as a diversifier and inflation hedge. The specific allocation depends on your risk tolerance, investment horizon, and overall financial situation. 10 oz bars are appropriate for investors with {{CAPITAL_REQUIREMENT_PLUS}} to allocate to physical gold.",
     },
     {
       question: "Should I buy 10 oz bars all at once or over time?",

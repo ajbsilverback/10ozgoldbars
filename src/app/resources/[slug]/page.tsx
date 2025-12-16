@@ -9,6 +9,7 @@ import QASection from "@/components/QASection";
 import Container from "@/components/Container";
 import { resourceQA } from "@/data/qa-content";
 import { fetchProductSpot } from "@/lib/monexSpot";
+import { replaceTokens } from "@/lib/priceTokens";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -272,7 +273,7 @@ export default async function ResourcePage({ params }: Props) {
               {content.keyTakeaways.map((takeaway, index) => (
                 <li key={index} className="flex items-start text-gray-300 text-sm md:text-base">
                   <span className="text-bullion-gold mr-2 mt-0.5">•</span>
-                  <span>{takeaway}</span>
+                  <span>{replaceTokens(takeaway, priceData)}</span>
                 </li>
               ))}
             </ul>
@@ -294,7 +295,7 @@ export default async function ResourcePage({ params }: Props) {
                     key={pIndex}
                     className="text-gray-300 leading-relaxed text-base md:text-lg"
                   >
-                    {paragraph}
+                    {replaceTokens(paragraph, priceData)}
                   </p>
                 ))}
                 {section.subheading && (
@@ -307,7 +308,7 @@ export default async function ResourcePage({ params }: Props) {
                         key={sIndex}
                         className="text-gray-300 leading-relaxed text-base md:text-lg"
                       >
-                        {paragraph}
+                        {replaceTokens(paragraph, priceData)}
                       </p>
                     ))}
                   </div>
