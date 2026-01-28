@@ -9,8 +9,8 @@
  * 
  * PROTECTED ELEMENTS:
  * - Pricing symbols (GBXSPOT vs GBX10)
- * - Monex API endpoints
- * - Monex chart embed script
+ * - Pricing feed endpoints (configured via PRICING_API_ORIGIN env var)
+ * - Chart embed script
  * - Navigation IA (matches kilo site)
  * - Repo remote (must remain ajbsilverback/10ozgoldbars)
  * 
@@ -72,17 +72,17 @@ export const SITE_CONFIG = {
   troyOunces: 10,
 
   // ============================================================
-  // MONEX API SYMBOLS
+  // PRICING FEED SYMBOLS
   // ============================================================
   
   /** 
-   * Product price symbol for Monex API
+   * Product price symbol for pricing feed
    * GBX10 = 10 oz gold bar (product cards + charts ONLY)
    */
   productSymbol: "GBX10",
   
   /**
-   * Spot index symbol for Monex API (raw metal spot price)
+   * Spot index symbol for pricing feed (raw metal spot price)
    * GBXSPOT = Gold Spot Index (market reference ONLY)
    */
   spotSymbol: "GBXSPOT",
@@ -107,15 +107,34 @@ export const SITE_CONFIG = {
 export type SiteConfig = typeof SITE_CONFIG;
 
 /**
- * Helper: Get Monex API URL for product symbol
+ * Helper: Get pricing API origin from environment variable
+ * Server-only - do not import into client components
  */
-export function getProductApiUrl(): string {
-  return `https://api.monex.com/api/v2/Metals/spot/summary?metals=${SITE_CONFIG.productSymbol}`;
+export function getPricingOrigin(): string {
+  const origin = process.env.PRICING_API_ORIGIN;
+  if (!origin) {
+    throw new Error("PRICING_API_ORIGIN environment variable is not set");
+  }
+  return origin;
 }
 
 /**
- * Helper: Get Monex API URL for spot symbol
+ * Helper: Get pricing feed URL for product symbol
+ */
+export function getProductApiUrl(): string {
+  return `${getPricingOrigin()}/api/v2/Metals/spot/summary?metals=${SITE_CONFIG.productSymbol}`;
+}
+
+/**
+ * Helper: Get pricing feed URL for spot symbol
  */
 export function getSpotApiUrl(): string {
-  return `https://api.monex.com/api/v2/Metals/spot/summary?metals=${SITE_CONFIG.spotSymbol}`;
+  return `${getPricingOrigin()}/api/v2/Metals/spot/summary?metals=${SITE_CONFIG.spotSymbol}`;
+}
+
+/**
+ * Helper: Get pricing feed URL for kilo bar (comparison only)
+ */
+export function getKiloBarApiUrl(): string {
+  return `${getPricingOrigin()}/api/v2/Metals/spot/summary?metals=GBX1K`;
 }

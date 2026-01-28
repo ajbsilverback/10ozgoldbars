@@ -1,14 +1,16 @@
 /**
- * Server-side utility for fetching product spot price from Monex API
+ * Server-side utility for fetching product spot price from pricing data feed
  * Fetches ONCE per page load - NO auto-refresh, NO intervals, NO polling, NO background revalidation
  */
 
-import { SITE_CONFIG, getProductApiUrl, getSpotApiUrl } from "./siteConfig";
+import "server-only";
+
+import { SITE_CONFIG, getProductApiUrl, getSpotApiUrl, getKiloBarApiUrl } from "./siteConfig";
 
 /**
- * TypeScript interface for Product Spot Summary from Monex API
+ * TypeScript interface for Product Spot Summary from pricing feed
  * 
- * API Response shape (data[0]):
+ * Response shape (data[0]):
  * {
  *   "symbol": "GBX10",
  *   "baseCurrency": "USD",
@@ -42,7 +44,7 @@ export interface ProductSpotSummary {
 export type GbozSpotSummary = ProductSpotSummary;
 
 /**
- * Fetches the current product spot price from Monex API
+ * Fetches the current product spot price from pricing feed
  * Uses symbol from SITE_CONFIG.productSymbol
  * 
  * Uses cache: 'no-store' to ensure:
@@ -66,7 +68,7 @@ export async function fetchProductSpot(): Promise<ProductSpotSummary | null> {
 
     // If response.ok is false → return null
     if (!response.ok) {
-      console.error(`Monex API error: ${response.status} ${response.statusText}`);
+      console.error(`Pricing feed error: ${response.status} ${response.statusText}`);
       return null;
     }
 
@@ -115,7 +117,7 @@ export async function fetchProductSpot(): Promise<ProductSpotSummary | null> {
     }
 
     if (!productData) {
-      console.error(`Monex API: Could not extract ${symbol} data from response`);
+      console.error(`Pricing feed: Could not extract ${symbol} data from response`);
       return null;
     }
 
@@ -130,7 +132,7 @@ export async function fetchProductSpot(): Promise<ProductSpotSummary | null> {
     
     // Validate we have at least some price data
     if (bid === 0 && ask === 0 && last === 0) {
-      console.error("Monex API: No price data found in response");
+      console.error("Pricing feed: No price data found in response");
       return null;
     }
 
@@ -170,14 +172,14 @@ export const fetchGbozSpot = fetchProductSpot;
 // ============================================================
 
 /**
- * Fetches the current 1 kilo gold bar price from Monex API
+ * Fetches the current 1 kilo gold bar price from pricing feed
  * Used ONLY for educational comparisons (e.g., "kilo bars cost $X")
  * NOT the primary product of this site
  * 
  * @returns Promise<number | null> - The ask price or null on error
  */
 export async function fetchKiloBarPrice(): Promise<number | null> {
-  const apiUrl = "https://api.monex.com/api/v2/Metals/spot/summary?metals=GBX1K";
+  const apiUrl = getKiloBarApiUrl();
   
   try {
     const response = await fetch(apiUrl, {
@@ -186,7 +188,7 @@ export async function fetchKiloBarPrice(): Promise<number | null> {
     });
 
     if (!response.ok) {
-      console.error(`Monex API (GBX1K) error: ${response.status}`);
+      console.error(`Pricing feed (kilo) error: ${response.status}`);
       return null;
     }
 
@@ -248,7 +250,7 @@ export function formatChange(change: number, changePercent: number): string {
 // ============================================================
 
 /**
- * TypeScript interface for Metal Spot Index from Monex API
+ * TypeScript interface for Metal Spot Index from pricing feed
  */
 export interface MetalSpotIndexSummary {
   symbol: string;
@@ -270,7 +272,7 @@ export interface MetalSpotIndexSummary {
 export type GoldSpotIndexSummary = MetalSpotIndexSummary;
 
 /**
- * Fetches the current Metal Spot Index from Monex API
+ * Fetches the current Metal Spot Index from pricing feed
  * Uses symbol from SITE_CONFIG.spotSymbol
  * 
  * Uses cache: 'no-store' to ensure:
@@ -294,7 +296,7 @@ export async function fetchMetalSpotIndex(): Promise<MetalSpotIndexSummary | nul
     });
 
     if (!response.ok) {
-      console.error(`Monex API (${symbol}) error: ${response.status} ${response.statusText}`);
+      console.error(`Pricing feed (${symbol}) error: ${response.status} ${response.statusText}`);
       return null;
     }
 
@@ -326,7 +328,7 @@ export async function fetchMetalSpotIndex(): Promise<MetalSpotIndexSummary | nul
     }
 
     if (!spotData) {
-      console.error(`Monex API: Could not extract ${symbol} data from response`);
+      console.error(`Pricing feed: Could not extract ${symbol} data from response`);
       return null;
     }
 
@@ -340,7 +342,7 @@ export async function fetchMetalSpotIndex(): Promise<MetalSpotIndexSummary | nul
     const previousClose = Number(spotData.previousClose ?? spotData.PreviousClose ?? spotData.close ?? spotData.Close ?? 0);
 
     if (bid === 0 && ask === 0 && last === 0) {
-      console.error(`Monex API (${symbol}): No price data found in response`);
+      console.error(`Pricing feed (${symbol}): No price data found in response`);
       return null;
     }
 

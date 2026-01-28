@@ -2,3 +2,8 @@
 tsconfig.tsbuildinfo
 node_modules/
 .vercel
+
+# Environment variables (keep secrets out of repo)
+.env
+.env.local
+.env*.local

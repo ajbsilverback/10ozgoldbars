@@ -77,16 +77,9 @@ src/
     └── article-content.ts  # Article content
 ```
 
-## API Configuration
+## Pricing Configuration
 
-This site uses the Monex API for pricing data:
-
-- **Product Symbol**: GBX10 (10 oz gold bar)
-- **Spot Symbol**: GBXSPOT (Gold spot index)
-
-API endpoints:
-- `https://api.monex.com/api/v2/Metals/spot/summary?metals=GBX10`
-- `https://api.monex.com/api/v2/Metals/spot/summary?metals=GBXSPOT`
+This site uses Monex for pricing data. The pricing feed origin is configured via the `PRICING_API_ORIGIN` environment variable.
 
 Prices are fetched once per page load (no polling/intervals).
 
