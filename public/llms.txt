@@ -16,8 +16,8 @@
 
 ### /live-gold-prices
 Live gold pricing and market education:
-- Real-time 10 oz gold bar prices via Monex API (GBX10)
-- Gold spot prices (per troy ounce) via Monex API (GBXSPOT)
+- Real-time 10 oz gold bar prices via Monex
+- Gold spot prices (per troy ounce) via Monex
 - Interactive price charts
 - Explanation of spot price vs 10 oz bar price
 - Premium structure education (1.5-3% typical for 10 oz bars)
@@ -45,9 +45,9 @@ Independent buying guide covering:
 
 ## Pricing Data
 
-**Data Source:** Live pricing data is fetched from the Monex API:
-- 10 oz Gold Bar price: Monex spot summary API (GBX10)
-- Gold spot price (per ounce): Monex spot summary API (GBXSPOT)
+**Data Source:** Live pricing data is fetched from Monex:
+- 10 oz Gold Bar price
+- Gold spot price (per ounce)
 
 **Important notes:**
 - Prices are fetched once per page load (no real-time streaming)

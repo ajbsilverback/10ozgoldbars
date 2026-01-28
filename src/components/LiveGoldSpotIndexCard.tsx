@@ -1,10 +1,9 @@
 import { fetchMetalSpotIndex, formatUSD, formatChange, formatTimestamp } from "@/lib/monexSpot";
-import { SITE_CONFIG } from "@/lib/siteConfig";
+import LocalTimestamp from "./LocalTimestamp";
 
 /**
- * Server Component - Fetches Gold Spot Price (GBXSPOT) ONCE per page load
+ * Server Component - Fetches Gold Spot Price ONCE per page load
  * 
- * Uses Monex API with symbol: GBXSPOT (gold spot index per troy ounce)
  * This is RAW GOLD SPOT pricing, NOT product-specific pricing.
  * 
  * ABSOLUTELY NO setInterval, useEffect, or client-side polling.
@@ -19,7 +18,7 @@ export default async function LiveGoldSpotIndexCard() {
     return (
       <div className="max-w-3xl mx-auto rounded-xl border border-bullion-gold/30 shadow-md p-6 sm:p-10 bg-[#111]">
         <p className="text-gray-400 text-center text-lg">
-          Gold spot pricing ({SITE_CONFIG.spotSymbol}) is temporarily unavailable.
+          Gold spot pricing is temporarily unavailable.
         </p>
       </div>
     );
@@ -37,7 +36,7 @@ export default async function LiveGoldSpotIndexCard() {
             Gold Spot Price
           </h2>
           <p className="text-xs text-gray-500 mt-1">
-            Raw gold spot ({SITE_CONFIG.spotSymbol})
+            Raw gold spot
           </p>
         </div>
         <div className="flex items-center gap-2">
@@ -129,12 +128,16 @@ export default async function LiveGoldSpotIndexCard() {
 
       {/* Timestamp */}
       <p className="text-sm text-gray-500 text-center">
-        As of: {formatTimestamp(data.timestamp)}
+        <LocalTimestamp
+          value={data.timestamp}
+          fallback={formatTimestamp(data.timestamp)}
+          prefix="As of: "
+        />
       </p>
 
       {/* Attribution */}
       <p className="text-xs text-gray-600 text-center pt-4 border-t border-bullion-gold/10">
-        Gold spot ({SITE_CONFIG.spotSymbol}) data from{" "}
+        Gold spot data from{" "}
         <a
           href="https://www.monex.com/gold-prices/"
           target="_blank"

@@ -1,5 +1,4 @@
 import { fetchProductSpot, ProductSpotSummary } from "@/lib/monexSpot";
-import { SITE_CONFIG } from "@/lib/siteConfig";
 
 interface CapitalRequirementsCardProps {
   /** Optional pre-fetched price data to avoid duplicate API calls */
@@ -9,7 +8,7 @@ interface CapitalRequirementsCardProps {
 /**
  * Server Component - Displays the approximate capital required to purchase a 10 oz gold bar.
  * 
- * Uses 10 oz gold bar (GBX10) pricing from Monex API.
+ * Uses 10 oz gold bar pricing from pricing feed.
  * Can receive pre-fetched price data or will fetch its own if not provided.
  * NO polling, NO intervals - renders ONCE per page load only.
  */
@@ -38,7 +37,7 @@ export default async function CapitalRequirementsCard({ priceData }: CapitalRequ
       </h3>
       <p className="text-gray-400 text-sm text-center mb-6">
         {hasValidPrice
-          ? `Based on current 10 oz gold bar (${SITE_CONFIG.productSymbol}) ask price:`
+          ? "Based on current 10 oz gold bar ask price:"
           : "To purchase a single 10 oz gold bar:"}
       </p>
       <div className="text-center py-6 rounded-lg bg-bullion-gold/10 border border-bullion-gold/30">
@@ -59,7 +58,7 @@ export default async function CapitalRequirementsCard({ priceData }: CapitalRequ
         )}
       </div>
       <p className="text-gray-500 text-xs text-center mt-4">
-        {SITE_CONFIG.productSymbol} pricing varies with gold spot and dealer premiums
+        Pricing varies with gold spot and dealer premiums
       </p>
     </div>
   );

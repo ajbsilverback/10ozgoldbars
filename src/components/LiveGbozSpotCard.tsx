@@ -1,15 +1,14 @@
 import Link from "next/link";
 import { fetchProductSpot, formatUSD, formatChange, formatTimestamp } from "@/lib/monexSpot";
-import { SITE_CONFIG } from "@/lib/siteConfig";
+import LocalTimestamp from "./LocalTimestamp";
 
 type LiveGbozSpotCardProps = {
   showCta?: boolean;
 };
 
 /**
- * Server Component - Fetches 10 oz Gold Bar (GBX10) price ONCE per page load
+ * Server Component - Fetches 10 oz Gold Bar price ONCE per page load
  * 
- * Uses Monex API with symbol: GBX10 (10 oz gold bar product pricing)
  * This is PRODUCT-SPECIFIC pricing, NOT raw gold spot.
  * 
  * ABSOLUTELY NO setInterval, useEffect, or client-side polling.
@@ -24,7 +23,7 @@ export default async function LiveGbozSpotCard({ showCta = true }: LiveGbozSpotC
     return (
       <div className="max-w-3xl mx-auto rounded-xl border border-bullion-gold/30 shadow-md p-6 sm:p-10 bg-[#111]">
         <p className="text-gray-400 text-center text-lg">
-          10 oz gold bar pricing ({SITE_CONFIG.productSymbol}) is temporarily unavailable.
+          10 oz gold bar pricing is temporarily unavailable.
         </p>
       </div>
     );
@@ -42,7 +41,7 @@ export default async function LiveGbozSpotCard({ showCta = true }: LiveGbozSpotC
             10 oz Gold Bar Price
           </h2>
           <p className="text-xs text-gray-500 mt-1">
-            Product pricing ({SITE_CONFIG.productSymbol})
+            Product pricing
           </p>
         </div>
         <div className="flex items-center gap-2">
@@ -146,7 +145,11 @@ export default async function LiveGbozSpotCard({ showCta = true }: LiveGbozSpotC
 
       {/* Timestamp */}
       <p className="text-sm text-gray-500 text-center">
-        As of: {formatTimestamp(data.timestamp)}
+        <LocalTimestamp
+          value={data.timestamp}
+          fallback={formatTimestamp(data.timestamp)}
+          prefix="As of: "
+        />
       </p>
 
       {/* CTA Button - only shown when showCta is true */}
@@ -166,7 +169,7 @@ export default async function LiveGbozSpotCard({ showCta = true }: LiveGbozSpotC
 
       {/* Attribution */}
       <p className="text-xs text-gray-600 text-center pt-4 border-t border-bullion-gold/10">
-        10 oz gold bar ({SITE_CONFIG.productSymbol}) pricing from{" "}
+        10 oz gold bar pricing from{" "}
         <a
           href="https://www.monex.com/10-oz-gold-bullion-bar-price-charts/"
           target="_blank"
