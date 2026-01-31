@@ -7,6 +7,12 @@ import "server-only";
 
 import { SITE_CONFIG, getProductApiUrl, getSpotApiUrl, getKiloBarApiUrl } from "./siteConfig";
 
+/** Skip pricing-feed error logs during production build (Dynamic server usage is expected; we fall back to null). */
+const isProductionBuild = process.env.NEXT_PHASE === "phase-production-build";
+function logPricingError(...args: Parameters<typeof console.error>): void {
+  if (!isProductionBuild) console.error(...args);
+}
+
 /**
  * TypeScript interface for Product Spot Summary from pricing feed
  * 
@@ -68,7 +74,7 @@ export async function fetchProductSpot(): Promise<ProductSpotSummary | null> {
 
     // If response.ok is false → return null
     if (!response.ok) {
-      console.error(`Pricing feed error: ${response.status} ${response.statusText}`);
+      logPricingError(`Pricing feed error: ${response.status} ${response.statusText}`);
       return null;
     }
 
@@ -117,7 +123,7 @@ export async function fetchProductSpot(): Promise<ProductSpotSummary | null> {
     }
 
     if (!productData) {
-      console.error(`Pricing feed: Could not extract ${symbol} data from response`);
+      logPricingError(`Pricing feed: Could not extract ${symbol} data from response`);
       return null;
     }
 
@@ -132,7 +138,7 @@ export async function fetchProductSpot(): Promise<ProductSpotSummary | null> {
     
     // Validate we have at least some price data
     if (bid === 0 && ask === 0 && last === 0) {
-      console.error("Pricing feed: No price data found in response");
+      logPricingError("Pricing feed: No price data found in response");
       return null;
     }
 
@@ -159,7 +165,7 @@ export async function fetchProductSpot(): Promise<ProductSpotSummary | null> {
 
     return spotSummary;
   } catch (error) {
-    console.error(`Error fetching ${symbol} spot price:`, error);
+    logPricingError(`Error fetching ${symbol} spot price:`, error);
     return null;
   }
 }
@@ -188,7 +194,7 @@ export async function fetchKiloBarPrice(): Promise<number | null> {
     });
 
     if (!response.ok) {
-      console.error(`Pricing feed (kilo) error: ${response.status}`);
+      logPricingError(`Pricing feed (kilo) error: ${response.status}`);
       return null;
     }
 
@@ -201,7 +207,7 @@ export async function fetchKiloBarPrice(): Promise<number | null> {
     
     return null;
   } catch (error) {
-    console.error("Error fetching GBX1K price:", error);
+    logPricingError("Error fetching GBX1K price:", error);
     return null;
   }
 }
@@ -296,7 +302,7 @@ export async function fetchMetalSpotIndex(): Promise<MetalSpotIndexSummary | nul
     });
 
     if (!response.ok) {
-      console.error(`Pricing feed (${symbol}) error: ${response.status} ${response.statusText}`);
+      logPricingError(`Pricing feed (${symbol}) error: ${response.status} ${response.statusText}`);
       return null;
     }
 
@@ -328,7 +334,7 @@ export async function fetchMetalSpotIndex(): Promise<MetalSpotIndexSummary | nul
     }
 
     if (!spotData) {
-      console.error(`Pricing feed: Could not extract ${symbol} data from response`);
+      logPricingError(`Pricing feed: Could not extract ${symbol} data from response`);
       return null;
     }
 
@@ -342,7 +348,7 @@ export async function fetchMetalSpotIndex(): Promise<MetalSpotIndexSummary | nul
     const previousClose = Number(spotData.previousClose ?? spotData.PreviousClose ?? spotData.close ?? spotData.Close ?? 0);
 
     if (bid === 0 && ask === 0 && last === 0) {
-      console.error(`Pricing feed (${symbol}): No price data found in response`);
+      logPricingError(`Pricing feed (${symbol}): No price data found in response`);
       return null;
     }
 
@@ -368,7 +374,7 @@ export async function fetchMetalSpotIndex(): Promise<MetalSpotIndexSummary | nul
 
     return spotSummary;
   } catch (error) {
-    console.error(`Error fetching ${symbol} Spot Index:`, error);
+    logPricingError(`Error fetching ${symbol} Spot Index:`, error);
     return null;
   }
 }
