@@ -21,7 +21,7 @@ const articleContents: Record<string, ArticleContent> = {
       {
         heading: "Why 10 oz Bars Have Lower Premiums Than 1 oz Bars",
         content: [
-          "When purchasing gold bars, you pay a premium above the spot price of gold. This premium covers refining, minting, assaying, distribution, and dealer margins. For 10 oz gold bars, these premiums are notably lower than 1 oz bars, typically 1.5-3% above spot price under normal market conditions.",
+          "When purchasing gold bars, you pay a premium above the spot price of gold. This premium covers refining, minting, assaying, distribution, and dealer margins. The <a href=\"https://www.gold.org/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">World Gold Council</a> and market data show that for 10 oz gold bars, these premiums are notably lower than 1 oz bars, typically 1.5-3% above spot price under normal market conditions.",
           "The economics are straightforward: producing one 10 oz bar is more efficient than producing 10 individual 1 oz bars with equivalent total gold content. The refining process is the same, but minting, packaging, handling, and distribution costs are incurred once rather than 10 times.",
           "This efficiency translates directly to savings for investors. At $2,000/oz spot, a 10 oz bar at 2% premium costs approximately $20,400. The same gold content purchased as 1 oz bars at 5% average premium would cost around $21,000, a difference of $600 on a single purchase.",
         ],
@@ -49,11 +49,11 @@ const articleContents: Record<string, ArticleContent> = {
         content: [
           "Timing your purchases during periods of market calm helps avoid premium spikes. When headlines about economic crises fade and demand normalizes, premiums typically return to standard ranges. Patient investors who aren't reacting to immediate fears secure better pricing.",
           "Building relationships with reputable dealers can improve your transaction economics. Regular customers often receive preferential pricing, advance notice of inventory availability, and smoother transaction processing. For purchases at this level, relationships help.",
-          "Shopping multiple dealers is essential. Premiums vary based on dealer business models, inventory positions, and competitive strategies. A few phone calls or website checks can reveal meaningful price differences on 10 oz bars.",
+          "Shopping multiple dealers is essential. Premiums vary based on dealer business models, inventory positions, and competitive strategies. For current spot and product pricing context, see a <a href=\"https://www.monex.com/gold-prices/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">gold pricing page</a>. A few phone calls or website checks can reveal meaningful price differences on 10 oz bars.",
         ],
         subheading: "Brand Considerations and Premium Recovery",
         subcontent: [
-          "Recognized brands (PAMP Suisse, Credit Suisse, Perth Mint, Royal Canadian Mint) typically command slightly higher premiums but trade with better liquidity on resale. The net result is often better total economics despite higher upfront cost.",
+          "Recognized brands (PAMP Suisse, Credit Suisse, Perth Mint, <a href=\"https://www.mint.ca/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">Royal Canadian Mint</a>) typically command slightly higher premiums but trade with better liquidity on resale. Bars from <a href=\"https://www.lbma.org.uk/good-delivery\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">LBMA-accredited</a> refiners are accepted globally. The net result is often better total economics despite higher upfront cost.",
           "For 10 oz bars specifically, brand premiums are meaningful but not as differentiated as for 1 oz bars. Focus on recognized refiners as the primary quality criterion rather than paying significant premiums for specific brands.",
         ],
       },
@@ -71,7 +71,7 @@ const articleContents: Record<string, ArticleContent> = {
       {
         heading: "Understanding Gold Bar Size Options",
         content: [
-          "Gold bars come in standardized sizes ranging from 1 gram to 400 ounces. For individual investors, the practical choices typically narrow to 1 oz, 10 oz, and 1 kilogram (32.15 oz) bars. Each size presents distinct trade-offs between premium costs, liquidity, capital requirements, and flexibility.",
+          "Gold bars come in standardized sizes ranging from 1 gram to 400 ounces. The <a href=\"https://www.gold.org/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">World Gold Council</a> and <a href=\"https://www.lbma.org.uk/good-delivery\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">LBMA</a> standards apply to bar formats. For individual investors, the practical choices typically narrow to 1 oz, 10 oz, and 1 kilogram (32.15 oz) bars. Each size presents distinct trade-offs between premium costs, liquidity, capital requirements, and flexibility.",
           "The size you choose should align with your investment capital, anticipated holding period, liquidity needs, and comfort with concentration. There is no universally correct answer; the best choice depends on your personal circumstances and goals.",
           "Understanding these trade-offs empowers you to make decisions that optimize your gold holdings for your specific situation rather than simply following conventional advice that may not apply to your circumstances.",
         ],
@@ -118,7 +118,7 @@ const articleContents: Record<string, ArticleContent> = {
       {
         heading: "Building a Mixed-Size Portfolio",
         content: [
-          "Many sophisticated investors combine bar sizes to optimize across multiple objectives. A thoughtful approach might include 10 oz bars for core holdings (good premium efficiency), and a reserve of 1 oz bars for potential short-term liquidity needs.",
+          "Many sophisticated investors combine bar sizes to optimize across multiple objectives. <a href=\"https://www.cmegroup.com/markets/metals/precious/gold.html\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">Gold market</a> structure and dealer demand support both sizes. A thoughtful approach might include 10 oz bars for core holdings (good premium efficiency), and a reserve of 1 oz bars for potential short-term liquidity needs.",
           "This layered strategy captures premium efficiency for the majority of holdings while maintaining flexibility where it's most valuable. The optimal allocation depends on your total gold position, anticipated needs, and investment timeline.",
           "Review your size allocation periodically as circumstances change. An investor approaching retirement might shift toward smaller denominations for flexibility, while one in accumulation phase might emphasize larger bars for premium savings.",
         ],
@@ -139,7 +139,7 @@ const articleContents: Record<string, ArticleContent> = {
         content: [
           "One of the advantages of 10 oz gold bars is their practical storage. At approximately 60mm × 31mm × 9mm and weighing about 311 grams, they're compact enough to store easily while holding meaningful value ({{CAPITAL_REQUIREMENT}} each).",
           "Unlike kilo bars which often require professional storage, 10 oz bars offer more flexibility. You can realistically store several 10 oz bars in a home safe or bank safe deposit box without the security concerns that come with larger holdings.",
-          "Your storage decision should reflect your total holdings value, access requirements, insurance considerations, and personal comfort level. Each option presents trade-offs worth understanding before committing capital.",
+          "Your storage decision should reflect your total holdings value, access requirements, insurance considerations, and personal comfort level. The <a href=\"https://www.gold.org/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">World Gold Council</a> and custody providers publish guidance on physical gold storage. Each option presents trade-offs worth understanding before committing capital.",
         ],
       },
       {
@@ -164,7 +164,7 @@ const articleContents: Record<string, ArticleContent> = {
         ],
         subheading: "Safe Deposit Box Considerations",
         subcontent: [
-          "Bank box contents are NOT insured by FDIC or the bank itself. You must obtain separate insurance coverage. Contact your insurance provider about a valuable articles rider or standalone policy.",
+          "Bank box contents are NOT insured by the <a href=\"https://www.fdic.gov/resources/deposit-insurance/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">FDIC</a> or the bank itself. You must obtain separate insurance coverage. Contact your insurance provider about a valuable articles rider or standalone policy.",
           "Access is limited to banking hours, which can be problematic in emergencies. Some investors find this acceptable for long-term holdings they don't plan to access frequently.",
         ],
       },
@@ -196,7 +196,7 @@ const articleContents: Record<string, ArticleContent> = {
         heading: "Why Brand Matters for 10 oz Bars",
         content: [
           "A 10 oz gold bar from any recognized refiner contains the same quantity of gold: 10 troy ounces of .9999 fine metal. Yet subtle differences exist in recognition, security features, and resale dynamics. Understanding these differences helps you make informed purchasing decisions.",
-          "For 10 oz bars, brand recognition affects resale ease and pricing. Bars from PAMP Suisse, Credit Suisse, Perth Mint, and Royal Canadian Mint are instantly recognized and readily accepted by dealers worldwide.",
+          "For 10 oz bars, brand recognition affects resale ease and pricing. Bars from PAMP Suisse, Credit Suisse, <a href=\"https://www.perthmint.com/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">Perth Mint</a>, and <a href=\"https://www.mint.ca/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">Royal Canadian Mint</a> are instantly recognized and readily accepted by dealers worldwide.",
           "Brand matters more for resale than for the gold's intrinsic value. Well-known brands sell faster and often at slightly better prices than generic or lesser-known products.",
         ],
       },
@@ -220,7 +220,7 @@ const articleContents: Record<string, ArticleContent> = {
         heading: "Perth Mint and Government Mints",
         content: [
           "Perth Mint (Australia) offers government-backed 10 oz bars with distinctive kangaroo designs. As a subsidiary of the Western Australian government, Perth Mint bars carry implicit sovereign backing.",
-          "Royal Canadian Mint bars feature the maple leaf design and government backing. Both are excellent choices with strong North American recognition and dealer acceptance.",
+          "<a href=\"https://www.mint.ca/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">Royal Canadian Mint</a> bars feature the maple leaf design and government backing. Both are excellent choices with strong North American recognition and dealer acceptance. <a href=\"https://www.lbma.org.uk/good-delivery\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">LBMA Good Delivery</a> and refiner accreditation support global liquidity.",
           "Government mint products sometimes carry modest premiums over private refiner bars, but the sovereign backing appeals to some investors.",
         ],
         subheading: "Making Your Brand Choice",
@@ -244,14 +244,14 @@ const articleContents: Record<string, ArticleContent> = {
         heading: "Understanding 10 oz Bar Liquidity",
         content: [
           "Liquidity describes how quickly and easily an asset can be converted to cash without significantly affecting its price. For gold investors, liquidity is important. An illiquid asset fails as a financial instrument if you cannot access its value when needed.",
-          "10 oz gold bars are highly liquid. The popular size attracts strong dealer demand, and bars from recognized refiners trade actively. Most established dealers maintain ready markets, and transactions typically complete within days.",
+          "10 oz gold bars are highly liquid. The popular size attracts strong dealer demand, and bars from <a href=\"https://www.lbma.org.uk/good-delivery\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">LBMA-accredited</a> refiners trade actively. Most established dealers maintain ready markets, and transactions typically complete within days. <a href=\"https://www.cmegroup.com/markets/metals/precious/gold.html\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">Gold futures and spot</a> markets provide price context.",
           "The 10 oz size hits a sweet spot: large enough for premium efficiency but accessible enough that dealers actively seek inventory. This creates competitive markets and efficient pricing.",
         ],
       },
       {
         heading: "Factors Affecting 10 oz Bar Liquidity",
         content: [
-          "Brand recognition significantly impacts liquidity. 10 oz bars from PAMP, Credit Suisse, Perth Mint, and Royal Canadian Mint enjoy immediate acceptance without additional verification. Lesser-known brands may require verification, extending transaction time.",
+          "Brand recognition significantly impacts liquidity. 10 oz bars from PAMP, Credit Suisse, Perth Mint, and Royal Canadian Mint enjoy immediate acceptance without additional verification when sourced from <a href=\"https://www.lbma.org.uk/good-delivery\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">accredited refiners</a>. Lesser-known brands may require verification, extending transaction time.",
           "Documentation completeness matters. Assay certificates, purchase records, and packaging in original condition expedite sales and support pricing. Bars lacking documentation may face modest discounts.",
           "Market conditions affect all gold liquidity. During periods of strong demand, 10 oz bars sell quickly. During quiet markets, sales may take slightly longer but remain practical.",
         ],
@@ -288,7 +288,7 @@ const articleContents: Record<string, ArticleContent> = {
       {
         heading: "Forces Behind Gold Price Movements",
         content: [
-          "Gold prices reflect the constantly shifting balance between global supply and demand, influenced by economic conditions, geopolitical events, currency movements, and investor sentiment. Understanding these dynamics helps you contextualize price movements.",
+          "Gold prices reflect the constantly shifting balance between global supply and demand, influenced by economic conditions, geopolitical events, currency movements, and investor sentiment. The <a href=\"https://www.gold.org/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">World Gold Council</a> and <a href=\"https://www.cmegroup.com/markets/metals/precious/gold.html\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">CME Group</a> publish market and demand data. Understanding these dynamics helps you contextualize price movements.",
           "Unlike industrial commodities driven primarily by production and consumption, gold's price incorporates significant monetary and psychological components. Gold functions as a commodity, currency alternative, and store of value simultaneously.",
           "For 10 oz bar investors, these dynamics affect holdings identically to any other gold format. A 10 oz bar's value changes with spot prices just as smaller or larger bars do.",
         ],
@@ -317,7 +317,7 @@ const articleContents: Record<string, ArticleContent> = {
       {
         heading: "Central Bank Activity and Supply",
         content: [
-          "Central banks collectively hold approximately 35,000 tonnes of gold reserves. Their buying and selling activities are significant market forces. In recent years, central bank purchasing, particularly from emerging market nations, has supported gold prices.",
+          "Central banks collectively hold approximately 35,000 tonnes of gold reserves. Their buying and selling activities are significant market forces. The <a href=\"https://www.gold.org/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">World Gold Council</a> tracks central bank demand. In recent years, central bank purchasing, particularly from emerging market nations, has supported gold prices.",
           "This official sector demand reflects a strategic shift away from dollar-denominated reserves toward tangible assets. Sustained central bank buying provides underlying support for gold prices.",
           "Gold mine production adds approximately 3,000-3,500 tonnes annually. Unlike commodities consumed in use, virtually all gold ever mined still exists, moderating supply disruption impacts.",
         ],
@@ -336,7 +336,7 @@ const articleContents: Record<string, ArticleContent> = {
       {
         heading: "What Is the Bid-Ask Spread?",
         content: [
-          "When trading gold bars, you encounter two prices: the ask (what dealers charge when you buy) and the bid (what they pay when they buy from you). The difference, known as the bid-ask spread, represents the transaction cost of entering and exiting your position.",
+          "When trading gold bars, you encounter two prices: the ask (what dealers charge when you buy) and the bid (what they pay when they buy from you). The difference, known as the bid-ask spread, represents the transaction cost of entering and exiting your position. <a href=\"https://www.cmegroup.com/markets/metals/precious/gold.html\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">Gold spot and futures</a> markets provide reference pricing.",
           "Understanding spreads is essential for evaluating the true cost of gold ownership. A 10 oz bar purchased at 2% premium and sold at 1% discount to spot requires gold to appreciate 3% just to break even.",
           "10 oz bars typically enjoy competitive spreads, often 1.5-2.5%. This is similar to or better than 1 oz bars and reflects the strong market for 10 oz products.",
         ],
@@ -344,7 +344,7 @@ const articleContents: Record<string, ArticleContent> = {
       {
         heading: "Factors Affecting 10 oz Bar Spreads",
         content: [
-          "Product recognition significantly influences spreads. 10 oz bars from PAMP, Credit Suisse, Perth Mint, and Royal Canadian Mint trade with tighter spreads because dealers can resell them quickly. Generic or lesser-known bars face wider spreads.",
+          "Product recognition significantly influences spreads. 10 oz bars from PAMP, Credit Suisse, Perth Mint, and Royal Canadian Mint trade with tighter spreads because dealers can resell them quickly. Bars from <a href=\"https://www.lbma.org.uk/good-delivery\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">LBMA-accredited</a> refiners typically have competitive spreads. Generic or lesser-known bars face wider spreads.",
           "Market conditions dramatically impact spreads. During volatility or supply stress, spreads widen as dealers protect against rapid price movements. Calm, stable markets produce the tightest spreads.",
           "Documentation quality matters. Bars with complete documentation (assay certificates, purchase records, original packaging) trade more efficiently than bars with missing paperwork.",
         ],
@@ -364,7 +364,7 @@ const articleContents: Record<string, ArticleContent> = {
         subheading: "Strategies to Minimize Spread Impact",
         subcontent: [
           "Building dealer relationships can improve spread economics. Regular customers often receive better pricing. Dealers who know your holdings may offer tighter spreads than walk-in customers.",
-          "Timing matters. During market stress, wait if possible, as spreads typically return to normal levels once volatility subsides. For routine transactions, shop multiple dealers to identify competitive spreads.",
+          "Timing matters. During market stress, wait if possible, as spreads typically return to normal levels once volatility subsides. For routine transactions, shop multiple dealers to identify competitive spreads. For pricing and spread context, see a <a href=\"https://www.monex.com/gold-prices/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">gold pricing resource</a>.",
         ],
       },
     ],
@@ -382,7 +382,7 @@ const articleContents: Record<string, ArticleContent> = {
         heading: "Why Authentication Matters for 10 oz Bars",
         content: [
           "With individual bars valued at {{CAPITAL_REQUIREMENT}}, authentication is important for 10 oz gold purchases. While the risk is lower than for larger bars, verification remains essential before committing capital.",
-          "The good news: recognized refiners invest in anti-counterfeiting measures. Their 10 oz bars include security features that make sophisticated counterfeits difficult and expensive to produce.",
+          "The good news: recognized refiners invest in anti-counterfeiting measures. The <a href=\"https://www.lbma.org.uk/good-delivery\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">LBMA</a> and refiners publish authenticity guidance. Their 10 oz bars include security features that make sophisticated counterfeits difficult and expensive to produce.",
           "For legitimate purchases from reputable dealers, authentication concerns are minimal. The risk increases when buying from unknown sources, secondary markets, or bars with incomplete documentation.",
         ],
       },
@@ -395,7 +395,7 @@ const articleContents: Record<string, ArticleContent> = {
         ],
         subheading: "Documentation Requirements",
         subcontent: [
-          "Every legitimate 10 oz bar should include: an assay certificate with matching serial number, precise weight confirmation, purity certification (.9999 fine), and refiner identification.",
+          "Every legitimate 10 oz bar should include: an assay certificate with matching serial number, precise weight confirmation, purity certification (.9999 fine), and refiner identification. The <a href=\"https://www.ftc.gov/business-guidance/resources/guides-jewelry-precious-metals-precious-stones\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">FTC's jewelry and precious metals guide</a> covers consumer protection.",
           "Preserve all documentation carefully. Store copies separately from the physical gold. This paperwork is essential for future sales and supports insurance claims if needed.",
         ],
       },
@@ -426,7 +426,7 @@ const articleContents: Record<string, ArticleContent> = {
       {
         heading: "The Institutional Gold Market",
         content: [
-          "Global institutional gold trading operates through standardized formats and quality standards. The London Bullion Market Association (LBMA) sets the standards that ensure gold bars meet exacting specifications.",
+          "Global institutional gold trading operates through standardized formats and quality standards. The <a href=\"https://www.lbma.org.uk/good-delivery\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">London Bullion Market Association (LBMA)</a> sets the standards that ensure gold bars meet exacting specifications.",
           "Retail 10 oz bar investors benefit from this infrastructure. The bars you purchase from LBMA-accredited refiners meet the same quality standards used by institutions. There is no separate 'retail grade.'",
           "This institutional backbone provides confidence. Your 10 oz bar from PAMP, Credit Suisse, or Perth Mint is not an obscure product but a standard format with reliable quality and pricing.",
         ],
@@ -434,7 +434,7 @@ const articleContents: Record<string, ArticleContent> = {
       {
         heading: "LBMA: The Quality Standard",
         content: [
-          "The London Bullion Market Association accredits refiners meeting strict quality standards. LBMA Good Delivery lists specify which refiners produce bars acceptable for institutional trading.",
+          "The <a href=\"https://www.lbma.org.uk/good-delivery\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">London Bullion Market Association</a> accredits refiners meeting strict quality standards. LBMA Good Delivery lists specify which refiners produce bars acceptable for institutional trading.",
           "For retail 10 oz bar buyers, choosing products from LBMA-accredited refiners ensures quality and liquidity. LBMA-accredited bars are accepted by dealers worldwide without additional verification.",
           "Major LBMA-accredited refiners producing 10 oz bars include PAMP Suisse, Valcambi, Credit Suisse (all Switzerland), Perth Mint (Australia), and Royal Canadian Mint (Canada).",
         ],
@@ -471,7 +471,7 @@ const articleContents: Record<string, ArticleContent> = {
       {
         heading: "Gold's Role in Portfolio Diversification",
         content: [
-          "Gold serves multiple functions in investment portfolios: diversification from traditional assets, inflation hedge, safe haven during crises, and long-term store of value. These benefits do not depend on bar size.",
+          "Gold serves multiple functions in investment portfolios: diversification from traditional assets, inflation hedge, safe haven during crises, and long-term store of value. The <a href=\"https://www.gold.org/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">World Gold Council</a> publishes research on gold demand and allocation. These benefits do not depend on bar size.",
           "Conventional wisdom suggests 5-15% of a portfolio in precious metals. Conservative investors might target 5%, while those more concerned about monetary system risks might go higher.",
           "10 oz bars become appropriate when your gold allocation reaches meaningful levels, typically $20,000-$50,000 or more. Below these thresholds, 1 oz bars provide more flexibility.",
         ],
@@ -530,7 +530,7 @@ const articleContents: Record<string, ArticleContent> = {
         subheading: "Questions to Ask Potential Dealers",
         subcontent: [
           "Before committing, clarify essential details. Ask about their sourcing: do they buy directly from refiners? Inquire about buyback policies: will they repurchase bars they sell, and at what spread?",
-          "Verify they stock products from recognized refiners. Ask about documentation: every 10 oz bar should include assay certification with matching serial numbers.",
+          "Verify they stock products from recognized refiners. Bars from <a href=\"https://www.lbma.org.uk/good-delivery\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">LBMA-accredited</a> refiners and government mints (<a href=\"https://www.usmint.gov/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">U.S. Mint</a>, <a href=\"https://www.mint.ca/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">Royal Canadian Mint</a>) meet quality standards. Ask about documentation: every 10 oz bar should include assay certification with matching serial numbers.",
         ],
       },
       {
@@ -588,7 +588,7 @@ const articleContents: Record<string, ArticleContent> = {
       {
         heading: "Federal Tax Classification of Physical Gold",
         content: [
-          "For federal tax purposes, physical gold is generally classified as a collectible rather than as an ordinary investment asset. This classification affects how gains are taxed when you eventually sell your gold bars.",
+          "For federal tax purposes, physical gold is generally classified as a collectible rather than as an ordinary investment asset. The <a href=\"https://www.irs.gov/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">IRS</a> publishes guidance on capital gains and collectibles. This classification affects how gains are taxed when you eventually sell your gold bars.",
           "Understanding this classification helps frame your expectations, though the specific rates and rules change with tax legislation. The collectible classification applies regardless of bar size.",
           "Your tax advisor can explain current rates and how they apply to your projected holding period and income level.",
         ],
@@ -617,7 +617,7 @@ const articleContents: Record<string, ArticleContent> = {
       {
         heading: "IRA and Retirement Account Ownership",
         content: [
-          "Certain retirement accounts can hold physical gold, including specific IRAs commonly called Precious Metals IRAs or Gold IRAs. Holding gold within such accounts follows different tax rules than personal ownership.",
+          "Certain retirement accounts can hold physical gold, including specific IRAs commonly called Precious Metals IRAs or Gold IRAs. The <a href=\"https://www.irs.gov/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">IRS</a> sets rules for IRA-eligible assets. Holding gold within such accounts follows different tax rules than personal ownership.",
           "IRA ownership involves specific requirements regarding eligible products, approved custodians, and storage arrangements. 10 oz bars meeting purity standards generally qualify, but verify with your custodian.",
           "The decision between personal ownership and IRA ownership involves trade-offs beyond taxes. IRA gold must be held by an approved custodian; you cannot take personal possession while maintaining IRA status.",
         ],
