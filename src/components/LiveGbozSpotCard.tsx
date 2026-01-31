@@ -119,25 +119,25 @@ export default async function LiveGbozSpotCard({ showCta = true }: LiveGbozSpotC
           <div className="rounded-md bg-[#161616] border border-yellow-500/10 px-4 py-3 text-center">
             <p className="text-xs text-neutral-400 uppercase tracking-wide mb-1">Open</p>
             <p className="text-sm md:text-base font-semibold text-neutral-100">
-              {data.open > 0 ? formatUSD(data.open) : "—"}
+              {data.open > 0 ? formatUSD(data.open) : "N/A"}
             </p>
           </div>
           <div className="rounded-md bg-[#161616] border border-yellow-500/10 px-4 py-3 text-center">
             <p className="text-xs text-neutral-400 uppercase tracking-wide mb-1">High</p>
             <p className="text-sm md:text-base font-semibold text-emerald-400">
-              {data.high > 0 ? formatUSD(data.high) : "—"}
+              {data.high > 0 ? formatUSD(data.high) : "N/A"}
             </p>
           </div>
           <div className="rounded-md bg-[#161616] border border-yellow-500/10 px-4 py-3 text-center">
             <p className="text-xs text-neutral-400 uppercase tracking-wide mb-1">Low</p>
             <p className="text-sm md:text-base font-semibold text-red-400">
-              {data.low > 0 ? formatUSD(data.low) : "—"}
+              {data.low > 0 ? formatUSD(data.low) : "N/A"}
             </p>
           </div>
           <div className="rounded-md bg-[#161616] border border-yellow-500/10 px-4 py-3 text-center">
             <p className="text-xs text-neutral-400 uppercase tracking-wide mb-1">Prev Close</p>
             <p className="text-sm md:text-base font-semibold text-neutral-100">
-              {data.previousClose > 0 ? formatUSD(data.previousClose) : "—"}
+              {data.previousClose > 0 ? formatUSD(data.previousClose) : "N/A"}
             </p>
           </div>
         </div>

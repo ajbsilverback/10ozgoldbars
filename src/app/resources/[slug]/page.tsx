@@ -66,6 +66,12 @@ function getMonexAnchorText(slug: string): string {
     "portfolio-allocation": "Monex investing in gold resources",
     "first-time-buyers-guide": "Monex gold products and pricing",
     "tax-considerations": "Monex gold investment knowledge base",
+    "why-10-oz-gold-bars": "Monex gold market pricing",
+    "10-oz-gold-bar-premiums-explained": "Monex gold price data",
+    "verify-10-oz-gold-bar-authenticity": "Monex gold investing knowledge base",
+    "store-10-oz-gold-bars": "Monex gold investment knowledge base",
+    "10-oz-bar-vs-1-oz-coins-bars": "Monex investing in gold resources",
+    "9999-fine-gold-explained": "Monex gold investment guide",
   };
   return anchorTextMap[slug] || "Monex gold resources";
 }
@@ -156,6 +162,48 @@ function generateAISummaryBullets(slug: string, title: string): string[] {
       "Understand capital gains basics and holding period implications",
       "Discover how state tax treatment varies across jurisdictions",
       "Get guidance on IRA ownership vs personal possession trade-offs",
+    ],
+    "why-10-oz-gold-bars": [
+      "This article explains why 10 oz gold bars are a middle weight sweet spot",
+      "Learn how 10 oz bars balance premium efficiency and practical flexibility",
+      "Understand dealer recognition and liquidity for the 10 oz size",
+      "Discover how 10 oz fits between 1 oz and kilo bars in cost and capital",
+      "Get context from market structure and refiner standards",
+    ],
+    "10-oz-gold-bar-premiums-explained": [
+      "This article explains what drives premiums on 10 oz gold bars",
+      "Learn when premiums typically widen or tighten",
+      "Understand the role of quality, brand, and market conditions",
+      "Discover how to evaluate dealer pricing and timing",
+      "Get third-party context on premium dynamics",
+    ],
+    "verify-10-oz-gold-bar-authenticity": [
+      "This article covers how to verify a 10 oz gold bar is authentic",
+      "Learn about assay cards, dimensions, and weight checks",
+      "Understand magnet tests and professional verification (e.g., XRF)",
+      "Discover red flags and how to avoid counterfeits",
+      "Get guidance on dealers and documentation",
+    ],
+    "store-10-oz-gold-bars": [
+      "This article compares ways to store 10 oz gold bars",
+      "Learn about home safes, bank safe deposit boxes, and vaulting",
+      "Understand insurance considerations for each option",
+      "Discover why bank box contents are not FDIC insured",
+      "Get practical guidance on documentation and security",
+    ],
+    "10-oz-bar-vs-1-oz-coins-bars": [
+      "This article compares 10 oz bars with 1 oz coins and 1 oz bars",
+      "Learn premium and liquidity differences across formats",
+      "Understand divisibility and resale convenience",
+      "Discover when to choose 10 oz vs 1 oz units",
+      "Get guidance on mixing sizes for your goals",
+    ],
+    "9999-fine-gold-explained": [
+      "This article explains what 999.9 fine gold means for 10 oz bars",
+      "Learn purity standards and refinery marks",
+      "Understand LBMA Good Delivery context",
+      "Discover how documentation supports authenticity and resale",
+      "Get refiner and mint source context",
     ],
   };
 
@@ -293,10 +341,11 @@ export default async function ResourcePage({ params }: Props) {
                 {section.content.map((paragraph, pIndex) => (
                   <p
                     key={pIndex}
-                    className="text-gray-300 leading-relaxed text-base md:text-lg"
-                  >
-                    {replaceTokens(paragraph, priceData)}
-                  </p>
+                    className="text-gray-300 leading-relaxed text-base md:text-lg prose-a:text-bullion-gold prose-a:underline prose-a:underline-offset-2 hover:prose-a:text-bullion-goldLight"
+                    dangerouslySetInnerHTML={{
+                      __html: replaceTokens(paragraph, priceData),
+                    }}
+                  />
                 ))}
                 {section.subheading && (
                   <div className="space-y-3 pt-4">
@@ -306,10 +355,11 @@ export default async function ResourcePage({ params }: Props) {
                     {section.subcontent?.map((paragraph, sIndex) => (
                       <p
                         key={sIndex}
-                        className="text-gray-300 leading-relaxed text-base md:text-lg"
-                      >
-                        {replaceTokens(paragraph, priceData)}
-                      </p>
+                        className="text-gray-300 leading-relaxed text-base md:text-lg prose-a:text-bullion-gold prose-a:underline prose-a:underline-offset-2 hover:prose-a:text-bullion-goldLight"
+                        dangerouslySetInnerHTML={{
+                          __html: replaceTokens(paragraph, priceData),
+                        }}
+                      />
                     ))}
                   </div>
                 )}

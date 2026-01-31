@@ -249,4 +249,88 @@ export const resourceQA: Record<string, QAItem[]> = {
       answer: "Certain IRAs, often called Precious Metals IRAs or Gold IRAs, can hold physical gold including qualifying 10 oz bars. The gold must meet purity requirements and be held by an approved custodian. IRA ownership provides tax-advantaged growth but involves custodian fees and prevents personal possession while in the account.",
     },
   ],
+  "why-10-oz-gold-bars": [
+    {
+      question: "Why is 10 oz called a sweet spot?",
+      answer: "10 oz bars typically offer lower per-ounce premiums than 1 oz bars while requiring less capital per bar than kilo bars. They are widely recognized by dealers, fit practical storage, and balance premium efficiency with reasonable divisibility. That combination makes 10 oz a common choice for serious individual investors.",
+    },
+    {
+      question: "How do 10 oz bar premiums compare to 1 oz?",
+      answer: "Under normal conditions, 10 oz bars often trade at 1.5% to 3% over spot, while 1 oz bars can be 3% to 8% or more. The difference comes from spreading fixed costs (assaying, packaging, handling) over more ounces. Kilo bars can be even lower in premium but require a larger outlay per bar.",
+    },
+    {
+      question: "Are 10 oz bars easy to sell?",
+      answer: "Yes. Dealers actively buy 10 oz bars from recognized refiners (e.g., PAMP, Valcambi, Perth Mint). Selling means converting the full 10 oz amount at once. If you may need to sell in smaller amounts, holding some 1 oz units alongside 10 oz bars can provide flexibility.",
+    },
+  ],
+  "10-oz-gold-bar-premiums-explained": [
+    {
+      question: "What makes 10 oz bar premiums go up?",
+      answer: "Premiums tend to widen when demand for physical bars rises (e.g., during stress or uncertainty), supply is tight, or dealers face higher funding or inventory risk. They typically tighten when demand normalizes and supply and competition increase.",
+    },
+    {
+      question: "Do brand and refiner affect 10 oz bar premiums?",
+      answer: "Yes. Bars from LBMA-accredited refiners and well-known mints often command a small premium over generic products. For 10 oz bars, the brand spread is usually narrower than for 1 oz products. Recognized brands also tend to have better resale liquidity.",
+    },
+    {
+      question: "Should I wait for lower premiums?",
+      answer: "Premiums are one input into cost; spot price and dealer choice matter too. Buying when markets are calm often means premiums are at the lower end of the typical range. Avoid basing decisions on hardcoded price targets; use current market information.",
+    },
+  ],
+  "verify-10-oz-gold-bar-authenticity": [
+    {
+      question: "What documentation should come with a 10 oz bar?",
+      answer: "A legitimate bar from a major refiner should have an assay certificate or card with weight, purity (e.g., .9999), refiner name, and a serial number matching the bar. Keep the certificate and packaging for resale and insurance.",
+    },
+    {
+      question: "Can a magnet test confirm gold?",
+      answer: "Gold is not magnetic. A strong magnet should not attract a genuine gold bar, so a positive pull suggests the bar is not pure gold. The magnet test does not prove purity (e.g., gold-plated items can still be non-magnetic); weight and dimensions add to basic checks.",
+    },
+    {
+      question: "When should I get professional authentication?",
+      answer: "For bars bought from established dealers with full documentation, extra testing is often unnecessary. For secondary market purchases, unknown sellers, or missing paperwork, professional testing (e.g., XRF) can verify purity and support confidence.",
+    },
+  ],
+  "store-10-oz-gold-bars": [
+    {
+      question: "Is a bank safe deposit box insured?",
+      answer: "No. The bank does not insure box contents, and the FDIC insures deposits, not box contents. You need your own insurance (e.g., valuable articles rider or standalone policy) for gold stored in a safe deposit box.",
+    },
+    {
+      question: "What kind of home safe is best for 10 oz bars?",
+      answer: "Use a fire-resistant safe rated for at least one hour, ideally bolted to the floor or wall. Ensure it is large enough and that you have a separate insurance policy or rider that covers precious metals. Discretion and a monitored alarm improve security.",
+    },
+    {
+      question: "What is allocated vault storage?",
+      answer: "Allocated storage means your bars are held in your name, segregated (e.g., by serial number), and not mixed with others' metal. Verify that the operator provides clear insurance and audit procedures and that you receive proper documentation.",
+    },
+  ],
+  "10-oz-bar-vs-1-oz-coins-bars": [
+    {
+      question: "Why are 10 oz bars cheaper per ounce than 1 oz?",
+      answer: "Fixed costs (refining, assaying, packaging, handling) are spread over more ounces with larger bars. So 10 oz bars typically have lower per-ounce premiums than 1 oz bars or coins, though you commit more capital per unit.",
+    },
+    {
+      question: "When should I choose 1 oz coins or bars instead of 10 oz?",
+      answer: "Choose 1 oz if you want to add or sell in smaller amounts, need maximum divisibility, or prefer sovereign mint coins. The trade-off is a higher premium per ounce and more units to store and document.",
+    },
+    {
+      question: "Can I mix 10 oz bars and 1 oz units?",
+      answer: "Yes. Many investors hold 10 oz bars for core, premium-efficient holdings and 1 oz coins or bars for flexibility and partial liquidation. The mix can match your capital, premium sensitivity, and liquidity needs.",
+    },
+  ],
+  "9999-fine-gold-explained": [
+    {
+      question: "What does 999.9 fine mean?",
+      answer: "999.9 fine (or .9999) means the bar is 99.99% gold by mass. The remaining 0.01% is typically trace other metals. This is the standard for investment-grade 10 oz bars from major refiners.",
+    },
+    {
+      question: "How does LBMA Good Delivery relate to 10 oz bars?",
+      answer: "Good Delivery applies to large wholesale bars. Refiners on the LBMA list often produce 10 oz bars to the same purity and quality standards. Buying from an LBMA-accredited refiner gives assurance of institutional-grade purity and production.",
+    },
+    {
+      question: "Do I need the assay certificate?",
+      answer: "Yes. The assay certificate documents weight, purity, and refiner and usually matches the bar by serial number. It supports authenticity, resale value, and insurance. Keep it and store a copy off-site.",
+    },
+  ],
 };

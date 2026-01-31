@@ -212,7 +212,7 @@ export default async function HomePage() {
                 Lower Premiums
               </h3>
               <p className="text-gray-400 leading-relaxed">
-                10 oz bars typically carry 1.5-3% premiums over spot price—significantly 
+                10 oz bars typically carry 1.5-3% premiums over spot price, significantly 
                 lower than 1 oz bars (3-8% premium). You get more gold for your money 
                 while maintaining practical portability and liquidity.
               </p>

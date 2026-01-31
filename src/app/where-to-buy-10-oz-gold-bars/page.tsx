@@ -5,7 +5,7 @@ import { SITE_CONFIG } from "@/lib/siteConfig";
 export const metadata: Metadata = {
   title: "Where to Buy 10 oz Gold Bars | Independent Dealer Guide",
   description:
-    "Independent guide to buying 10 oz gold bars from online dealers, local coin shops, marketplaces, and vaulted programs. No endorsements—educational information only.",
+    "Independent guide to buying 10 oz gold bars from online dealers, local coin shops, marketplaces, and vaulted programs. No endorsements; educational information only.",
   alternates: {
     canonical: `${SITE_CONFIG.canonicalDomain}/where-to-buy-10-oz-gold-bars`,
   },

@@ -128,6 +128,66 @@ export const resources: Resource[] = [
     category: "Tax & Legal",
     monexLink: "https://www.monex.com/knowledge-base/gold-investing/",
   },
+  {
+    slug: "why-10-oz-gold-bars",
+    title: "Why 10 oz Gold Bars Are a \"Middle Weight\" Sweet Spot",
+    description:
+      "Educational analysis of why the 10 oz gold bar size offers an optimal balance between premium efficiency, liquidity, and practical ownership for individual investors.",
+    excerpt:
+      "Understand why 10 oz bars sit in a sweet spot between 1 oz flexibility and kilo-scale efficiency.",
+    category: "Investment",
+    monexLink: "https://www.monex.com/gold-prices/",
+  },
+  {
+    slug: "10-oz-gold-bar-premiums-explained",
+    title: "10 oz Gold Bar Premiums Explained",
+    description:
+      "What drives premiums on 10 oz gold bars, when they widen or tighten, and how to evaluate costs. Informational guide with third-party market context.",
+    excerpt:
+      "Learn what drives 10 oz bar premiums and when they typically widen or tighten.",
+    category: "Pricing",
+    monexLink: "https://www.monex.com/gold-prices/",
+  },
+  {
+    slug: "verify-10-oz-gold-bar-authenticity",
+    title: "How to Verify a 10 oz Gold Bar Is Authentic",
+    description:
+      "Assay cards, dimensions, magnet and weight tests, dealer verification, and how to spot counterfeits. Educational guide to authenticity and security.",
+    excerpt:
+      "Practical steps to verify authenticity using assay cards, dimensions, and simple tests.",
+    category: "Security",
+    monexLink: "https://www.monex.com/knowledge-base/gold-investing/",
+  },
+  {
+    slug: "store-10-oz-gold-bars",
+    title: "Best Ways to Store a 10 oz Gold Bar",
+    description:
+      "Compare home safe, bank safe deposit box, and professional vaulting; insurance considerations and best practices for securing 10 oz gold bars.",
+    excerpt:
+      "Home safe vs bank box vs vaulting, plus insurance considerations for 10 oz bars.",
+    category: "Security",
+    monexLink: "https://www.monex.com/knowledge-base/gold-investing/",
+  },
+  {
+    slug: "10-oz-bar-vs-1-oz-coins-bars",
+    title: "10 oz Bar vs 1 oz Coins vs 1 oz Bars",
+    description:
+      "Liquidity, premiums, divisibility, and resale convenience compared across 10 oz bars, 1 oz coins, and 1 oz bars for informed allocation decisions.",
+    excerpt:
+      "Compare liquidity, premiums, divisibility, and resale across 10 oz bars, 1 oz coins, and 1 oz bars.",
+    category: "Investment",
+    monexLink: "https://www.monex.com/investing-in-gold/",
+  },
+  {
+    slug: "9999-fine-gold-explained",
+    title: "What \"999.9 Fine Gold\" Really Means for 10 oz Bars",
+    description:
+      "Purity standards, refinery marks, and LBMA Good Delivery context. What .9999 fine means and why it matters for 10 oz gold bars.",
+    excerpt:
+      "Purity, refinery marks, and LBMA Good Delivery context for 10 oz bars.",
+    category: "Products",
+    monexLink: "https://www.monex.com/investing-in-gold/",
+  },
 ];
 
 export function getResourceBySlug(slug: string): Resource | undefined {
