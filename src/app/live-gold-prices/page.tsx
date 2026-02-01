@@ -7,7 +7,7 @@ import QASection from "@/components/QASection";
 import LiveGbozSpotCard from "@/components/LiveGbozSpotCard";
 import LiveGoldSpotIndexCard from "@/components/LiveGoldSpotIndexCard";
 import { pricesQA } from "@/data/qa-content";
-import { fetchProductSpot, fetchMetalSpotIndex, formatUSD } from "@/lib/monexSpot";
+import PremiumComparisonBySize from "@/components/PremiumComparisonBySize";
 
 export const metadata: Metadata = {
   title: "Live 10 oz Gold Bar Prices & Gold Spot Price Charts",
@@ -31,19 +31,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function PricesPage() {
-  // Fetch price data once for the entire page
-  const priceData = await fetchProductSpot();
-  const spotData = await fetchMetalSpotIndex();
-  
-  // Get spot price per oz for examples (rounded to nearest dollar)
-  const spotPerOz = spotData ? Math.round(spotData.last) : 2000;
-  const formatSpotPrice = (price: number) => formatUSD(price).replace(".00", "");
-  
-  // Calculate example prices based on current spot
-  const tenOneOzBars = Math.round(spotPerOz * 10 * 1.05); // 5% premium
-  const oneTenOzBar = Math.round(spotPerOz * 10 * 1.02);  // 2% premium
-  const savings = tenOneOzBars - oneTenOzBar;
+export default function PricesPage() {
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -226,34 +214,14 @@ export default async function PricesPage() {
                 </ul>
               </div>
 
-              <div className="card">
-                <h3 className="text-xl md:text-2xl font-display font-semibold mb-4 text-bullion-gold">
-                  Premium Comparison by Size
-                </h3>
-                <p className="text-gray-300 leading-relaxed mb-3">
-                  The premium savings on 10 oz bars are meaningful when building 
-                  a gold position:
-                </p>
-                <div className="bg-bullion-darker/50 rounded-lg p-4">
-                  <p className="text-gray-400 text-sm mb-2">
-                    <strong className="text-bullion-gold">Example at {formatSpotPrice(spotPerOz)}/oz spot:</strong>
-                  </p>
-                  <ul className="text-gray-400 text-sm space-y-2">
-                    <li>• <strong className="text-white">10 × 1 oz bars (5% avg premium):</strong> ~{formatSpotPrice(tenOneOzBars)}</li>
-                    <li>• <strong className="text-white">1 × 10 oz bar (2% premium):</strong> ~{formatSpotPrice(oneTenOzBar)}</li>
-                    <li className="pt-2 border-t border-bullion-gold/20">
-                      <strong className="text-bullion-gold">Savings:</strong> ~{formatSpotPrice(savings)} by choosing 10 oz over 1 oz bars
-                    </li>
-                  </ul>
-                </div>
-              </div>
+              <PremiumComparisonBySize />
             </div>
           </div>
         </div>
       </section>
 
       {/* Q&A Section */}
-      <QASection items={pricesQA} includeSchema={false} priceData={priceData} />
+      <QASection items={pricesQA} includeSchema={false} priceData={null} />
 
       {/* Monex Research Link */}
       <section className="py-10 md:py-12">

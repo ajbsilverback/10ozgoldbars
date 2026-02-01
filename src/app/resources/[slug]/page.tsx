@@ -8,7 +8,6 @@ import AISummary from "@/components/AISummary";
 import QASection from "@/components/QASection";
 import Container from "@/components/Container";
 import { resourceQA } from "@/data/qa-content";
-import { fetchProductSpot } from "@/lib/monexSpot";
 import { replaceTokens } from "@/lib/priceTokens";
 
 interface Props {
@@ -229,7 +228,7 @@ export default async function ResourcePage({ params }: Props) {
   const aiSummaryBullets = generateAISummaryBullets(slug, resource.title);
   
   // Fetch price data for dynamic FAQ tokens
-  const priceData = await fetchProductSpot();
+  const priceData = null;
 
   const articleSchema = {
     "@context": "https://schema.org",

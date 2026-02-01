@@ -6,7 +6,6 @@ import QASection from "@/components/QASection";
 import LiveGbozSpotCard from "@/components/LiveGbozSpotCard";
 import CapitalRequirementsCard from "@/components/CapitalRequirementsCard";
 import { homeQA } from "@/data/qa-content";
-import { fetchProductSpot, fetchKiloBarPrice, formatUSD } from "@/lib/monexSpot";
 
 export const metadata: Metadata = {
   title: "10 oz Gold Bars | Expert Guide to Ten Ounce Gold Bar Investing",
@@ -31,25 +30,9 @@ export const metadata: Metadata = {
 };
 
 export default async function HomePage() {
-  // Fetch price data once for the entire page
-  const priceData = await fetchProductSpot();
-  const kiloBarPrice = await fetchKiloBarPrice();
-  
-  // Helper to format price as approximate (rounded to nearest $1,000)
-  const formatApproxPrice = (price: number): string => {
-    const rounded = Math.round(price / 1000) * 1000;
-    return new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "USD",
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }).format(rounded);
-  };
-  
-  // Get approximate bar price for display
-  const approxBarPrice = priceData ? formatApproxPrice(priceData.ask) : "~$20,000";
-  // Get approximate kilo bar price for comparison (fallback to $140,000)
-  const approxKiloPrice = kiloBarPrice ? formatApproxPrice(kiloBarPrice) : "~$140,000";
+  // Static fallbacks for SSG; live pricing is loaded client-side via cards and /api/spot
+  const approxBarPrice = "~$20,000";
+  const approxKiloPrice = "~$140,000";
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -335,7 +318,7 @@ export default async function HomePage() {
               </div>
             </div>
             <div className="flex justify-center lg:justify-end mt-10 lg:mt-0">
-              <CapitalRequirementsCard priceData={priceData} />
+              <CapitalRequirementsCard />
             </div>
           </div>
         </div>
@@ -383,27 +366,9 @@ export default async function HomePage() {
                 </tr>
                 <tr className="border-b border-gray-800">
                   <td className="py-4 px-6 font-medium">Entry Cost</td>
-                  <td className="py-4 px-6 text-center">
-                    {priceData ? (
-                      <>~{formatUSD(Math.round((priceData.ask / SITE_CONFIG.troyOunces) * 1.05)).replace(".00", "")}</>
-                    ) : (
-                      "~$2,100"
-                    )}
-                  </td>
-                  <td className="py-4 px-6 text-center text-bullion-gold">
-                    {priceData ? (
-                      <>~{formatUSD(Math.round(priceData.ask * 1.02)).replace(".00", "")}</>
-                    ) : (
-                      "~$20,400"
-                    )}
-                  </td>
-                  <td className="py-4 px-6 text-center">
-                    {kiloBarPrice ? (
-                      <>~{formatUSD(Math.round(kiloBarPrice)).replace(".00", "")}</>
-                    ) : (
-                      "~$140,000"
-                    )}
-                  </td>
+                  <td className="py-4 px-6 text-center">~$2,100</td>
+                  <td className="py-4 px-6 text-center text-bullion-gold">~$20,400</td>
+                  <td className="py-4 px-6 text-center">~$140,000</td>
                 </tr>
                 <tr className="border-b border-gray-800">
                   <td className="py-4 px-6 font-medium">Divisibility</td>
@@ -519,7 +484,7 @@ export default async function HomePage() {
       </section>
 
       {/* Q&A Section */}
-      <QASection items={homeQA} priceData={priceData} />
+      <QASection items={homeQA} priceData={null} />
 
       {/* CTA Section */}
       <section className="py-16 md:py-20 relative overflow-hidden">

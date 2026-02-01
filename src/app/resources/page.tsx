@@ -4,7 +4,6 @@ import { SITE_CONFIG } from "@/lib/siteConfig";
 import { resources, getResourceCategories } from "@/data/resources";
 import QASection from "@/components/QASection";
 import { resourcesQA } from "@/data/qa-content";
-import { fetchProductSpot } from "@/lib/monexSpot";
 
 export const metadata: Metadata = {
   title: "10 oz Gold Bar Educational Resources & Investment Guides",
@@ -36,9 +35,6 @@ export default async function ResourcesPage({ searchParams }: PageProps) {
   const params = await searchParams;
   const activeCategory = params.category || "all";
   const categories = getResourceCategories();
-  
-  // Fetch price data for dynamic FAQ tokens
-  const priceData = await fetchProductSpot();
 
   // Filter resources based on selected category
   const filteredResources =
@@ -267,7 +263,7 @@ export default async function ResourcesPage({ searchParams }: PageProps) {
       </section>
 
       {/* Q&A Section */}
-      <QASection items={resourcesQA} priceData={priceData} />
+      <QASection items={resourcesQA} priceData={null} />
 
       {/* CTA Section */}
       <section className="py-12 md:py-16">
