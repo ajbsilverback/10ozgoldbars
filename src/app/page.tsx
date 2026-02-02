@@ -5,6 +5,7 @@ import { SITE_CONFIG } from "@/lib/siteConfig";
 import QASection from "@/components/QASection";
 import LiveGbozSpotCard from "@/components/LiveGbozSpotCard";
 import CapitalRequirementsCard from "@/components/CapitalRequirementsCard";
+import ComparingBarSizesEntryCostRow from "@/components/ComparingBarSizesEntryCostRow";
 import { homeQA } from "@/data/qa-content";
 
 export const metadata: Metadata = {
@@ -364,12 +365,7 @@ export default async function HomePage() {
                   </td>
                   <td className="py-4 px-6 text-center">1-2%</td>
                 </tr>
-                <tr className="border-b border-gray-800">
-                  <td className="py-4 px-6 font-medium">Entry Cost</td>
-                  <td className="py-4 px-6 text-center">~$2,100</td>
-                  <td className="py-4 px-6 text-center text-bullion-gold">~$20,400</td>
-                  <td className="py-4 px-6 text-center">~$140,000</td>
-                </tr>
+                <ComparingBarSizesEntryCostRow />
                 <tr className="border-b border-gray-800">
                   <td className="py-4 px-6 font-medium">Divisibility</td>
                   <td className="py-4 px-6 text-center">★★★★★</td>
